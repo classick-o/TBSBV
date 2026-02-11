@@ -1,0 +1,198 @@
+<!-- Source: initial-1/TBSBV 4 -->
+---
+const certifications = [
+  {
+    icon: "award",
+    title: "ISO 27001 Certified",
+    description: "Information Security Management",
+  },
+  {
+    icon: "shield",
+    title: "SOC 2 Type II",
+    description: "Security & Compliance",
+  },
+  {
+    icon: "checkCircle2",
+    title: "GDPR Compliant",
+    description: "Data Protection Standards",
+  },
+  {
+    icon: "building2",
+    title: "Licensed PI Firm",
+    description: "Licensed in 12+ Jurisdictions",
+  },
+];
+
+const industries = [
+  "Financial Services",
+  "Healthcare",
+  "Technology",
+  "Legal",
+  "Manufacturing",
+  "Retail",
+  "Energy",
+  "Government",
+];
+
+const stats = [
+  { value: "Fortune 500", label: "Clients" },
+  { value: "12+", label: "Industries Served" },
+  { value: "20+", label: "Years Experience" },
+];
+---
+
+<section
+  id="trust"
+  class="relative py-32 lg:py-40 bg-white overflow-hidden"
+>
+  <!-- Background Elements -->
+  <div class="absolute inset-0 opacity-[0.015]">
+    <div
+      class="absolute inset-0"
+      style="background-image: radial-gradient(circle at 2px 2px, rgb(6, 182, 212) 1px, transparent 0); background-size: 48px 48px;"
+    ></div>
+  </div>
+
+  <div class="relative z-10 max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-20">
+    <!-- Section Header -->
+    <div
+      data-animate
+      style="--delay: 0s;"
+      class="text-center max-w-4xl mx-auto mb-20"
+    >
+      <div class="inline-flex items-center gap-2 px-5 py-2 bg-cyan-50 border border-cyan-100 mb-6">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-cyan-600"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+        <span class="text-xs font-bold text-cyan-600 tracking-[0.2em] uppercase">
+          Trust & Credentials
+        </span>
+      </div>
+      <h2 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 leading-[1.1] tracking-tight">
+        Certified{" "}
+        <span class="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+          Excellence
+        </span>
+      </h2>
+      <p class="text-xl sm:text-2xl text-slate-600 leading-relaxed">
+        Backed by industry-leading certifications and trusted by organizations worldwide.
+      </p>
+    </div>
+
+    <!-- Certifications Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+      {certifications.map((cert, index) => (
+        <div
+          data-animate
+          style={`--delay: ${index * 0.1}s;`}
+          class="bg-white border-2 border-slate-200 p-8 hover:border-cyan-300 transition-all duration-300 hover:shadow-xl text-center group"
+        >
+          <div class="inline-flex w-16 h-16 bg-gradient-to-br from-cyan-50 to-blue-50 border-2 border-cyan-100 items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            {cert.icon === "award" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-cyan-600"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg>
+            )}
+            {cert.icon === "shield" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-cyan-600"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+            )}
+            {cert.icon === "checkCircle2" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-cyan-600"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            )}
+            {cert.icon === "building2" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-cyan-600"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+            )}
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">
+            {cert.title}
+          </h3>
+          <p class="text-sm text-slate-600">{cert.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Trusted By Section -->
+    <div
+      data-animate
+      style="--delay: 0.5s;"
+      class="bg-gradient-to-br from-slate-50 to-cyan-50/30 border-2 border-slate-200 p-16 lg:p-20"
+    >
+      <div class="text-center mb-12">
+        <h3 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+          Trusted Across Industries
+        </h3>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+          We serve organizations across diverse sectors, from Fortune 500 companies to specialized boutique firms.
+        </p>
+      </div>
+
+      <!-- Industry Tags -->
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        {industries.map((industry, index) => (
+          <div
+            data-animate
+            style={`--delay: ${0.6 + index * 0.05}s;`}
+            class="px-6 py-3 bg-white border-2 border-slate-300 hover:border-cyan-500 hover:shadow-lg transition-all duration-300"
+          >
+            <span class="text-sm font-semibold text-slate-700">
+              {industry}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      <!-- Stats Row -->
+      <div class="grid grid-cols-3 gap-8 pt-12 border-t-2 border-slate-200">
+        {stats.map((stat) => (
+          <div class="text-center">
+            <div class="text-3xl lg:text-4xl font-bold text-slate-900 mb-2">
+              {stat.value}
+            </div>
+            <div class="text-sm text-slate-600 font-medium">
+              {stat.label}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Partners Note -->
+    <div
+      data-animate
+      style="--delay: 0.8s;"
+      class="mt-16 text-center"
+    >
+      <p class="text-sm text-slate-500 max-w-3xl mx-auto leading-relaxed">
+        Due to the confidential nature of our work, we cannot publicly display client names or logos.
+        However, our reputation speaks through results and the trust of leading organizations worldwide.
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  function initTrustAnimations() {
+    const animatedElements = document.querySelectorAll('#trust [data-animate]');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target as HTMLElement;
+            const delay = getComputedStyle(el).getPropertyValue('--delay') || '0s';
+            el.style.transition = `opacity 0.5s ease ${delay}, transform 0.5s ease ${delay}`;
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0) scale(1)';
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    animatedElements.forEach((el) => {
+      const element = el as HTMLElement;
+      element.style.opacity = '0';
+      element.style.transform = 'translateY(30px)';
+      observer.observe(element);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initTrustAnimations);
+  document.addEventListener('astro:after-swap', initTrustAnimations);
+</script>

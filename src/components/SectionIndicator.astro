@@ -1,0 +1,63 @@
+<!-- Source: initial-1/TBSBV 4 -->
+---
+const sections = [
+  { id: "home", label: "Home" },
+  { id: "services", label: "Services" },
+  { id: "case-studies", label: "Cases" },
+  { id: "process", label: "Process" },
+  { id: "about", label: "About" },
+  { id: "contact", label: "Contact" },
+];
+---
+
+<div id="section-indicator" class="fixed right-8 top-1/2 -translate-y-1/2 z-40 hidden xl:block">
+  <div class="flex flex-col gap-3">
+    {sections.map((section) => (
+      <a
+        href={`#${section.id}`}
+        class="group flex items-center gap-3 section-dot"
+        data-section={section.id}
+      >
+        <div class="w-3 h-3 transition-all duration-300 bg-slate-600 hover:bg-slate-400 dot-indicator"></div>
+        <span class="text-xs font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-slate-500 dot-label">
+          {section.label}
+        </span>
+      </a>
+    ))}
+  </div>
+</div>
+
+<script>
+  function updateSectionIndicator() {
+    const scrollPosition = window.scrollY + 200;
+    const dots = document.querySelectorAll('.section-dot');
+
+    dots.forEach((dot) => {
+      const sectionId = dot.getAttribute('data-section');
+      const section = document.getElementById(sectionId);
+      const indicator = dot.querySelector('.dot-indicator');
+      const label = dot.querySelector('.dot-label');
+
+      if (section && indicator && label) {
+        const offsetTop = section.offsetTop;
+        const offsetBottom = offsetTop + section.offsetHeight;
+        const isActive = scrollPosition >= offsetTop && scrollPosition < offsetBottom;
+
+        if (isActive) {
+          indicator.classList.remove('bg-slate-600');
+          indicator.classList.add('bg-cyan-500', 'scale-125');
+          label.classList.remove('text-slate-500');
+          label.classList.add('text-cyan-400', 'opacity-100');
+        } else {
+          indicator.classList.add('bg-slate-600');
+          indicator.classList.remove('bg-cyan-500', 'scale-125');
+          label.classList.add('text-slate-500');
+          label.classList.remove('text-cyan-400', 'opacity-100');
+        }
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateSectionIndicator, { passive: true });
+  updateSectionIndicator();
+</script>

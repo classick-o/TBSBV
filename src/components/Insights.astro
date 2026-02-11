@@ -1,0 +1,160 @@
+<!-- Source: initial-1/TBSBV 4 -->
+---
+const insights = [
+  {
+    category: "Cybersecurity Trends",
+    title: "The Rise of AI-Powered Cyber Attacks in 2026",
+    excerpt:
+      "How machine learning is being weaponized by threat actors and what organizations can do to stay protected.",
+    readTime: "6 min read",
+    date: "Jan 28, 2026",
+    gradient: "from-cyan-500 to-blue-500",
+    image: "https://images.unsplash.com/photo-1658552963426-1083cf9c495e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGN5YW4lMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc3MDA1MzM2MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+  },
+  {
+    category: "Due Diligence",
+    title: "Hidden Red Flags in M&A Transactions",
+    excerpt:
+      "Key warning signs that every investor should watch for during pre-acquisition due diligence investigations.",
+    readTime: "8 min read",
+    date: "Jan 15, 2026",
+    gradient: "from-blue-500 to-indigo-500",
+    image: "https://images.unsplash.com/photo-1653549893012-b8b4fbe97630?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGJsdWUlMjBuZXR3b3JrfGVufDF8fHx8MTc3MDA1MzM2MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+  },
+  {
+    category: "Digital Forensics",
+    title: "Blockchain Forensics: Tracing Crypto Fraud",
+    excerpt:
+      "Advanced techniques for tracking cryptocurrency transactions and recovering stolen digital assets.",
+    readTime: "10 min read",
+    date: "Jan 5, 2026",
+    gradient: "from-indigo-500 to-purple-500",
+    image: "https://images.unsplash.com/photo-1629487015513-7075665af4b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGluZGlnbyUyMHBhdHRlcm5zfGVufDF8fHx8MTc3MDA1MzM2Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+  },
+];
+---
+
+<section
+  id="insights"
+  class="relative py-32 lg:py-40 bg-slate-50 overflow-hidden"
+>
+  <!-- Background Elements -->
+  <div class="absolute inset-0 opacity-[0.02]">
+    <div
+      class="absolute inset-0"
+      style="background-image: radial-gradient(circle, rgba(6, 182, 212, 0.4) 1px, transparent 1px); background-size: 40px 40px;"
+    ></div>
+  </div>
+
+  <div class="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+    <!-- Section Header -->
+    <div
+      data-animate
+      class="text-center max-w-4xl mx-auto mb-20"
+    >
+      <div class="inline-flex items-center gap-2 px-5 py-2 bg-white border border-slate-200 mb-6">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-cyan-600"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+        <span class="text-sm font-semibold text-cyan-600 tracking-wider uppercase">
+          Insights & Resources
+        </span>
+      </div>
+      <h2 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 mb-8 leading-[1.1] tracking-tight">
+        Stay Ahead of{" "}
+        <span class="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+          Digital Threats
+        </span>
+      </h2>
+      <p class="text-xl sm:text-2xl text-slate-600 leading-relaxed">
+        Expert insights, industry trends, and practical guidance from our
+        team of cybersecurity professionals.
+      </p>
+    </div>
+
+    <!-- Insights Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+      {insights.map((insight) => (
+        <article
+          data-animate
+          class="group relative bg-white overflow-hidden border border-slate-200 hover:border-cyan-200 transition-all duration-500 hover:shadow-2xl"
+        >
+          <!-- Abstract Image -->
+          <div class="relative h-64 w-full overflow-hidden">
+            <img
+              src={insight.image}
+              alt={insight.title}
+              loading="lazy"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent"></div>
+
+            <!-- Category Badge on Image -->
+            <div class="absolute top-6 left-6 inline-flex items-center gap-2 px-4 py-2 bg-white/95 backdrop-blur-sm border border-slate-200">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-cyan-600"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+              <span class="text-xs font-semibold text-cyan-600 uppercase tracking-wider">
+                {insight.category}
+              </span>
+            </div>
+          </div>
+
+          <!-- Gradient Header -->
+          <div
+            class={`h-1 bg-gradient-to-r ${insight.gradient}`}
+          ></div>
+
+          <div class="p-8 lg:p-10">
+            <!-- Title -->
+            <h3 class="text-2xl font-bold text-slate-900 mb-4 group-hover:text-cyan-600 transition-colors leading-tight">
+              {insight.title}
+            </h3>
+
+            <!-- Excerpt -->
+            <p class="text-slate-600 mb-6 leading-relaxed text-lg">
+              {insight.excerpt}
+            </p>
+
+            <!-- Meta Info -->
+            <div class="flex items-center justify-between text-sm text-slate-500 mb-6 pb-6 border-b border-slate-100">
+              <span>{insight.date}</span>
+              <span>{insight.readTime}</span>
+            </div>
+
+            <!-- Read More Link -->
+            <a
+              href="#contact"
+              class="inline-flex items-center gap-2 text-cyan-600 font-semibold group-hover:gap-3 transition-all"
+            >
+              Read Article
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- Newsletter CTA -->
+    <div
+      data-animate
+      class="bg-gradient-to-br from-slate-900 to-slate-800 p-16 lg:p-20 text-center"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-14 h-14 text-cyan-400 mx-auto mb-8"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+      <h3 class="text-3xl lg:text-4xl font-bold text-white mb-6">
+        Get Monthly Security Insights
+      </h3>
+      <p class="text-slate-300 text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+        Subscribe to our newsletter for expert analysis, threat intelligence
+        updates, and best practices delivered to your inbox.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+        <input
+          type="email"
+          placeholder="Enter your email address"
+          class="flex-1 px-6 py-4 bg-white border-2 border-transparent text-slate-900 placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors text-lg"
+        />
+        <button class="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold hover:shadow-xl hover:shadow-cyan-500/30 transition-all whitespace-nowrap text-lg hover:scale-[1.02]">
+          Subscribe Now
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

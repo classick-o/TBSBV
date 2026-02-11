@@ -1,0 +1,94 @@
+---
+/* Main index page — assembles all sections per initial-1/TBSBV 4/src/app/App.tsx layout */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Preloader from '../components/Preloader.astro';
+import ScrollProgress from '../components/ScrollProgress.astro';
+import SectionIndicator from '../components/SectionIndicator.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import WhyChooseUs from '../components/WhyChooseUs.astro';
+import TrustSection from '../components/TrustSection.astro';
+import CaseStudies from '../components/CaseStudies.astro';
+import MetricsSection from '../components/MetricsSection.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Process from '../components/Process.astro';
+import Awards from '../components/Awards.astro';
+import About from '../components/About.astro';
+import Insights from '../components/Insights.astro';
+import FAQ from '../components/FAQ.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import StickyConsultation from '../components/StickyConsultation.astro';
+
+const pageTitle = 'TBSBV — Cybersecurity, Investigations & Due Diligence';
+const pageDescription = 'TBSBV delivers world-class cyber investigation, due diligence, and integrity management solutions. Navigate complex digital threats with confidence across 45+ countries.';
+
+/* JSON-LD structured data */
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "TBSBV",
+  "alternateName": "Transparent Business Solutions",
+  "url": "https://example.com",
+  "description": pageDescription,
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-800-TBSBV-01",
+    "contactType": "customer service",
+    "availableLanguage": ["English"]
+  }
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "TBSBV",
+  "url": "https://example.com"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How confidential are your investigations?", "acceptedAnswer": { "@type": "Answer", "text": "Absolute confidentiality is the cornerstone of our service. We operate under strict NDAs, employ military-grade encryption for all communications, and maintain ISO 27001 certification." }},
+    { "@type": "Question", "name": "What industries do you specialize in?", "acceptedAnswer": { "@type": "Answer", "text": "We serve financial services, technology, healthcare, legal, manufacturing, and government sectors across 12+ industries." }},
+    { "@type": "Question", "name": "How quickly can you respond to urgent cases?", "acceptedAnswer": { "@type": "Answer", "text": "We maintain 24/7 rapid response with an average response time of 2.6 hours globally. We can deploy investigators within hours to any major city." }},
+    { "@type": "Question", "name": "What is your success rate?", "acceptedAnswer": { "@type": "Answer", "text": "We maintain a 98% success rate across all service lines." }},
+    { "@type": "Question", "name": "How do you price your services?", "acceptedAnswer": { "@type": "Answer", "text": "Pricing depends on case complexity, geographic scope, and urgency. We offer hourly rates, project-based fees, and retainer arrangements. Initial consultations are complimentary." }},
+    { "@type": "Question", "name": "Do you work internationally?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We operate in 45+ countries with licensed investigators and local partnerships worldwide." }},
+    { "@type": "Question", "name": "What technology do you use?", "acceptedAnswer": { "@type": "Answer", "text": "We employ blockchain forensics platforms, AI-powered OSINT analysis, advanced cyber forensics suites, and proprietary investigation software." }},
+    { "@type": "Question", "name": "Can your findings be used in legal proceedings?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Our investigations are conducted to forensic standards that meet or exceed legal requirements globally." }}
+  ]
+};
+
+const jsonLdHtml = `<script type="application/ld+json">${JSON.stringify(organizationSchema)}</script>
+<script type="application/ld+json">${JSON.stringify(websiteSchema)}</script>
+<script type="application/ld+json">${JSON.stringify(faqSchema)}</script>`;
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} jsonLd={jsonLdHtml}>
+
+  <Preloader />
+  <ScrollProgress />
+  <SectionIndicator />
+
+  <Header />
+  <main>
+    <Hero />
+    <Services />
+    <WhyChooseUs />
+    <TrustSection />
+    <CaseStudies />
+    <MetricsSection />
+    <Testimonials />
+    <Process />
+    <Awards />
+    <About />
+    <Insights />
+    <FAQ />
+    <Contact />
+  </main>
+  <Footer />
+  <StickyConsultation />
+</BaseLayout>

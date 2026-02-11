@@ -1,0 +1,219 @@
+<!-- Source: initial-1/TBSBV 4 -->
+---
+const cases = [
+  {
+    category: "Cyber Investigation",
+    title: "Global Cryptocurrency Fraud Investigation",
+    challenge:
+      "A multinational corporation lost $12M in a sophisticated crypto scam involving multiple jurisdictions.",
+    solution:
+      "Deployed advanced blockchain analysis and international cooperation to trace digital assets across 8 countries.",
+    results: ["$9.8M recovered", "5 arrests made", "Network dismantled"],
+    gradient: "from-cyan-500 to-blue-500",
+    image: "https://images.unsplash.com/photo-1687093777245-bc60c636ddf0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHRlYWwlMjBzaGFwZXN8ZW58MXx8fHwxNzcwMDUzMzYyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+  },
+  {
+    category: "Due Diligence",
+    title: "Pre-Acquisition Corporate Intelligence",
+    challenge:
+      "Private equity firm needed comprehensive due diligence on a target company with complex ownership structure.",
+    solution:
+      "Conducted deep-dive investigation revealing undisclosed liabilities and beneficial ownership concerns.",
+    results: [
+      "Deal restructured",
+      "Saved $4M in risk exposure",
+      "Negotiated better terms",
+    ],
+    gradient: "from-blue-500 to-indigo-500",
+    image: "https://images.unsplash.com/photo-1549971723-1c9327e72f54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGJsdWUlMjBsaWdodHxlbnwxfHx8fDE3Njk5NTQ4OTJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+  },
+  {
+    category: "Reputation Management",
+    title: "Executive Reputation Crisis Response",
+    challenge:
+      "C-suite executive faced coordinated online defamation campaign threatening career and company reputation.",
+    solution:
+      "Implemented 360° reputation management strategy including threat identification, legal action, and positive PR.",
+    results: [
+      "Threats neutralized",
+      "Reputation restored",
+      "Legal recourse secured",
+    ],
+    gradient: "from-indigo-500 to-purple-500",
+    image: "https://images.unsplash.com/photo-1646038572815-43fe759e459b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHB1cnBsZSUyMGdyYWRpZW50fGVufDF8fHx8MTc2OTk1NDg5MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+  },
+];
+---
+
+<section
+  id="case-studies"
+  class="relative py-40 lg:py-48 bg-gradient-to-b from-white to-slate-50 overflow-hidden"
+>
+  <!-- Background Gradient Orbs -->
+  <div class="absolute top-20 right-20 w-[600px] h-[600px] bg-gradient-to-br from-cyan-100/30 to-transparent blur-3xl"></div>
+  <div class="absolute bottom-20 left-20 w-[500px] h-[500px] bg-gradient-to-br from-blue-100/30 to-transparent blur-3xl"></div>
+
+  <div class="relative z-10 max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-20">
+    <!-- Section Header - Magazine Style -->
+    <div
+      data-animate
+      class="mb-32"
+    >
+      <div class="grid lg:grid-cols-2 gap-16 items-end">
+        <div>
+          <div class="inline-flex items-center gap-2 px-5 py-2 bg-cyan-50 border border-cyan-100 mb-8">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-cyan-600"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+            <span class="text-xs font-bold text-cyan-600 tracking-[0.2em] uppercase">
+              Success Stories
+            </span>
+          </div>
+          <h2 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.05] tracking-[-0.02em]">
+            Real
+            <br />
+            <span class="bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              Results
+            </span>
+          </h2>
+        </div>
+        <div class="pb-4">
+          <p class="text-2xl text-slate-600 leading-relaxed">
+            See how we've helped organizations navigate complex digital threats
+            and achieve measurable, transformative outcomes.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case Studies - Editorial Layout -->
+    <div class="space-y-32">
+      {cases.map((caseStudy, index) => (
+        <article
+          data-animate
+          class="group relative"
+        >
+          <div class="grid lg:grid-cols-5 gap-12 items-center">
+            <!-- Image Column - Takes 3 columns -->
+            <div class={`lg:col-span-3 relative ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
+              <div class="relative overflow-hidden aspect-[4/3]">
+                <img
+                  src={caseStudy.image}
+                  alt={caseStudy.title}
+                  loading="lazy"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                />
+                <!-- Gradient Overlay -->
+                <div class={`absolute inset-0 bg-gradient-to-br ${caseStudy.gradient} opacity-20 mix-blend-multiply`}></div>
+
+                <!-- Decorative Frame -->
+                <div class="absolute -top-6 -left-6 w-32 h-32 border-t-4 border-l-4 border-cyan-500 group-hover:w-40 group-hover:h-40 transition-all duration-500"></div>
+                <div class="absolute -bottom-6 -right-6 w-32 h-32 border-b-4 border-r-4 border-blue-500 group-hover:w-40 group-hover:h-40 transition-all duration-500"></div>
+              </div>
+            </div>
+
+            <!-- Content Column - Takes 2 columns -->
+            <div class={`lg:col-span-2 ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
+              <!-- Category Badge -->
+              <div class="inline-flex px-5 py-2 bg-white border-2 border-slate-900 mb-6">
+                <span class="text-sm font-bold text-slate-900 uppercase tracking-wider">
+                  {caseStudy.category}
+                </span>
+              </div>
+
+              <!-- Title - Magazine Style -->
+              <h3 class="text-5xl lg:text-6xl font-bold text-slate-900 mb-8 leading-[1] tracking-tight group-hover:text-cyan-600 transition-colors">
+                {caseStudy.title}
+              </h3>
+
+              <!-- Challenge -->
+              <div class="mb-8 pb-8 border-b-2 border-slate-200">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-12 h-0.5 bg-cyan-500"></div>
+                  <span class="text-xs font-bold text-cyan-600 uppercase tracking-[0.2em]">
+                    Challenge
+                  </span>
+                </div>
+                <p class="text-lg text-slate-700 leading-relaxed">
+                  {caseStudy.challenge}
+                </p>
+              </div>
+
+              <!-- Solution -->
+              <div class="mb-10">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-12 h-0.5 bg-blue-500"></div>
+                  <span class="text-xs font-bold text-blue-600 uppercase tracking-[0.2em]">
+                    Solution
+                  </span>
+                </div>
+                <p class="text-lg text-slate-700 leading-relaxed">
+                  {caseStudy.solution}
+                </p>
+              </div>
+
+              <!-- Results - Highlighted -->
+              <div class="bg-slate-900 p-8 mb-8">
+                <div class="flex items-center gap-3 mb-6">
+                  <div class="w-12 h-0.5 bg-cyan-400"></div>
+                  <span class="text-xs font-bold text-cyan-400 uppercase tracking-[0.2em]">
+                    Impact
+                  </span>
+                </div>
+                <div class="space-y-4">
+                  {caseStudy.results.map((result) => (
+                    <div class="flex items-start gap-4">
+                      <div class={`flex-shrink-0 w-8 h-8 bg-gradient-to-br ${caseStudy.gradient} flex items-center justify-center mt-1`}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-white"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+                      </div>
+                      <span class="text-2xl text-white font-bold">
+                        {result}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <!-- CTA -->
+              <a
+                href="#contact"
+                class="inline-flex items-center gap-3 text-slate-900 font-bold text-lg border-b-2 border-slate-900 pb-1 hover:border-cyan-600 hover:text-cyan-600 transition-all group/link"
+              >
+                Discuss Your Case
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 group-hover/link:translate-x-2 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- Bottom CTA - Full Width Banner -->
+    <div
+      data-animate
+      class="mt-32 relative overflow-hidden"
+    >
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900"></div>
+      <div class="absolute inset-0">
+        <div class="absolute top-0 right-0 w-[400px] h-full bg-gradient-to-l from-cyan-500/10 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-full bg-gradient-to-r from-blue-500/10 to-transparent"></div>
+      </div>
+
+      <div class="relative p-20 lg:p-24">
+        <div class="max-w-4xl mx-auto text-center">
+          <h3 class="text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
+            Your Challenge Could Be<br />Our Next Success Story
+          </h3>
+          <p class="text-2xl text-slate-300 mb-12 leading-relaxed">
+            Every case is unique. Let us create a tailored solution for your specific needs.
+          </p>
+          <a
+            href="#contact"
+            class="inline-flex items-center gap-4 px-14 py-7 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold text-xl hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 hover:-translate-y-1"
+          >
+            <span>Start Your Journey</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
