@@ -437,7 +437,7 @@
   }
 </script>
 
-<!-- Full-hero Particle Flow — horizontal band with fade-out trails -->
+<!-- Full-hero Line Flow — horizontal flowing lines with fade-out tails -->
 <script>
   import * as THREE from 'three';
 
@@ -445,18 +445,18 @@
   const heroSection = document.getElementById('home') as HTMLElement;
 
   if (pfCanvas && heroSection) {
-    const renderer = new THREE.WebGLRenderer({ canvas: pfCanvas, alpha: true, antialias: false });
+    const renderer = new THREE.WebGLRenderer({ canvas: pfCanvas, alpha: true, antialias: true });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
-    camera.position.set(0, 0.0005, 6);  // raised higher
+    camera.position.set(0, 0.0005, 6);
 
     const isMobile = window.innerWidth < 1024;
-    const N = isMobile ? 1000 : 3000;
-    const TRAIL_LEN = 32;              // ghost copies per particle
-    const TRAIL_SKIP = 6;             // shift trail every N frames
-    const totalPts = N * TRAIL_LEN;
+    const N = isMobile ? 150 : 400;       // number of lines
+    const PTS = 48;                         // points per line
+    const TRAIL_SKIP = 3;                   // shift trail every N frames
+    const totalPts = N * PTS;
 
     let fieldX = 6.0;
     let fieldY = 0.8;
@@ -479,33 +479,19 @@
       }
     }
 
-    // Glow sprite texture
-    const gc = document.createElement('canvas');
-    gc.width = 64; gc.height = 64;
-    const gctx = gc.getContext('2d')!;
-    const gr = gctx.createRadialGradient(32, 32, 0, 32, 32, 32);
-    gr.addColorStop(0, 'rgba(255,255,255,1)');
-    gr.addColorStop(0.1, 'rgba(255,255,255,0.9)');
-    gr.addColorStop(0.3, 'rgba(255,255,255,0.35)');
-    gr.addColorStop(1, 'rgba(255,255,255,0)');
-    gctx.fillStyle = gr;
-    gctx.fillRect(0, 0, 64, 64);
-    const tex = new THREE.CanvasTexture(gc);
+    // Per-line layout: positions[i*PTS+0] = head, positions[i*PTS+PTS-1] = tail
+    const positions = new Float32Array(totalPts * 3);
+    const alphas = new Float32Array(totalPts);
+    const trailFade = new Float32Array(totalPts);
 
-    // Layout: [N heads] [N trail_1] [N trail_2] ... [N trail_(TRAIL_LEN-1)]
-    const allPos = new Float32Array(totalPts * 3);
-    const allAlpha = new Float32Array(totalPts);
-    const allTrail = new Float32Array(totalPts);
-
-    // Pre-compute trail fade (non-linear for smoother falloff)
-    for (let t = 0; t < TRAIL_LEN; t++) {
-      const fade = Math.pow(1.0 - t / (TRAIL_LEN - 1), 1.5);
-      for (let i = 0; i < N; i++) {
-        allTrail[t * N + i] = fade;
+    // Pre-compute trail fade per vertex (head=1, tail=0)
+    for (let i = 0; i < N; i++) {
+      for (let p = 0; p < PTS; p++) {
+        trailFade[i * PTS + p] = Math.pow(1.0 - p / (PTS - 1), 1.5);
       }
     }
 
-    // Per-particle movement data (heads only)
+    // Per-line movement data
     const speeds = new Float32Array(N);
     const phases = new Float32Array(N);
     const waveAmpY = new Float32Array(N);
@@ -515,15 +501,14 @@
       const x = randomX ? (Math.random() - 0.5) * fieldX * 2 : -fieldX + Math.random() * 0.3;
       const y = (Math.random() - 0.5) * fieldY * 2;
       const z = (Math.random() - 0.5) * fieldZ * 2;
-      const baseAlpha = 0.15 + Math.random() * 0.85;
+      const baseAlpha = 0.2 + Math.random() * 0.8;
 
-      // Set all trail layers to same position (no visible trail at spawn)
-      for (let t = 0; t < TRAIL_LEN; t++) {
-        const idx = (t * N + i) * 3;
-        allPos[idx] = x;
-        allPos[idx + 1] = y;
-        allPos[idx + 2] = z;
-        allAlpha[t * N + i] = baseAlpha;
+      for (let p = 0; p < PTS; p++) {
+        const idx = (i * PTS + p) * 3;
+        positions[idx] = x;
+        positions[idx + 1] = y;
+        positions[idx + 2] = z;
+        alphas[i * PTS + p] = baseAlpha;
       }
 
       speeds[i]   = 0.0005 + Math.random() * 0.0015;
@@ -534,20 +519,28 @@
 
     for (let i = 0; i < N; i++) spawn(i, true);
 
+    // Index buffer: connect consecutive points within each line
+    const indexData: number[] = [];
+    for (let i = 0; i < N; i++) {
+      const base = i * PTS;
+      for (let j = 0; j < PTS - 1; j++) {
+        indexData.push(base + j, base + j + 1);
+      }
+    }
+
     const geo = new THREE.BufferGeometry();
-    geo.setAttribute('position', new THREE.BufferAttribute(allPos, 3));
-    geo.setAttribute('aAlpha', new THREE.BufferAttribute(allAlpha, 1));
-    geo.setAttribute('aTrail', new THREE.BufferAttribute(allTrail, 1));
+    geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    geo.setAttribute('aAlpha', new THREE.BufferAttribute(alphas, 1));
+    geo.setAttribute('aTrail', new THREE.BufferAttribute(trailFade, 1));
+    geo.setIndex(new THREE.BufferAttribute(new Uint32Array(indexData), 1));
 
     const mat = new THREE.ShaderMaterial({
       transparent: true,
       depthWrite: false,
       blending: THREE.AdditiveBlending,
       uniforms: {
-        uTex: { value: tex },
         uColorHead: { value: new THREE.Color(0x67E8F9) },  // cyan-300
         uColorTail: { value: new THREE.Color(0x2563EB) },   // blue-600
-        uPR: { value: Math.min(window.devicePixelRatio, 2) },
         uFieldX: { value: fieldX },
         uFieldY: { value: fieldY },
       },
@@ -557,7 +550,6 @@
         attribute float aTrail;
         varying float vAlpha;
         varying float vTrail;
-        uniform float uPR;
         uniform float uFieldX;
         uniform float uFieldY;
 
@@ -566,31 +558,25 @@
           float fy = 1.0 - smoothstep(uFieldY * 0.4, uFieldY, abs(position.y));
           vAlpha = aAlpha * aTrail * fx * fy;
           vTrail = aTrail;
-
-          vec4 mv = modelViewMatrix * vec4(position, 1.0);
-          float sizeFactor = 0.25 + 0.75 * aTrail;
-          gl_PointSize = clamp(uPR * (40.0 / -mv.z) * sizeFactor, 0.5, 16.0);
-          gl_Position = projectionMatrix * mv;
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
         }
       `,
       fragmentShader: `
         precision highp float;
-        uniform sampler2D uTex;
         uniform vec3 uColorHead;
         uniform vec3 uColorTail;
         varying float vAlpha;
         varying float vTrail;
 
         void main() {
-          vec4 t = texture2D(uTex, gl_PointCoord);
           vec3 col = mix(uColorTail, uColorHead, vTrail);
-          gl_FragColor = vec4(col, t.a * vAlpha);
+          gl_FragColor = vec4(col, vAlpha);
         }
       `,
     });
 
-    const points = new THREE.Points(geo, mat);
-    scene.add(points);
+    const lines = new THREE.LineSegments(geo, mat);
+    scene.add(lines);
 
     const ro = new ResizeObserver(resize);
     ro.observe(heroSection);
@@ -605,21 +591,22 @@
       frameCount++;
       const t = clock.getElapsedTime();
 
-      // Shift trail history every TRAIL_SKIP frames (creates visible spacing)
+      // Shift trail every TRAIL_SKIP frames (push points towards tail)
       if (frameCount % TRAIL_SKIP === 0) {
-        for (let tr = TRAIL_LEN - 1; tr > 0; tr--) {
-          allPos.copyWithin(tr * N * 3, (tr - 1) * N * 3, tr * N * 3);
+        for (let i = 0; i < N; i++) {
+          const lineStart = i * PTS * 3;
+          positions.copyWithin(lineStart + 3, lineStart, lineStart + (PTS - 1) * 3);
         }
       }
 
-      // Update head positions (layer 0, indices 0..N-1)
+      // Update head positions (point 0 of each line)
       for (let i = 0; i < N; i++) {
-        const i3 = i * 3;
-        allPos[i3] += speeds[i];
-        allPos[i3 + 1] += Math.sin(t * waveFreq[i] + phases[i]) * waveAmpY[i];
+        const headIdx = i * PTS * 3;
+        positions[headIdx] += speeds[i];
+        positions[headIdx + 1] += Math.sin(t * waveFreq[i] + phases[i]) * waveAmpY[i];
 
-        if (allPos[i3] > fieldX) spawn(i, false);
-        if (Math.abs(allPos[i3 + 1]) > fieldY) allPos[i3 + 1] *= 0.995;
+        if (positions[headIdx] > fieldX) spawn(i, false);
+        if (Math.abs(positions[headIdx + 1]) > fieldY) positions[headIdx + 1] *= 0.995;
       }
 
       geo.attributes.position.needsUpdate = true;
@@ -634,7 +621,6 @@
       renderer.dispose();
       geo.dispose();
       mat.dispose();
-      tex.dispose();
     });
   }
 </script>
