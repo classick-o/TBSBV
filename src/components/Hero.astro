@@ -10,105 +10,128 @@
   <div class="absolute top-0 right-0 w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] bg-gradient-to-br from-cyan-500/10 via-blue-500/5 to-transparent blur-3xl"></div>
   <div class="absolute bottom-0 left-0 w-[250px] h-[250px] sm:w-[500px] sm:h-[500px] bg-gradient-to-tr from-teal-500/10 via-blue-600/5 to-transparent blur-3xl"></div>
 
+  <!-- Full-hero Particle Flow Canvas -->
+  <canvas id="particle-flow-canvas" class="absolute inset-0 w-full h-full z-[5] pointer-events-none"></canvas>
+
+  <!-- Left fade overlay -->
+  <div class="absolute inset-0 z-[6] pointer-events-none bg-gradient-to-r from-black/80 via-black/50 to-transparent" style="--tw-gradient-via-position:25%;--tw-gradient-to-position:40%;"></div>
+
   <!-- Content -->
   <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-24 sm:py-32 lg:py-40">
-    <div class="text-center max-w-5xl mx-auto">
-      <!-- Badge -->
-      <div
-        class="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 mb-6 sm:mb-8 animate-fade-in-up"
-        data-animate
-      >
-        <div class="w-2 h-2 bg-cyan-400 animate-pulse"></div>
-        <span class="text-xs sm:text-sm font-medium text-cyan-400 tracking-wide">
-          CYBERSECURITY &bull; INVESTIGATIONS &bull; DUE DILIGENCE
-        </span>
-      </div>
 
-      <!-- Main Headline -->
-      <h1
-        class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-[1.1] tracking-tight mb-6 sm:mb-8 px-2 animate-fade-in-up"
-        data-animate
-        style="animation-delay: 0.2s;"
-      >
-        We Uncover Truth in the
-        <span class="relative inline-block">
-          <span class="bg-gradient-to-r from-cyan-400 via-blue-400 to-teal-400 bg-clip-text text-transparent">
-            Digital Maze
+    <!-- Two-column layout: text left, 3D logo right -->
+    <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 xl:gap-16">
+
+      <!-- LEFT COLUMN: Text Content -->
+      <div class="w-full lg:w-1/2 text-center lg:text-left">
+        <!-- Badge -->
+        <div
+          class="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 mb-6 sm:mb-8 animate-fade-in-up"
+          data-animate
+        >
+          <div class="w-2 h-2 bg-cyan-400 animate-pulse"></div>
+          <span class="text-xs sm:text-sm font-medium text-cyan-400 tracking-wide">
+            CYBERSECURITY &bull; INVESTIGATIONS &bull; DUE DILIGENCE
           </span>
-          <div class="absolute -bottom-1 sm:-bottom-2 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-teal-400 opacity-40 animate-grow-width" style="animation-delay: 1s;"></div>
-        </span>
-      </h1>
+        </div>
 
-      <!-- Subheadline -->
-      <p
-        class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-slate-300 leading-relaxed mb-8 sm:mb-12 max-w-4xl mx-auto font-light px-4 animate-fade-in-up"
-        data-animate
-        style="animation-delay: 0.4s;"
-      >
-        Navigate complex digital threats with confidence. TBSBV delivers
-        world-class cyber investigation, due diligence, and integrity
-        management solutions.
-      </p>
+        <!-- Main Headline -->
+        <h1
+          class="text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white leading-[1.1] tracking-tight mb-6 sm:mb-8 animate-fade-in-up"
+          data-animate
+          style="animation-delay: 0.2s;"
+        >
+          We Uncover Truth in the
+          <span class="relative inline-block">
+            <span class="bg-gradient-to-r from-cyan-400 via-blue-400 to-teal-400 bg-clip-text text-transparent">
+              Digital Maze
+            </span>
+            <div class="absolute -bottom-1 sm:-bottom-2 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-teal-400 opacity-40 animate-grow-width" style="animation-delay: 1s;"></div>
+          </span>
+        </h1>
 
-      <!-- CTA Buttons -->
-      <div
-        class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4 animate-fade-in-up"
-        data-animate
-        style="animation-delay: 0.6s;"
-      >
-        <a
-          href="#contact"
-          class="w-full sm:w-auto group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold text-base sm:text-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/30 hover:scale-105"
+        <!-- Subheadline -->
+        <p
+          class="text-base sm:text-lg md:text-xl lg:text-lg xl:text-xl 2xl:text-2xl text-slate-300 leading-relaxed mb-8 sm:mb-12 font-light animate-fade-in-up"
+          data-animate
+          style="animation-delay: 0.4s;"
         >
-          <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <span class="relative">Request a Consultation</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="relative ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
-        <a
-          href="#services"
-          class="w-full sm:w-auto group inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/50 backdrop-blur-sm text-white font-semibold text-base sm:text-lg border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 hover:bg-slate-800/80"
+          Navigate complex digital threats with confidence. TBSBV delivers
+          world-class cyber investigation, due diligence, and integrity
+          management solutions.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 animate-fade-in-up"
+          data-animate
+          style="animation-delay: 0.6s;"
         >
-          <span>Explore Services</span>
-        </a>
+          <a
+            href="#contact"
+            class="w-full sm:w-auto group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold text-base sm:text-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/30 hover:scale-105"
+          >
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <span class="relative">Request a Consultation</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="relative ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a
+            href="#services"
+            class="w-full sm:w-auto group inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/50 backdrop-blur-sm text-white font-semibold text-base sm:text-lg border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 hover:bg-slate-800/80"
+          >
+            <span>Explore Services</span>
+          </a>
+        </div>
       </div>
 
-      <!-- Trust Stats -->
-      <div
-        class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 mt-16 sm:mt-20 lg:mt-24 pt-8 sm:pt-12 border-t border-slate-800/50 animate-fade-in-up"
-        data-animate
-        style="animation-delay: 0.8s;"
-      >
-        <div class="text-center group">
-          <div class="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-1 sm:mb-2 group-hover:scale-110 transition-transform">
-            950+
-          </div>
-          <div class="text-xs sm:text-sm text-slate-400 font-medium tracking-wide">
-            Cases Resolved
+      <!-- RIGHT COLUMN: 3D Logo -->
+      <div class="w-full lg:w-1/2 flex items-center justify-center">
+        <div id="logo-3d-container" class="relative w-full aspect-square max-w-[500px] lg:max-w-none">
+          <canvas id="logo-3d-canvas" class="absolute inset-0 w-full h-full opacity-0 transition-opacity duration-1000"></canvas>
+          <!-- Loading spinner -->
+          <div id="logo-3d-loader" class="absolute inset-0 flex items-center justify-center">
+            <div class="w-16 h-16 border-2 border-cyan-500/30 border-t-cyan-400 rounded-full animate-spin"></div>
           </div>
         </div>
-        <div class="text-center group">
-          <div class="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-1 sm:mb-2 group-hover:scale-110 transition-transform">
-            45+
-          </div>
-          <div class="text-xs sm:text-sm text-slate-400 font-medium tracking-wide">
-            Countries
-          </div>
+      </div>
+    </div>
+
+    <!-- Trust Stats (full width below both columns) -->
+    <div
+      class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 mt-16 sm:mt-20 lg:mt-24 pt-8 sm:pt-12 border-t border-slate-800/50 animate-fade-in-up"
+      data-animate
+      style="animation-delay: 0.8s;"
+    >
+      <div class="text-center group">
+        <div class="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-1 sm:mb-2 group-hover:scale-110 transition-transform">
+          950+
         </div>
-        <div class="text-center group">
-          <div class="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-1 sm:mb-2 group-hover:scale-110 transition-transform">
-            10+
-          </div>
-          <div class="text-xs sm:text-sm text-slate-400 font-medium tracking-wide">
-            Partners
-          </div>
+        <div class="text-xs sm:text-sm text-slate-400 font-medium tracking-wide">
+          Cases Resolved
         </div>
-        <div class="text-center group">
-          <div class="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-1 sm:mb-2 group-hover:scale-110 transition-transform">
-            100%
-          </div>
-          <div class="text-xs sm:text-sm text-slate-400 font-medium tracking-wide">
-            Confidential
-          </div>
+      </div>
+      <div class="text-center group">
+        <div class="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-1 sm:mb-2 group-hover:scale-110 transition-transform">
+          45+
+        </div>
+        <div class="text-xs sm:text-sm text-slate-400 font-medium tracking-wide">
+          Countries
+        </div>
+      </div>
+      <div class="text-center group">
+        <div class="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-1 sm:mb-2 group-hover:scale-110 transition-transform">
+          10+
+        </div>
+        <div class="text-xs sm:text-sm text-slate-400 font-medium tracking-wide">
+          Partners
+        </div>
+      </div>
+      <div class="text-center group">
+        <div class="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-1 sm:mb-2 group-hover:scale-110 transition-transform">
+          100%
+        </div>
+        <div class="text-xs sm:text-sm text-slate-400 font-medium tracking-wide">
+          Confidential
         </div>
       </div>
     </div>
@@ -146,15 +169,6 @@
     }
   }
 
-  @keyframes scrollBounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(12px);
-    }
-  }
-
   .animate-fade-in-up {
     opacity: 0;
     animation: fadeInUp 0.8s ease-out forwards;
@@ -170,17 +184,17 @@
     animation: growWidth 1s ease-out forwards;
   }
 
-  .animate-scroll-bounce {
-    animation: scrollBounce 1.5s ease-in-out infinite;
+  #logo-3d-canvas {
+    display: block;
   }
 </style>
 
+<!-- 2D Background Particle Network -->
 <script>
   const canvas = document.getElementById('hero-canvas') as HTMLCanvasElement;
   if (canvas) {
     const ctx = canvas.getContext('2d');
     if (ctx) {
-      // Set canvas size
       const setCanvasSize = () => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -188,7 +202,6 @@
       setCanvasSize();
       window.addEventListener('resize', setCanvasSize);
 
-      // Particle network animation
       const particles: Array<{
         x: number;
         y: number;
@@ -211,22 +224,18 @@
         if (!ctx || !canvas) return;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        // Update and draw particles
         particles.forEach((particle, i) => {
           particle.x += particle.vx;
           particle.y += particle.vy;
 
-          // Bounce off edges
           if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
           if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
 
-          // Draw particle
           ctx.beginPath();
           ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
           ctx.fillStyle = 'rgba(56, 189, 248, 0.4)';
           ctx.fill();
 
-          // Draw connections
           particles.slice(i + 1).forEach((particle2) => {
             const dx = particle.x - particle2.x;
             const dy = particle.y - particle2.y;
@@ -248,5 +257,384 @@
 
       animate();
     }
+  }
+</script>
+
+<!-- Three.js 3D Logo (logo only, no particles) -->
+<script>
+  import * as THREE from 'three';
+  import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+  const BASE_PATH = import.meta.env.BASE_URL.replace(/\/$/, '');
+  const MODEL_URL = `${BASE_PATH}/assets/models/logo-3d.glb`;
+  const INITIAL_Y_ROTATION = -Math.PI / 6;
+  const FLOAT_AMPLITUDE = 0.15;
+  const FLOAT_SPEED = 0.8;
+
+  const logo3dCanvas = document.getElementById('logo-3d-canvas') as HTMLCanvasElement;
+  const container = document.getElementById('logo-3d-container') as HTMLElement;
+  const loaderEl = document.getElementById('logo-3d-loader') as HTMLElement;
+
+  if (logo3dCanvas && container) {
+    const renderer = new THREE.WebGLRenderer({
+      canvas: logo3dCanvas,
+      alpha: true,
+      antialias: true,
+      powerPreference: 'high-performance',
+    });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.2;
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
+    camera.position.set(0, 0, 5);
+    camera.lookAt(0, 0, 0);
+
+    // Lighting — cool blue with subtle warm accent
+    const mainLight = new THREE.DirectionalLight(0x88AADD, 2.0);
+    mainLight.position.set(-5, 3, 2);
+    scene.add(mainLight);
+
+    const fillLight = new THREE.DirectionalLight(0x3366BB, 1.5);
+    fillLight.position.set(3, -1, 3);
+    scene.add(fillLight);
+
+    scene.add(new THREE.AmbientLight(0x1A2545, 0.6));
+
+    const rimLight = new THREE.DirectionalLight(0x4488DD, 1.2);
+    rimLight.position.set(0, 2, -4);
+    scene.add(rimLight);
+
+    // Top-right spotlight
+    const topRightLight = new THREE.DirectionalLight(0x6699DD, 1.8);
+    topRightLight.position.set(3, 3, 4);
+    scene.add(topRightLight);
+
+    // Bottom-front light — subtle distant glow from bottom-left
+    const bottomFrontLight = new THREE.DirectionalLight(0x6699BB, 0.8);
+    bottomFrontLight.position.set(-6, -6, 5);
+    scene.add(bottomFrontLight);
+
+    let animationFrameId: number;
+
+    function handleResize() {
+      const w = container.clientWidth;
+      const h = container.clientHeight;
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+    }
+
+    const resizeObserver = new ResizeObserver(handleResize);
+    resizeObserver.observe(container);
+    handleResize();
+
+    let model: THREE.Group | null = null;
+
+    const gltfLoader = new GLTFLoader();
+    gltfLoader.load(
+      MODEL_URL,
+      (gltf) => {
+        model = gltf.scene;
+
+        // Procedural environment map
+        const pmremGenerator = new THREE.PMREMGenerator(renderer);
+        const envScene = new THREE.Scene();
+        envScene.background = new THREE.Color(0x080E1A);
+        const envLight1 = new THREE.DirectionalLight(0x6688BB, 2);
+        envLight1.position.set(-3, 3, 2);
+        envScene.add(envLight1);
+        const envLight2 = new THREE.DirectionalLight(0x3355AA, 1.8);
+        envLight2.position.set(3, -1, 3);
+        envScene.add(envLight2);
+        envScene.add(new THREE.AmbientLight(0x101830, 0.5));
+        const envMap = pmremGenerator.fromScene(envScene, 0.04).texture;
+        pmremGenerator.dispose();
+
+        const metallicMaterial = new THREE.MeshStandardMaterial({
+          color: 0xB8C0D0,
+          metalness: 1.0,
+          roughness: 0.15,
+          envMap: envMap,
+          envMapIntensity: 1.5,
+          side: THREE.DoubleSide,
+        });
+
+        model.traverse((child) => {
+          if ((child as THREE.Mesh).isMesh) {
+            (child as THREE.Mesh).material = metallicMaterial;
+          }
+        });
+
+        // Center and scale — smaller logo
+        const box = new THREE.Box3().setFromObject(model);
+        const center = box.getCenter(new THREE.Vector3());
+        const size = box.getSize(new THREE.Vector3());
+        const maxDim = Math.max(size.x, size.y, size.z);
+        const scaleFactor = 3.375 / maxDim;
+
+        model.position.sub(center);
+        model.scale.setScalar(scaleFactor);
+        model.position.multiplyScalar(scaleFactor);
+
+        const pivot = new THREE.Group();
+        pivot.add(model);
+        pivot.rotation.y = INITIAL_Y_ROTATION;
+        scene.add(pivot);
+        model = pivot;
+
+        logo3dCanvas.classList.remove('opacity-0');
+        logo3dCanvas.classList.add('opacity-100');
+        if (loaderEl) loaderEl.style.display = 'none';
+      },
+      undefined,
+      (error) => {
+        console.error('Failed to load 3D model:', error);
+        if (loaderEl) loaderEl.style.display = 'none';
+      }
+    );
+
+    const clock = new THREE.Clock();
+
+    function animateScene() {
+      animationFrameId = requestAnimationFrame(animateScene);
+      const elapsed = clock.getElapsedTime();
+
+      if (model) {
+        model.position.y = Math.sin(elapsed * FLOAT_SPEED) * FLOAT_AMPLITUDE;
+        model.position.z = Math.cos(elapsed * FLOAT_SPEED * 0.7) * 0.1;
+      }
+
+      // Smooth light orbiting — wide, organic movement
+      mainLight.position.x = -5 + Math.sin(elapsed * 0.7) * 2.5 + Math.cos(elapsed * 0.3) * 1.0;
+      mainLight.position.y = 3 + Math.cos(elapsed * 0.55) * 2.0 + Math.sin(elapsed * 0.25) * 0.8;
+      mainLight.position.z = 2 + Math.sin(elapsed * 0.45) * 1.5;
+
+      fillLight.position.x = 3 + Math.cos(elapsed * 0.8) * 2.0 + Math.sin(elapsed * 0.35) * 1.0;
+      fillLight.position.y = -1 + Math.sin(elapsed * 0.5) * 1.8 + Math.cos(elapsed * 0.2) * 0.6;
+      fillLight.position.z = 3 + Math.cos(elapsed * 0.6) * 1.5;
+
+      topRightLight.position.x = 3 + Math.sin(elapsed * 0.85) * 2.0 + Math.cos(elapsed * 0.4) * 0.8;
+      topRightLight.position.y = 3 + Math.cos(elapsed * 0.65) * 1.8 + Math.sin(elapsed * 0.28) * 0.6;
+      topRightLight.position.z = 4 + Math.sin(elapsed * 0.55) * 1.5;
+
+      bottomFrontLight.position.x = -6 + Math.sin(elapsed * 0.6) * 2.0 + Math.cos(elapsed * 0.32) * 1.0;
+      bottomFrontLight.position.y = -6 + Math.cos(elapsed * 0.75) * 1.5 + Math.sin(elapsed * 0.22) * 0.8;
+      bottomFrontLight.position.z = 5 + Math.sin(elapsed * 0.5) * 1.5;
+
+      renderer.render(scene, camera);
+    }
+
+    animateScene();
+
+    document.addEventListener('astro:before-swap', () => {
+      cancelAnimationFrame(animationFrameId);
+      resizeObserver.disconnect();
+      renderer.dispose();
+    });
+  }
+</script>
+
+<!-- Full-hero Particle Flow — horizontal band with fade-out trails -->
+<script>
+  import * as THREE from 'three';
+
+  const pfCanvas = document.getElementById('particle-flow-canvas') as HTMLCanvasElement;
+  const heroSection = document.getElementById('home') as HTMLElement;
+
+  if (pfCanvas && heroSection) {
+    const renderer = new THREE.WebGLRenderer({ canvas: pfCanvas, alpha: true, antialias: false });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
+    camera.position.set(0, 0.0005, 6);  // raised higher
+
+    const isMobile = window.innerWidth < 1024;
+    const N = isMobile ? 1000 : 3000;
+    const TRAIL_LEN = 32;              // ghost copies per particle
+    const TRAIL_SKIP = 6;             // shift trail every N frames
+    const totalPts = N * TRAIL_LEN;
+
+    let fieldX = 6.0;
+    let fieldY = 0.8;
+    const fieldZ = 2.0;
+
+    function resize() {
+      const w = heroSection.clientWidth;
+      const h = heroSection.clientHeight;
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+      const vFov = camera.fov * Math.PI / 180;
+      const visH = 2 * Math.tan(vFov / 2) * camera.position.z;
+      const visW = visH * camera.aspect;
+      fieldX = visW / 2 * 1.3;
+      fieldY = visH * 0.22;
+      if (mat) {
+        mat.uniforms.uFieldX.value = fieldX;
+        mat.uniforms.uFieldY.value = fieldY;
+      }
+    }
+
+    // Glow sprite texture
+    const gc = document.createElement('canvas');
+    gc.width = 64; gc.height = 64;
+    const gctx = gc.getContext('2d')!;
+    const gr = gctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+    gr.addColorStop(0, 'rgba(255,255,255,1)');
+    gr.addColorStop(0.1, 'rgba(255,255,255,0.9)');
+    gr.addColorStop(0.3, 'rgba(255,255,255,0.35)');
+    gr.addColorStop(1, 'rgba(255,255,255,0)');
+    gctx.fillStyle = gr;
+    gctx.fillRect(0, 0, 64, 64);
+    const tex = new THREE.CanvasTexture(gc);
+
+    // Layout: [N heads] [N trail_1] [N trail_2] ... [N trail_(TRAIL_LEN-1)]
+    const allPos = new Float32Array(totalPts * 3);
+    const allAlpha = new Float32Array(totalPts);
+    const allTrail = new Float32Array(totalPts);
+
+    // Pre-compute trail fade (non-linear for smoother falloff)
+    for (let t = 0; t < TRAIL_LEN; t++) {
+      const fade = Math.pow(1.0 - t / (TRAIL_LEN - 1), 1.5);
+      for (let i = 0; i < N; i++) {
+        allTrail[t * N + i] = fade;
+      }
+    }
+
+    // Per-particle movement data (heads only)
+    const speeds = new Float32Array(N);
+    const phases = new Float32Array(N);
+    const waveAmpY = new Float32Array(N);
+    const waveFreq = new Float32Array(N);
+
+    function spawn(i: number, randomX: boolean) {
+      const x = randomX ? (Math.random() - 0.5) * fieldX * 2 : -fieldX + Math.random() * 0.3;
+      const y = (Math.random() - 0.5) * fieldY * 2;
+      const z = (Math.random() - 0.5) * fieldZ * 2;
+      const baseAlpha = 0.15 + Math.random() * 0.85;
+
+      // Set all trail layers to same position (no visible trail at spawn)
+      for (let t = 0; t < TRAIL_LEN; t++) {
+        const idx = (t * N + i) * 3;
+        allPos[idx] = x;
+        allPos[idx + 1] = y;
+        allPos[idx + 2] = z;
+        allAlpha[t * N + i] = baseAlpha;
+      }
+
+      speeds[i]   = 0.0005 + Math.random() * 0.0015;
+      phases[i]   = Math.random() * Math.PI * 2;
+      waveAmpY[i] = 0.0003 + Math.random() * 0.0002;
+      waveFreq[i] = 0.1 + Math.random() * 0.3;
+    }
+
+    for (let i = 0; i < N; i++) spawn(i, true);
+
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.BufferAttribute(allPos, 3));
+    geo.setAttribute('aAlpha', new THREE.BufferAttribute(allAlpha, 1));
+    geo.setAttribute('aTrail', new THREE.BufferAttribute(allTrail, 1));
+
+    const mat = new THREE.ShaderMaterial({
+      transparent: true,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+      uniforms: {
+        uTex: { value: tex },
+        uColorHead: { value: new THREE.Color(0x67E8F9) },  // cyan-300
+        uColorTail: { value: new THREE.Color(0x2563EB) },   // blue-600
+        uPR: { value: Math.min(window.devicePixelRatio, 2) },
+        uFieldX: { value: fieldX },
+        uFieldY: { value: fieldY },
+      },
+      vertexShader: `
+        precision highp float;
+        attribute float aAlpha;
+        attribute float aTrail;
+        varying float vAlpha;
+        varying float vTrail;
+        uniform float uPR;
+        uniform float uFieldX;
+        uniform float uFieldY;
+
+        void main() {
+          float fx = 1.0 - smoothstep(uFieldX * 0.65, uFieldX, abs(position.x));
+          float fy = 1.0 - smoothstep(uFieldY * 0.4, uFieldY, abs(position.y));
+          vAlpha = aAlpha * aTrail * fx * fy;
+          vTrail = aTrail;
+
+          vec4 mv = modelViewMatrix * vec4(position, 1.0);
+          float sizeFactor = 0.25 + 0.75 * aTrail;
+          gl_PointSize = clamp(uPR * (40.0 / -mv.z) * sizeFactor, 0.5, 16.0);
+          gl_Position = projectionMatrix * mv;
+        }
+      `,
+      fragmentShader: `
+        precision highp float;
+        uniform sampler2D uTex;
+        uniform vec3 uColorHead;
+        uniform vec3 uColorTail;
+        varying float vAlpha;
+        varying float vTrail;
+
+        void main() {
+          vec4 t = texture2D(uTex, gl_PointCoord);
+          vec3 col = mix(uColorTail, uColorHead, vTrail);
+          gl_FragColor = vec4(col, t.a * vAlpha);
+        }
+      `,
+    });
+
+    const points = new THREE.Points(geo, mat);
+    scene.add(points);
+
+    const ro = new ResizeObserver(resize);
+    ro.observe(heroSection);
+    resize();
+
+    const clock = new THREE.Clock();
+    let frameId: number;
+    let frameCount = 0;
+
+    function animate() {
+      frameId = requestAnimationFrame(animate);
+      frameCount++;
+      const t = clock.getElapsedTime();
+
+      // Shift trail history every TRAIL_SKIP frames (creates visible spacing)
+      if (frameCount % TRAIL_SKIP === 0) {
+        for (let tr = TRAIL_LEN - 1; tr > 0; tr--) {
+          allPos.copyWithin(tr * N * 3, (tr - 1) * N * 3, tr * N * 3);
+        }
+      }
+
+      // Update head positions (layer 0, indices 0..N-1)
+      for (let i = 0; i < N; i++) {
+        const i3 = i * 3;
+        allPos[i3] += speeds[i];
+        allPos[i3 + 1] += Math.sin(t * waveFreq[i] + phases[i]) * waveAmpY[i];
+
+        if (allPos[i3] > fieldX) spawn(i, false);
+        if (Math.abs(allPos[i3 + 1]) > fieldY) allPos[i3 + 1] *= 0.995;
+      }
+
+      geo.attributes.position.needsUpdate = true;
+      renderer.render(scene, camera);
+    }
+
+    animate();
+
+    document.addEventListener('astro:before-swap', () => {
+      cancelAnimationFrame(frameId);
+      ro.disconnect();
+      renderer.dispose();
+      geo.dispose();
+      mat.dispose();
+      tex.dispose();
+    });
   }
 </script>
