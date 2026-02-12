@@ -220,8 +220,21 @@
         });
       }
 
+      let heroVisible = true;
+      let bgFrameId: number;
+
+      const heroEl = document.getElementById('home');
+      if (heroEl) {
+        const visObs = new IntersectionObserver(([e]) => {
+          heroVisible = e.isIntersecting;
+          if (heroVisible) bgFrameId = requestAnimationFrame(animate);
+        }, { threshold: 0 });
+        visObs.observe(heroEl);
+      }
+
       function animate() {
-        if (!ctx || !canvas) return;
+        if (!ctx || !canvas || !heroVisible) return;
+        bgFrameId = requestAnimationFrame(animate);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         particles.forEach((particle, i) => {
@@ -251,8 +264,6 @@
             }
           });
         });
-
-        requestAnimationFrame(animate);
       }
 
       animate();
@@ -397,8 +408,22 @@
     );
 
     const clock = new THREE.Clock();
+    let logoVisible = true;
+
+    const logoHeroEl = document.getElementById('home');
+    if (logoHeroEl) {
+      const logoVisObs = new IntersectionObserver(([e]) => {
+        logoVisible = e.isIntersecting;
+        if (logoVisible) {
+          clock.getDelta(); // reset delta to avoid jump
+          animationFrameId = requestAnimationFrame(animateScene);
+        }
+      }, { threshold: 0 });
+      logoVisObs.observe(logoHeroEl);
+    }
 
     function animateScene() {
+      if (!logoVisible) return;
       animationFrameId = requestAnimationFrame(animateScene);
       const elapsed = clock.getElapsedTime();
 
@@ -585,8 +610,19 @@
     const clock = new THREE.Clock();
     let frameId: number;
     let frameCount = 0;
+    let linesVisible = true;
+
+    const linesVisObs = new IntersectionObserver(([e]) => {
+      linesVisible = e.isIntersecting;
+      if (linesVisible) {
+        clock.getDelta();
+        frameId = requestAnimationFrame(animate);
+      }
+    }, { threshold: 0 });
+    linesVisObs.observe(heroSection);
 
     function animate() {
+      if (!linesVisible) return;
       frameId = requestAnimationFrame(animate);
       frameCount++;
       const t = clock.getElapsedTime();

@@ -297,11 +297,21 @@
     });
   });
 
-  // Auto-advance
-  autoInterval = setInterval(nextTestimonial, 8000);
+  // Auto-advance (pauses when section is off-screen)
+  const testimonialsSection = document.getElementById('testimonials');
+
+  if (testimonialsSection) {
+    const carouselVisObs = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) {
+        autoInterval = setInterval(nextTestimonial, 8000);
+      } else {
+        clearInterval(autoInterval);
+      }
+    }, { threshold: 0 });
+    carouselVisObs.observe(testimonialsSection);
+  }
 
   // Visibility animations
-  const testimonialsSection = document.getElementById('testimonials');
   const testimonialsAnimated = testimonialsSection?.querySelectorAll('[data-animate]');
 
   if (testimonialsSection && testimonialsAnimated) {

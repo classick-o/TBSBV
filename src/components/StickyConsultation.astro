@@ -108,28 +108,33 @@
   let isExpanded = false;
 
   // Show/hide based on scroll position
+  let scrollTicking = false;
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
-      if (stickyWidget?.classList.contains('hidden')) {
-        stickyWidget.classList.remove('hidden');
-        // Trigger entrance animation
-        requestAnimationFrame(() => {
-          stickyWidget.classList.remove('translate-x-full', 'opacity-0');
-          stickyWidget.classList.add('translate-x-0', 'opacity-100');
-        });
+    if (scrollTicking) return;
+    scrollTicking = true;
+    requestAnimationFrame(() => {
+      scrollTicking = false;
+      if (window.scrollY > 400) {
+        if (stickyWidget?.classList.contains('hidden')) {
+          stickyWidget.classList.remove('hidden');
+          requestAnimationFrame(() => {
+            stickyWidget.classList.remove('translate-x-full', 'opacity-0');
+            stickyWidget.classList.add('translate-x-0', 'opacity-100');
+          });
+        }
+      } else {
+        if (!stickyWidget?.classList.contains('hidden') && !isExpanded) {
+          stickyWidget.classList.add('translate-x-full', 'opacity-0');
+          stickyWidget.classList.remove('translate-x-0', 'opacity-100');
+          setTimeout(() => {
+            if (window.scrollY <= 400) {
+              stickyWidget.classList.add('hidden');
+            }
+          }, 500);
+        }
       }
-    } else {
-      if (!stickyWidget?.classList.contains('hidden') && !isExpanded) {
-        stickyWidget.classList.add('translate-x-full', 'opacity-0');
-        stickyWidget.classList.remove('translate-x-0', 'opacity-100');
-        setTimeout(() => {
-          if (window.scrollY <= 400) {
-            stickyWidget.classList.add('hidden');
-          }
-        }, 500);
-      }
-    }
-  });
+    });
+  }, { passive: true });
 
   function expandCard() {
     isExpanded = true;
