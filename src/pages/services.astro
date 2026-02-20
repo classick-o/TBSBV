@@ -1,0 +1,322 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Services | TBSBV';
+const description = 'Comprehensive cybersecurity and investigative services from Transparent Business Solutions B.V. — cyber investigation, due diligence, social media investigation, and integrity & reputation management.';
+const canonicalURL = 'https://classick-o.github.io/TBSBV/services/';
+const ogImage = 'https://classick-o.github.io/TBSBV/assets/logo/logo-png.png';
+
+const services = [
+  {
+    id: 'due-diligence',
+    number: '01',
+    title: 'Due Diligence',
+    label: 'Financial & Legal Investigation',
+    description: 'Comprehensive financial and legal investigation services for businesses and individuals seeking to uncover hidden risks. We provide rigorous assessment of economic, legal, fiscal, and financial circumstances to give you a complete picture before making critical decisions.',
+    features: [
+      'Due diligence services related to online fraud investigation',
+      'Case assessment and examination of financial records',
+      'Investigation of economic, legal, fiscal, and financial circumstances of fraud',
+      'Strategic business intelligence gathering',
+      'Asset tracing and verification',
+      'Background verification of individuals and entities',
+    ],
+    gradient: 'from-cyan-500 to-blue-500',
+    accentColor: 'text-cyan-600',
+    accentBg: 'bg-cyan-50 border-cyan-200',
+    bgColor: 'bg-white',
+    cornerA: 'border-t-4 border-r-4 border-cyan-500 -top-4 -right-4',
+    cornerB: 'border-b-4 border-l-4 border-blue-500 -bottom-4 -left-4',
+    image: 'https://images.unsplash.com/photo-1734792314947-883f84148b3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGdlb21ldHJpYyUyMGJsdWV8ZW58MXx8fHwxNzcwMDUzMzYwfDA&ixlib=rb-4.1.0&q=80&w=1080',
+    icon: `<path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M4.268 21a2 2 0 0 0 1.727 1H18a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"/><path d="m9 18-1.5-1.5"/><circle cx="5" cy="14" r="3"/>`,
+  },
+  {
+    id: 'cyber-investigation',
+    number: '02',
+    title: 'Cyber Investigation',
+    label: 'Digital Forensics & Intelligence',
+    description: 'Advanced multi-jurisdictional fraud investigation and digital forensics. Our experts trace digital footprints across borders, recover critical evidence, and build legally sound cases against cybercriminals operating in any jurisdiction worldwide.',
+    features: [
+      'Multi-jurisdictional fraud investigation for all types of online fraud',
+      'Website forensics and digital evidence recovery',
+      'Cryptocurrency transaction tracing and wallet analysis',
+      'Tracking and identifying the authors of cyber crimes',
+      'Incident response and cyber threat containment',
+      'Other intelligence-focused investigative activities',
+    ],
+    gradient: 'from-blue-500 to-indigo-500',
+    accentColor: 'text-blue-600',
+    accentBg: 'bg-blue-50 border-blue-200',
+    bgColor: 'bg-slate-50',
+    cornerA: 'border-t-4 border-l-4 border-blue-500 -top-4 -left-4',
+    cornerB: 'border-b-4 border-r-4 border-indigo-500 -bottom-4 -right-4',
+    image: 'https://images.unsplash.com/photo-1762716514229-739f6769e282?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGRpZ2l0YWwlMjBncmFkaWVudHxlbnwxfHx8fDE3NzAwNTMzNjB8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    icon: `<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>`,
+  },
+  {
+    id: 'social-media-investigation',
+    number: '03',
+    title: 'Social Media Investigation',
+    label: 'Digital Threat Detection & Online Safety',
+    description: 'Comprehensive digital threat detection and online safety services to protect individuals and organizations from online abuse, exploitation, and targeted cyber harassment. We monitor, investigate, and help neutralize threats across all digital platforms.',
+    features: [
+      'Defamation and cyber harassment investigations',
+      'Cybercrime and online scam detection',
+      'Protecting children from online threats and exploitation',
+      'Investigating fake dating profiles and romance fraud',
+      'Online bullying and cyberstalking investigations',
+      'Digital platform threat assessment and monitoring',
+    ],
+    gradient: 'from-teal-500 to-cyan-500',
+    accentColor: 'text-teal-600',
+    accentBg: 'bg-teal-50 border-teal-200',
+    bgColor: 'bg-white',
+    cornerA: 'border-t-4 border-r-4 border-teal-500 -top-4 -right-4',
+    cornerB: 'border-b-4 border-l-4 border-cyan-500 -bottom-4 -left-4',
+    image: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0',
+    icon: `<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>`,
+  },
+  {
+    id: 'reputation-management',
+    number: '04',
+    title: 'Integrity & Reputation Management',
+    label: 'Crisis Management & Digital Reputation',
+    description: 'Strategic crisis management and advanced digital reputation protection for individuals and businesses. We assess, mitigate, and eliminate reputational risks — from negative database entries to targeted online attacks — restoring your digital presence and credibility.',
+    features: [
+      'Crisis management and strategic risk assessment planning',
+      'Reputation management including World-Check database issues',
+      'Digital reputation cleansing and information removal',
+      'Deindexing technology implementation for harmful content',
+      'Elimination of negative online information',
+      'Assistance in combating sextortion and digital blackmail threats',
+    ],
+    gradient: 'from-indigo-500 to-purple-500',
+    accentColor: 'text-indigo-600',
+    accentBg: 'bg-indigo-50 border-indigo-200',
+    bgColor: 'bg-slate-50',
+    cornerA: 'border-t-4 border-l-4 border-indigo-500 -top-4 -left-4',
+    cornerB: 'border-b-4 border-r-4 border-purple-500 -bottom-4 -right-4',
+    image: 'https://images.unsplash.com/photo-1687463221020-b8769b32c622?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHB1cnBsZSUyMHNoYXBlc3xlbnwxfHx8fDE3NzAwNTMzNjF8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    icon: `<path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/>`,
+  },
+];
+
+const servicesSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": title,
+  "description": description,
+  "url": canonicalURL,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Transparent Business Solutions B.V.",
+    "url": "https://classick-o.github.io/TBSBV/"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": services.map((s, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": s.title,
+      "description": s.description,
+      "url": `${canonicalURL}#${s.id}`
+    }))
+  }
+};
+---
+
+<BaseLayout title={title} description={description} ogImage={ogImage} jsonLd={`<script type="application/ld+json">${JSON.stringify(servicesSchema)}</script>`}>
+
+  <!-- Header -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-xl border-b border-slate-800/50 shadow-2xl">
+    <div class="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-20">
+      <div class="flex items-center justify-between h-20 lg:h-24">
+        <a href="/TBSBV/" class="flex items-center group transition-all duration-300 hover:opacity-80">
+          <img src="/TBSBV/assets/logo/logo.svg" alt="TBSBV — Transparent Business Solutions" class="h-10 sm:h-12 w-auto" />
+        </a>
+        <nav class="hidden lg:flex items-center gap-8 xl:gap-10">
+          <a href="/TBSBV/services/" class="text-sm font-semibold text-cyan-400 transition-colors duration-200">Services</a>
+          <a href="/TBSBV/#why-choose-us" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Why Us</a>
+          <a href="/TBSBV/#case-studies" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Case Studies</a>
+          <a href="/TBSBV/#process" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Process</a>
+          <a href="/TBSBV/insights/" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Insights</a>
+          <a href="/TBSBV/partners/" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Partners</a>
+        </nav>
+        <a href="/TBSBV/#contact" class="hidden lg:inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold text-xs hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-300 hover:scale-105">
+          Request Consultation
+        </a>
+        <button id="menu-toggle" class="lg:hidden p-2 hover:bg-slate-800 transition-colors" aria-label="Toggle menu">
+          <span id="menu-icon-open">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          </span>
+          <span id="menu-icon-close" class="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-nav" class="hidden lg:hidden py-6 border-t border-slate-800 bg-slate-950">
+      <a href="/TBSBV/services/" class="block py-3 text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Services</a>
+      <a href="/TBSBV/#why-choose-us" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Why Us</a>
+      <a href="/TBSBV/#case-studies" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Case Studies</a>
+      <a href="/TBSBV/#process" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Process</a>
+      <a href="/TBSBV/insights/" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Insights</a>
+      <a href="/TBSBV/partners/" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Partners</a>
+      <a href="/TBSBV/#contact" class="block mt-4 mx-4 text-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold">Get Started</a>
+    </nav>
+  </header>
+
+  <script>
+    const menuBtn = document.getElementById('menu-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+    menuBtn?.addEventListener('click', () => {
+      const isOpen = !mobileNav.classList.contains('hidden');
+      mobileNav.classList.toggle('hidden');
+      if (isOpen) {
+        menuIconOpen.classList.remove('hidden');
+        menuIconClose.classList.add('hidden');
+      } else {
+        menuIconOpen.classList.add('hidden');
+        menuIconClose.classList.remove('hidden');
+      }
+    });
+    mobileNav?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.add('hidden');
+        menuIconOpen.classList.remove('hidden');
+        menuIconClose.classList.add('hidden');
+      });
+    });
+  </script>
+
+  <main class="bg-white min-h-screen pt-20 lg:pt-24">
+
+    <!-- Hero -->
+    <section class="relative py-20 sm:py-28 lg:py-36 bg-white overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.015]">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle, rgb(6, 182, 212) 1px, transparent 1px); background-size: 40px 40px;"></div>
+      </div>
+      <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-cyan-100/30 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-br from-blue-100/30 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 text-center">
+        <div class="inline-flex items-center gap-2 px-5 py-2 bg-cyan-50 border border-cyan-200 mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-600"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+          <span class="text-xs font-bold text-cyan-600 tracking-[0.2em] uppercase">Our Capabilities</span>
+        </div>
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.1] tracking-tight mb-6">
+          What We
+          <span class="bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent"> Offer</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto mb-12">
+          Embark on a journey of comprehensive solutions tailored to meet your needs. Combining cutting-edge technology with expert analysis to deliver unparalleled security and investigative services.
+        </p>
+
+        <!-- Quick nav links -->
+        <div class="flex flex-wrap justify-center gap-3">
+          {services.map((s) => (
+            <a href={`#${s.id}`} class={`inline-flex items-center gap-2 px-5 py-2.5 bg-white border-2 border-slate-200 text-slate-700 text-sm font-semibold hover:text-cyan-600 hover:border-cyan-300 transition-all duration-200`}>
+              {s.title}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Sections -->
+    {services.map((service, index) => {
+      const isEven = index % 2 === 0;
+      return (
+        <section id={service.id} class={`py-20 sm:py-28 lg:py-32 ${service.bgColor} border-t border-slate-200`}>
+          <div class="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+
+              <!-- Image -->
+              <div class={`relative ${isEven ? 'order-1 lg:order-2' : 'order-1'}`}>
+                <div class={`absolute w-16 h-16 pointer-events-none z-10 ${service.cornerA}`}></div>
+                <div class={`absolute w-16 h-16 pointer-events-none z-10 ${service.cornerB}`}></div>
+                <div class="overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    class="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-700"
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                  />
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class={isEven ? 'order-2 lg:order-1' : 'order-2'}>
+                <!-- Big decorative number -->
+                <div class="text-[6rem] sm:text-[8rem] font-black leading-none mb-0 -ml-1 select-none" style="color: #f1e9eb;">{service.number}</div>
+
+                <!-- Label -->
+                <div class="flex items-center gap-3 -mt-4 mb-5">
+                  <div class={`w-12 h-0.5 bg-gradient-to-r ${service.gradient}`}></div>
+                  <span class={`text-xs font-bold ${service.accentColor} tracking-[0.2em] uppercase`}>{service.label}</span>
+                </div>
+
+                <!-- Icon + Title -->
+                <div class="flex items-start gap-4 mb-6">
+                  <div class={`w-14 h-14 bg-gradient-to-br ${service.gradient} flex items-center justify-center flex-shrink-0 shadow-lg`}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white" set:html={service.icon} />
+                  </div>
+                  <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight">{service.title}</h2>
+                </div>
+
+                <!-- Description -->
+                <p class="text-slate-600 text-lg leading-relaxed mb-8">{service.description}</p>
+
+                <!-- Features -->
+                <ul class="space-y-3 mb-10">
+                  {service.features.map((feature) => (
+                    <li class="flex items-start gap-3">
+                      <div class={`w-5 h-5 bg-gradient-to-br ${service.gradient} flex items-center justify-center flex-shrink-0 mt-0.5`}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M20 6 9 17l-5-5"/></svg>
+                      </div>
+                      <span class="text-slate-700 leading-relaxed">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <!-- CTA -->
+                <a href="/TBSBV/#contact" class={`inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r ${service.gradient} text-white font-bold text-sm hover:shadow-xl transition-all duration-300 hover:scale-105`}>
+                  Start a Consultation
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </section>
+      );
+    })}
+
+    <!-- CTA Section -->
+    <section class="py-16 sm:py-20 lg:py-28 bg-slate-900 relative overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle, rgba(6, 182, 212, 0.6) 1px, transparent 1px); background-size: 32px 32px;"></div>
+      <div class="absolute top-0 right-0 w-80 h-80 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 text-center">
+        <div class="inline-flex items-center justify-center w-16 h-16 bg-cyan-500/10 border border-cyan-500/20 mb-6 mx-auto">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Need a Custom Solution?</h2>
+        <p class="text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
+          Every organization faces unique challenges. Let's create a tailored strategy for your specific needs. Our team is available for confidential consultations.
+        </p>
+        <a href="/TBSBV/#contact" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold text-sm hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300 hover:scale-105">
+          Schedule a Consultation
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <Footer />
+
+  </main>
+</BaseLayout>
