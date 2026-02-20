@@ -102,7 +102,7 @@ const services = [
         class="col-span-12 lg:col-span-7 group relative bg-slate-900 overflow-hidden hover:shadow-3xl transition-all duration-700"
       >
         <!-- Image Background -->
-        <div class="relative h-96 lg:h-[500px] overflow-hidden">
+        <div class="relative h-[480px] sm:h-[420px] lg:h-[500px] overflow-hidden">
           <img
             src={services[0].image}
             alt={services[0].title}
@@ -127,10 +127,10 @@ const services = [
             {services[0].description}
           </p>
 
-          <div class="flex flex-wrap gap-3 mb-8">
+          <div class="flex flex-wrap gap-2 sm:gap-3 mb-8">
             {services[0].features.map((feature) => (
-              <div class="px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10">
-                <span class="text-sm text-white font-medium">{feature}</span>
+              <div class="px-2.5 py-1 sm:px-4 sm:py-2 bg-white/5 backdrop-blur-sm border border-white/10">
+                <span class="text-xs sm:text-sm text-white font-medium">{feature}</span>
               </div>
             ))}
           </div>
