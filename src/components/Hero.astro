@@ -1,11 +1,5 @@
 <!-- Source: initial-2/TBSBV 1 -->
 <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
-  <!-- Animated Canvas Background -->
-  <canvas
-    id="hero-canvas"
-    class="absolute inset-0 w-full h-full opacity-40"
-  ></canvas>
-
   <!-- Gradient Overlays -->
   <div class="absolute top-0 right-0 w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] bg-gradient-to-br from-cyan-500/10 via-blue-500/5 to-transparent blur-3xl"></div>
   <div class="absolute bottom-0 left-0 w-[250px] h-[250px] sm:w-[500px] sm:h-[500px] bg-gradient-to-tr from-teal-500/10 via-blue-600/5 to-transparent blur-3xl"></div>
@@ -13,7 +7,7 @@
   <!-- Full-hero Particle Flow Canvas -->
   <canvas id="particle-flow-canvas" class="absolute inset-0 w-full h-full z-[5] pointer-events-none"></canvas>
 
-  <!-- Left fade overlay (desktop only — on mobile text is centered below logo) -->
+  <!-- Left fade overlay (desktop only) -->
   <div class="hidden lg:block absolute inset-0 z-[6] pointer-events-none bg-gradient-to-r from-black/80 via-black/50 to-transparent" style="--tw-gradient-via-position:25%;--tw-gradient-to-position:40%;"></div>
 
   <!-- Content -->
@@ -189,87 +183,6 @@
   }
 </style>
 
-<!-- 2D Background Particle Network -->
-<script>
-  const canvas = document.getElementById('hero-canvas') as HTMLCanvasElement;
-  if (canvas) {
-    const ctx = canvas.getContext('2d');
-    if (ctx) {
-      const setCanvasSize = () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      };
-      setCanvasSize();
-      window.addEventListener('resize', setCanvasSize);
-
-      const particles: Array<{
-        x: number;
-        y: number;
-        vx: number;
-        vy: number;
-        radius: number;
-      }> = [];
-
-      for (let i = 0; i < 60; i++) {
-        particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.3,
-          vy: (Math.random() - 0.5) * 0.3,
-          radius: Math.random() * 2 + 1,
-        });
-      }
-
-      let heroVisible = true;
-      let bgFrameId: number;
-
-      const heroEl = document.getElementById('home');
-      if (heroEl) {
-        const visObs = new IntersectionObserver(([e]) => {
-          heroVisible = e.isIntersecting;
-          if (heroVisible) bgFrameId = requestAnimationFrame(animate);
-        }, { threshold: 0 });
-        visObs.observe(heroEl);
-      }
-
-      function animate() {
-        if (!ctx || !canvas || !heroVisible) return;
-        bgFrameId = requestAnimationFrame(animate);
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        particles.forEach((particle, i) => {
-          particle.x += particle.vx;
-          particle.y += particle.vy;
-
-          if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
-          if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
-
-          ctx.beginPath();
-          ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(56, 189, 248, 0.4)';
-          ctx.fill();
-
-          particles.slice(i + 1).forEach((particle2) => {
-            const dx = particle.x - particle2.x;
-            const dy = particle.y - particle2.y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-
-            if (distance < 150) {
-              ctx.beginPath();
-              ctx.moveTo(particle.x, particle.y);
-              ctx.lineTo(particle2.x, particle2.y);
-              ctx.strokeStyle = `rgba(56, 189, 248, ${0.15 * (1 - distance / 150)})`;
-              ctx.lineWidth = 1;
-              ctx.stroke();
-            }
-          });
-        });
-      }
-
-      animate();
-    }
-  }
-</script>
 
 <!-- Three.js 3D Logo (logo only, no particles) -->
 <script>
@@ -478,14 +391,16 @@
     camera.position.set(0, 0.0005, 6);
 
     const isMobile = window.innerWidth < 1024;
-    const N = isMobile ? 150 : 400;       // number of lines
-    const PTS = 48;                         // points per line
-    const TRAIL_SKIP = 3;                   // shift trail every N frames
+    const N = isMobile ? 150 : 400;
+    const PTS = 48;
+    const TRAIL_SKIP = 3;
     const totalPts = N * PTS;
 
     let fieldX = 6.0;
     let fieldY = 0.8;
     const fieldZ = 2.0;
+
+    let mat: THREE.ShaderMaterial;
 
     function resize() {
       const w = heroSection.clientWidth;
@@ -504,19 +419,16 @@
       }
     }
 
-    // Per-line layout: positions[i*PTS+0] = head, positions[i*PTS+PTS-1] = tail
     const positions = new Float32Array(totalPts * 3);
     const alphas = new Float32Array(totalPts);
     const trailFade = new Float32Array(totalPts);
 
-    // Pre-compute trail fade per vertex (head=1, tail=0)
     for (let i = 0; i < N; i++) {
       for (let p = 0; p < PTS; p++) {
         trailFade[i * PTS + p] = Math.pow(1.0 - p / (PTS - 1), 1.5);
       }
     }
 
-    // Per-line movement data
     const speeds = new Float32Array(N);
     const phases = new Float32Array(N);
     const waveAmpY = new Float32Array(N);
@@ -544,7 +456,6 @@
 
     for (let i = 0; i < N; i++) spawn(i, true);
 
-    // Index buffer: connect consecutive points within each line
     const indexData: number[] = [];
     for (let i = 0; i < N; i++) {
       const base = i * PTS;
@@ -559,13 +470,13 @@
     geo.setAttribute('aTrail', new THREE.BufferAttribute(trailFade, 1));
     geo.setIndex(new THREE.BufferAttribute(new Uint32Array(indexData), 1));
 
-    const mat = new THREE.ShaderMaterial({
+    mat = new THREE.ShaderMaterial({
       transparent: true,
       depthWrite: false,
       blending: THREE.AdditiveBlending,
       uniforms: {
-        uColorHead: { value: new THREE.Color(0x67E8F9) },  // cyan-300
-        uColorTail: { value: new THREE.Color(0x2563EB) },   // blue-600
+        uColorHead: { value: new THREE.Color(0x67E8F9) },
+        uColorTail: { value: new THREE.Color(0x2563EB) },
         uFieldX: { value: fieldX },
         uFieldY: { value: fieldY },
       },
@@ -627,7 +538,6 @@
       frameCount++;
       const t = clock.getElapsedTime();
 
-      // Shift trail every TRAIL_SKIP frames (push points towards tail)
       if (frameCount % TRAIL_SKIP === 0) {
         for (let i = 0; i < N; i++) {
           const lineStart = i * PTS * 3;
@@ -635,7 +545,6 @@
         }
       }
 
-      // Update head positions (point 0 of each line)
       for (let i = 0; i < N; i++) {
         const headIdx = i * PTS * 3;
         positions[headIdx] += speeds[i];
@@ -660,3 +569,4 @@
     });
   }
 </script>
+
