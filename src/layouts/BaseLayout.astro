@@ -7,9 +7,10 @@ interface Props {
   description: string;
   jsonLd?: string;
   ogType?: string;
+  ogImage?: string;
 }
 
-const { title, description, jsonLd, ogType = 'website' } = Astro.props;
+const { title, description, jsonLd, ogType = 'website', ogImage = 'https://classick-o.github.io/TBSBV/assets/logo/logo-png.png' } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -32,11 +33,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="TBSBV" />
+    <meta property="og:image" content={ogImage} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

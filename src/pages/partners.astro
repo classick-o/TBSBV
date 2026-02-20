@@ -1,0 +1,316 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Partners | TBSBV';
+const description = 'Explore our network of esteemed partners who contribute to our mission of providing cutting-edge solutions and expertise in digital investigations, cybersecurity, and more.';
+const canonicalURL = 'https://classick-o.github.io/TBSBV/partners/';
+const ogImage = 'https://classick-o.github.io/TBSBV/assets/logo/logo-png.png';
+
+const partners = [
+  {
+    name: 'Carlo Zaccagnini',
+    type: 'Italian Law Firm',
+    url: 'https://carlozaccagnini.it/',
+    image: 'https://tbsbv.com/wp-content/uploads/2024/11/WhatsApp_Image_2024-11-13_at_11.23.42_AM-removebg-preview.png',
+    description: 'Carlo Zaccagnini Law Firm is a boutique Italian law firm with extensive experience in criminal tax and bankruptcy law, known for supporting top managers, prominent companies, and political figures. Their expertise spans preventive measures and cybercrime recovery, making them an invaluable ally for Transparent Business Solutions B.V. Through our collaboration, Carlo Zaccagnini\'s team provides civil law consultancy services to assist clients in reclaiming stolen funds.',
+  },
+  {
+    name: 'Mark Solomons',
+    type: 'Award-Winning Investigative Journalist',
+    url: 'https://marksolomons.com/',
+    image: 'https://tbsbv.com/wp-content/uploads/2024/04/Mark-web-logo-tbsvb.png',
+    description: 'Mark Solomons is an experienced criminal investigator specialising in complex fraud and cybercrime cases. A former award-winning investigative journalist and Financial Times reporter, Mark is an expert on cryptocurrency and investment fraud and can call on an extensive global network of trusted contacts in law enforcement, regulatory agencies and financial institutions. Based in Australia, Mark specialises in managing multi-jurisdictional fraud cases across Southeast Asia, Europe and the Middle East.',
+  },
+  {
+    name: 'YK Law LLP',
+    type: 'Business Law Firm',
+    url: 'https://www.yklaw.us/',
+    image: 'https://tbsbv.com/wp-content/uploads/2024/01/yk-logo-1.png',
+    description: 'As an American law firm embedded in a global network, YK Law possesses a distinctive ability to achieve outcomes for clients spanning local and international jurisdictions. Operating from offices in New York, Los Angeles, San Francisco, and Dallas, YK Law utilizes region-specific knowledge to navigate a wide spectrum of legal matters. As a member of the Yangke Global Network, YK Law is positioned to assist clients in meeting the challenges of a globalized legal landscape.',
+  },
+  {
+    name: 'AmCham',
+    type: 'American Chamber of Commerce in The Netherlands',
+    url: 'https://www.amcham.nl/',
+    image: 'https://tbsbv.com/wp-content/uploads/2024/01/Amcham.png',
+    description: 'Established in 1961, the American Chamber of Commerce in the Netherlands has played a pivotal role as the advocate for American businesses in the country. Representing a significant economic force, US-based firms affiliated with AmCham employ approximately 450,000 individuals, contributing to nearly 12% of the Netherlands\' annual revenue. AmCham continues to be a driving force in promoting trade, fostering partnerships, and maximizing the advantages available in the Dutch business landscape.',
+  },
+  {
+    name: 'Leon Hill',
+    type: 'In-House Legal Counsel',
+    url: 'https://apps.calbar.ca.gov/attorney/Licensee/Detail/123140',
+    image: 'https://tbsbv.com/wp-content/uploads/2024/01/Leon-Hill.jpg',
+    description: 'With a wealth of professional experience, Leon Hill is a force in managing complex projects focused on combatting fraud and enforcing anti-money-laundering regulations. His expertise extends to directing IP anti-piracy investigations, providing foreign area risk assessments, and unmasking fraudulent industrial provocateurs. Leon\'s multifaceted skill set positions him as a key player in navigating the intricate landscape of global fraud prevention and enforcement.',
+  },
+  {
+    name: 'Pacific Risk Ltd.',
+    type: 'Corporate Intelligence',
+    url: 'https://pacificriskasia.com/',
+    image: 'https://tbsbv.com/wp-content/uploads/2024/01/Pacific-Risk-Ltd.jpg',
+    description: 'At the helm of Pacific Risk Ltd. is Julian, whose extensive expertise encompasses the project management of diverse business intelligence cases. Ranging from pre-transactional due diligence across various industries to anti-money-laundering initiatives, security risk assessments, and complex criminal investigations, Julian leads assignments that span the globe, addressing intricate challenges involving insurance fraud, money laundering, and offshore companies.',
+  },
+  {
+    name: 'Scam Detector',
+    type: 'World\'s Largest Fraud Prevention Resource',
+    url: 'https://www.scam-detector.com/',
+    image: 'https://tbsbv.com/wp-content/uploads/2024/01/Scam-Detector.png',
+    description: 'As a pivotal platform dedicated to exposing the globe\'s most notorious scams, Scam Detector stands as a beacon of consumer protection. Offering a robust website validator tool, Scam Detector empowers users to verify the authenticity of any website before engagement. The platform has garnered features on esteemed media outlets such as ABC, BBC, CBS, FOX, and Cnet, solidifying its status as a trusted source of scam awareness.',
+  },
+  {
+    name: 'Guidepost Solutions',
+    type: 'Forensic Accounting & Security Technology',
+    url: 'https://guidepostsolutions.com/',
+    image: 'https://tbsbv.com/wp-content/uploads/2024/01/Guidepost-Solutions.png',
+    description: 'Guidepost Solutions stands as a global authority in risk management and investigations, offering a spectrum of services that include compliance solutions, local and international investigations, monitoring, and security and technology consultancy. Comprising investigators, security and technology experts, and compliance professionals, Guidepost Solutions sets industry standards by delivering comprehensive and strategic solutions tailored to the unique needs of each client.',
+  },
+];
+
+const partnersSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": title,
+  "description": description,
+  "url": canonicalURL,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Transparent Business Solutions B.V.",
+    "url": "https://classick-o.github.io/TBSBV/"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": partners.map((p, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": p.name,
+      "url": p.url,
+      "description": p.description
+    }))
+  }
+};
+---
+
+<BaseLayout title={title} description={description} ogImage={ogImage} jsonLd={`<script type="application/ld+json">${JSON.stringify(partnersSchema)}</script>`}>
+
+  <!-- Header -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-xl border-b border-slate-800/50 shadow-2xl">
+    <div class="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-20">
+      <div class="flex items-center justify-between h-20 lg:h-24">
+        <a href="/TBSBV/" class="flex items-center group transition-all duration-300 hover:opacity-80">
+          <img src="/TBSBV/assets/logo/logo.svg" alt="TBSBV — Transparent Business Solutions" class="h-10 sm:h-12 w-auto" />
+        </a>
+        <nav class="hidden lg:flex items-center gap-8 xl:gap-10">
+          <a href="/TBSBV/#services" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Services</a>
+          <a href="/TBSBV/#why-choose-us" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Why Us</a>
+          <a href="/TBSBV/#case-studies" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Case Studies</a>
+          <a href="/TBSBV/#process" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Process</a>
+          <a href="/TBSBV/insights/" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Insights</a>
+          <a href="/TBSBV/partners/" class="text-sm font-semibold text-cyan-400 transition-colors duration-200">Partners</a>
+        </nav>
+        <a href="/TBSBV/#contact" class="hidden lg:inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold text-xs hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-300 hover:scale-105">
+          Request Consultation
+        </a>
+        <!-- Mobile Menu Button -->
+        <button
+          id="menu-toggle"
+          class="lg:hidden p-2 hover:bg-slate-800 transition-colors"
+          aria-label="Toggle menu"
+        >
+          <span id="menu-icon-open">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          </span>
+          <span id="menu-icon-close" class="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav id="mobile-nav" class="hidden lg:hidden py-6 border-t border-slate-800 bg-slate-950">
+      <a href="/TBSBV/#services" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Services</a>
+      <a href="/TBSBV/#why-choose-us" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Why Us</a>
+      <a href="/TBSBV/#case-studies" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Case Studies</a>
+      <a href="/TBSBV/#process" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Process</a>
+      <a href="/TBSBV/insights/" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Insights</a>
+      <a href="/TBSBV/partners/" class="block py-3 text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Partners</a>
+      <a href="/TBSBV/#contact" class="block mt-4 mx-4 text-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold">Get Started</a>
+    </nav>
+  </header>
+
+  <script>
+    const header = document.getElementById('main-header');
+    const menuBtn = document.getElementById('menu-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+
+    menuBtn?.addEventListener('click', () => {
+      const isOpen = !mobileNav.classList.contains('hidden');
+      mobileNav.classList.toggle('hidden');
+      if (isOpen) {
+        menuIconOpen.classList.remove('hidden');
+        menuIconClose.classList.add('hidden');
+      } else {
+        menuIconOpen.classList.add('hidden');
+        menuIconClose.classList.remove('hidden');
+      }
+    });
+
+    mobileNav?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.add('hidden');
+        menuIconOpen.classList.remove('hidden');
+        menuIconClose.classList.add('hidden');
+      });
+    });
+  </script>
+
+  <main class="bg-white min-h-screen pt-20 lg:pt-24">
+
+    <!-- Hero -->
+    <section class="relative py-20 sm:py-28 lg:py-36 bg-white overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.015]">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle, rgb(6, 182, 212) 1px, transparent 1px); background-size: 40px 40px;"></div>
+      </div>
+      <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-cyan-100/30 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-br from-blue-100/30 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 text-center">
+        <div class="inline-flex items-center gap-2 px-5 py-2 bg-cyan-50 border border-cyan-200 mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-600"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span class="text-xs font-bold text-cyan-600 tracking-[0.2em] uppercase">Global Partner Network</span>
+        </div>
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.1] tracking-tight mb-6">
+          Partner With
+          <span class="bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent"> Transparent Business Solutions</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
+          Explore our network of esteemed partners who contribute to our mission of providing cutting-edge solutions and expertise in the realm of digital investigations, cybersecurity, and more.
+        </p>
+
+        <!-- Stats row -->
+        <div class="flex flex-wrap items-center justify-center gap-8 mt-12">
+          <div class="text-center">
+            <div class="text-3xl font-bold text-slate-900">8+</div>
+            <div class="text-xs text-slate-500 uppercase tracking-wider mt-1">Global Partners</div>
+          </div>
+          <div class="w-px h-10 bg-slate-200 hidden sm:block"></div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-slate-900">15+</div>
+            <div class="text-xs text-slate-500 uppercase tracking-wider mt-1">Countries Covered</div>
+          </div>
+          <div class="w-px h-10 bg-slate-200 hidden sm:block"></div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-slate-900">100%</div>
+            <div class="text-xs text-slate-500 uppercase tracking-wider mt-1">Vetted Expertise</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners Grid -->
+    <section class="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white to-slate-50 border-t border-slate-200">
+      <div class="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {partners.map((partner) => (
+            <article class="group bg-white border-2 border-slate-200 hover:border-cyan-300 transition-all duration-500 hover:shadow-xl hover:shadow-cyan-500/10 flex flex-col">
+
+              <!-- Top accent line on hover -->
+              <div class="h-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+              <!-- Logo area -->
+              <div class="p-8 pb-6 border-b border-slate-200 flex items-center justify-center h-36 bg-slate-50">
+                <img
+                  src={partner.image}
+                  alt={partner.name}
+                  loading="lazy"
+                  class="max-h-24 max-w-[200px] w-auto object-contain"
+                />
+              </div>
+
+              <!-- Content -->
+              <div class="p-6 sm:p-8 flex flex-col flex-1">
+                <!-- Type label -->
+                <span class="text-xs font-bold text-cyan-600 uppercase tracking-wider mb-3">
+                  {partner.type}
+                </span>
+
+                <!-- Name + link -->
+                <div class="flex items-start justify-between gap-3 mb-4">
+                  <h2 class="text-xl font-bold text-slate-900 leading-tight group-hover:text-cyan-600 transition-colors duration-300">
+                    {partner.name}
+                  </h2>
+                  <a
+                    href={partner.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex-shrink-0 w-8 h-8 flex items-center justify-center border-2 border-slate-200 hover:border-cyan-500 hover:bg-cyan-50 transition-all duration-300 mt-0.5"
+                    aria-label={`Visit ${partner.name}`}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-500 group-hover:text-cyan-600 transition-colors"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                  </a>
+                </div>
+
+                <!-- Description -->
+                <p class="text-slate-600 text-sm leading-relaxed flex-1">
+                  {partner.description}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Join the Network CTA -->
+    <section class="py-16 sm:py-20 lg:py-28 bg-white border-t border-slate-200">
+      <div class="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+          <!-- Left: Content -->
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-500"></div>
+              <span class="text-xs font-bold text-cyan-600 tracking-[0.2em] uppercase">Join the Network</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight mb-6">
+              Become Part of Our
+              <span class="bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent"> Global Network</span>
+            </h2>
+            <p class="text-slate-600 text-lg leading-relaxed mb-4 max-w-lg">
+              Empower your organization with collaborative intelligence. Join us in reshaping the future of cybersecurity and investigative consulting.
+            </p>
+            <p class="text-slate-500 text-base leading-relaxed mb-10 max-w-lg">
+              Whether you are a law firm, investigative journalist, or specialist consultancy, we welcome partners who share our commitment to transparency and results.
+            </p>
+            <a href="/TBSBV/#contact" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold text-sm hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300 hover:scale-105">
+              Get in Touch
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <!-- Right: Image placeholder -->
+          <div class="relative">
+            <!-- Decorative corner frames -->
+            <div class="absolute -top-4 -left-4 w-16 h-16 border-t-4 border-l-4 border-cyan-500 pointer-events-none z-10"></div>
+            <div class="absolute -bottom-4 -right-4 w-16 h-16 border-b-4 border-r-4 border-blue-500 pointer-events-none z-10"></div>
+
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1679193559894-5e27935d00c5?q=80&w=2098&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Global partner network collaboration"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+
+  </main>
+</BaseLayout>
