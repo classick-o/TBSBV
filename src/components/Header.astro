@@ -95,11 +95,20 @@
     const isOpen = !mobileNav.classList.contains('hidden');
     mobileNav.classList.toggle('hidden');
     if (isOpen) {
+      // closing
       menuIconOpen.classList.remove('hidden');
       menuIconClose.classList.add('hidden');
+      // restore transparent if still at top
+      if (window.scrollY <= 20) {
+        header.classList.remove('bg-slate-950/95', 'backdrop-blur-xl', 'border-b', 'border-slate-800/50', 'shadow-2xl');
+        header.classList.add('bg-transparent');
+      }
     } else {
+      // opening — force solid background so hero doesn't show through
       menuIconOpen.classList.add('hidden');
       menuIconClose.classList.remove('hidden');
+      header.classList.add('bg-slate-950/95', 'backdrop-blur-xl', 'border-b', 'border-slate-800/50', 'shadow-2xl');
+      header.classList.remove('bg-transparent');
     }
   });
 
