@@ -1,0 +1,259 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Footer from '../../components/Footer.astro';
+import { insights } from '../../data/insights';
+
+export function getStaticPaths() {
+  return insights.map((insight) => ({
+    params: { slug: insight.slug },
+    props: { insight },
+  }));
+}
+
+const { insight } = Astro.props;
+
+const relatedInsights = insights
+  .filter((i) => i.slug !== insight.slug && i.category === insight.category)
+  .slice(0, 2)
+  .concat(
+    insights
+      .filter((i) => i.slug !== insight.slug && i.category !== insight.category)
+      .slice(0, 2 - insights.filter((i) => i.slug !== insight.slug && i.category === insight.category).slice(0, 2).length)
+  );
+
+const pageTitle = `${insight.title} | TBSBV Insights`;
+const canonicalURL = `https://classick-o.github.io/TBSBV/insights/${insight.slug}/`;
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": insight.title,
+  "description": insight.excerpt,
+  "datePublished": insight.dateISO,
+  "dateModified": insight.dateISO,
+  "url": canonicalURL,
+  "image": insight.image,
+  "author": {
+    "@type": "Organization",
+    "name": "Transparent Business Solutions B.V.",
+    "url": "https://classick-o.github.io/TBSBV/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "TBSBV",
+    "url": "https://classick-o.github.io/TBSBV/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://classick-o.github.io/TBSBV/assets/logo/logo-png.png"
+    }
+  },
+  "articleSection": insight.category,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": canonicalURL
+  }
+};
+---
+
+<BaseLayout title={pageTitle} description={insight.excerpt} ogType="article" jsonLd={`<script type="application/ld+json">${JSON.stringify(articleSchema)}</script>`}>
+
+  <!-- Header -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-xl border-b border-slate-800/50 shadow-2xl">
+    <div class="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-20">
+      <div class="flex items-center justify-between h-20 lg:h-24">
+        <a href="/TBSBV/" class="flex items-center group transition-all duration-300 hover:opacity-80">
+          <img src="/TBSBV/assets/logo/logo.svg" alt="TBSBV — Transparent Business Solutions" class="h-10 sm:h-12 w-auto" />
+        </a>
+        <nav class="hidden lg:flex items-center gap-8 xl:gap-10">
+          <a href="/TBSBV/#services" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Services</a>
+          <a href="/TBSBV/#why-choose-us" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Why Us</a>
+          <a href="/TBSBV/#case-studies" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Case Studies</a>
+          <a href="/TBSBV/#process" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Process</a>
+          <a href="/TBSBV/insights/" class="text-sm font-semibold text-cyan-400 transition-colors duration-200">Insights</a>
+        </nav>
+        <a href="/TBSBV/#contact" class="hidden lg:inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold text-xs hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-300 hover:scale-105">
+          Request Consultation
+        </a>
+        <a href="/TBSBV/insights/" class="lg:hidden text-sm text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+          Insights
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="bg-slate-950 min-h-screen pt-20 lg:pt-24">
+
+    <!-- Article Hero -->
+    <section class="relative overflow-hidden">
+      <!-- Hero image with overlay -->
+      <div class="relative h-[50vh] sm:h-[55vh] lg:h-[60vh] min-h-[380px] max-h-[600px]">
+        <img
+          src={insight.image}
+          alt={insight.title}
+          class="w-full h-full object-cover"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/20"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950/40 to-transparent"></div>
+      </div>
+
+      <!-- Hero content, overlapping image -->
+      <div class="relative z-10 max-w-[900px] mx-auto px-6 sm:px-8 lg:px-12 -mt-48 sm:-mt-56 pb-0">
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 text-xs text-slate-500 mb-6" aria-label="Breadcrumb">
+          <a href="/TBSBV/" class="hover:text-cyan-400 transition-colors">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          <a href="/TBSBV/insights/" class="hover:text-cyan-400 transition-colors">Insights</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          <span class="text-slate-400 truncate max-w-[200px]">{insight.category}</span>
+        </nav>
+
+        <!-- Category badge -->
+        <div class={`inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${insight.gradient} text-white text-xs font-bold uppercase tracking-wider mb-6`}>
+          {insight.category}
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-[1.15] tracking-tight mb-6">
+          {insight.title}
+        </h1>
+
+        <!-- Meta -->
+        <div class="flex flex-wrap items-center gap-4 text-sm text-slate-400 mb-10 pb-10 border-b border-slate-800">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/20 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+            </div>
+            <span>TBSBV Intelligence Team</span>
+          </div>
+          <span class="w-1 h-1 bg-slate-600 rounded-full"></span>
+          <time datetime={insight.dateISO}>{insight.date}</time>
+          <span class="w-1 h-1 bg-slate-600 rounded-full"></span>
+          <span>{insight.readTime}</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Article Body -->
+    <section class="py-4">
+      <div class="max-w-[900px] mx-auto px-6 sm:px-8 lg:px-12">
+        <div
+          class="prose-article"
+          set:html={insight.body}
+        />
+
+        <!-- Share / back -->
+        <div class="mt-16 pt-10 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <a href="/TBSBV/insights/" class="inline-flex items-center gap-2 text-slate-400 hover:text-cyan-400 transition-colors text-sm font-semibold">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+            Back to Insights
+          </a>
+          <a href="/TBSBV/#contact" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold text-sm hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300 hover:scale-105">
+            Speak with Our Team
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Articles -->
+    {relatedInsights.length > 0 && (
+      <section class="py-16 sm:py-20 lg:py-24 border-t border-slate-800 mt-12">
+        <div class="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-10">Related Insights</h2>
+          <div class="grid sm:grid-cols-2 gap-8">
+            {relatedInsights.map((related) => (
+              <a href={`/TBSBV/insights/${related.slug}/`} class="group block">
+                <article class="bg-slate-900 border border-slate-800 hover:border-cyan-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-cyan-500/10 overflow-hidden flex gap-0 h-full">
+                  <div class="relative w-36 sm:w-48 flex-shrink-0 overflow-hidden">
+                    <img src={related.image} alt={related.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent to-slate-900/30 pointer-events-none"></div>
+                  </div>
+                  <div class={`w-0.5 bg-gradient-to-b ${related.gradient} flex-shrink-0`}></div>
+                  <div class="p-5 flex flex-col justify-center flex-1">
+                    <span class="text-xs font-bold text-cyan-400 uppercase tracking-wider mb-2">{related.category}</span>
+                    <h3 class="text-base font-bold text-white leading-snug mb-2 group-hover:text-cyan-400 transition-colors">{related.title}</h3>
+                    <span class="text-xs text-slate-500">{related.date} · {related.readTime}</span>
+                  </div>
+                </article>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <Footer />
+
+  </main>
+</BaseLayout>
+
+<style>
+  /* Article typography */
+  .prose-article :global(p) {
+    color: rgb(148 163 184); /* slate-400 */
+    line-height: 1.85;
+    margin-bottom: 1.5rem;
+    font-size: 1.0625rem;
+  }
+
+  .prose-article :global(h2) {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    padding-bottom: 0.625rem;
+    border-bottom: 1px solid rgb(30 41 59); /* slate-800 */
+  }
+
+  .prose-article :global(h3) {
+    color: rgb(226 232 240); /* slate-200 */
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose-article :global(ul) {
+    margin-bottom: 1.5rem;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .prose-article :global(ul li) {
+    color: rgb(148 163 184);
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    position: relative;
+    line-height: 1.75;
+    border-bottom: 1px solid rgb(15 23 42 / 0.5);
+  }
+
+  .prose-article :global(ul li::before) {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: linear-gradient(135deg, rgb(34 211 238), rgb(59 130 246));
+    border-radius: 1px;
+  }
+
+  .prose-article :global(ul li strong) {
+    color: rgb(226 232 240);
+    font-weight: 600;
+  }
+
+  .prose-article :global(strong) {
+    color: rgb(226 232 240);
+    font-weight: 600;
+  }
+
+  @media (min-width: 640px) {
+    .prose-article :global(h2) { font-size: 1.75rem; }
+  }
+</style>

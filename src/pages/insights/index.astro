@@ -1,0 +1,197 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Footer from '../../components/Footer.astro';
+import { insights } from '../../data/insights';
+
+const title = 'Insights & Intelligence | TBSBV';
+const description = 'Expert analysis, cybersecurity trends, due diligence guidance, and consumer rights intelligence from the specialists at Transparent Business Solutions B.V.';
+const canonicalURL = 'https://classick-o.github.io/TBSBV/insights/';
+
+const articleListSchema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "TBSBV Insights",
+  "description": description,
+  "url": canonicalURL,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Transparent Business Solutions B.V.",
+    "url": "https://classick-o.github.io/TBSBV/"
+  },
+  "blogPost": insights.map(i => ({
+    "@type": "BlogPosting",
+    "headline": i.title,
+    "description": i.excerpt,
+    "datePublished": i.dateISO,
+    "url": `${canonicalURL}${i.slug}/`,
+    "author": {
+      "@type": "Organization",
+      "name": "TBSBV"
+    }
+  }))
+};
+
+const categories = [...new Set(insights.map(i => i.category))];
+---
+
+<BaseLayout title={title} description={description} jsonLd={`<script type="application/ld+json">${JSON.stringify(articleListSchema)}</script>`}>
+
+  <!-- Header -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-xl border-b border-slate-800/50 shadow-2xl">
+    <div class="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-20">
+      <div class="flex items-center justify-between h-20 lg:h-24">
+        <a href="/TBSBV/" class="flex items-center group transition-all duration-300 hover:opacity-80">
+          <img src="/TBSBV/assets/logo/logo.svg" alt="TBSBV — Transparent Business Solutions" class="h-10 sm:h-12 w-auto" />
+        </a>
+        <nav class="hidden lg:flex items-center gap-8 xl:gap-10">
+          <a href="/TBSBV/#services" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Services</a>
+          <a href="/TBSBV/#why-choose-us" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Why Us</a>
+          <a href="/TBSBV/#case-studies" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Case Studies</a>
+          <a href="/TBSBV/#process" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Process</a>
+          <a href="/TBSBV/insights/" class="text-sm font-semibold text-cyan-400 transition-colors duration-200">Insights</a>
+        </nav>
+        <a href="/TBSBV/#contact" class="hidden lg:inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold text-xs hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-300 hover:scale-105">
+          Request Consultation
+        </a>
+        <!-- Mobile back link -->
+        <a href="/TBSBV/" class="lg:hidden text-sm text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+          Home
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="bg-slate-950 min-h-screen pt-20 lg:pt-24">
+
+    <!-- Hero -->
+    <section class="relative py-20 sm:py-28 lg:py-36 overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.03]">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle, rgba(6, 182, 212, 0.6) 1px, transparent 1px); background-size: 40px 40px;"></div>
+      </div>
+      <div class="absolute top-0 right-0 w-[700px] h-[700px] bg-cyan-500/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 text-center">
+        <div class="inline-flex items-center gap-2 px-5 py-2 bg-cyan-500/10 border border-cyan-500/20 mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-cyan-400"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+          <span class="text-xs font-bold text-cyan-400 tracking-[0.2em] uppercase">Insights & Intelligence</span>
+        </div>
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight mb-6">
+          Stay Ahead of
+          <span class="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent"> Digital Threats</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-slate-400 leading-relaxed max-w-3xl mx-auto">
+          Expert analysis, industry intelligence, and practical guidance from the specialists at Transparent Business Solutions B.V.
+        </p>
+
+        <!-- Category pills -->
+        <div class="flex flex-wrap items-center justify-center gap-3 mt-10">
+          <span class="px-4 py-1.5 bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 text-xs font-semibold tracking-wider uppercase">All Topics</span>
+          {categories.map(cat => (
+            <span class="px-4 py-1.5 bg-slate-800/60 border border-slate-700 text-slate-400 text-xs font-semibold tracking-wider uppercase">{cat}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Articles Grid -->
+    <section class="py-12 sm:py-16 lg:py-20">
+      <div class="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+
+        <!-- Featured article (first one, larger) -->
+        <a href={`/TBSBV/insights/${insights[0].slug}/`} class="group block mb-12 lg:mb-16">
+          <article class="grid lg:grid-cols-2 gap-0 bg-slate-900 border border-slate-800 hover:border-cyan-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/10 overflow-hidden">
+            <div class="relative h-72 lg:h-auto overflow-hidden">
+              <img src={insights[0].image} alt={insights[0].title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="eager" />
+              <div class="absolute inset-0 bg-gradient-to-r from-transparent to-slate-900/60 pointer-events-none hidden lg:block"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent pointer-events-none lg:hidden"></div>
+              <div class={`absolute top-6 left-6 inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${insights[0].gradient} text-white text-xs font-bold uppercase tracking-wider`}>
+                {insights[0].category}
+              </div>
+            </div>
+            <div class="p-8 sm:p-10 lg:p-14 flex flex-col justify-center">
+              <div class="flex items-center gap-4 text-xs text-slate-500 mb-4">
+                <span>{insights[0].date}</span>
+                <span class="w-1 h-1 bg-slate-600 rounded-full"></span>
+                <span>{insights[0].readTime}</span>
+                <span class="ml-auto px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-semibold">Featured</span>
+              </div>
+              <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight group-hover:text-cyan-400 transition-colors duration-300">
+                {insights[0].title}
+              </h2>
+              <p class="text-slate-400 leading-relaxed text-lg mb-8">{insights[0].excerpt}</p>
+              <div class="inline-flex items-center gap-2 text-cyan-400 font-semibold group-hover:gap-4 transition-all duration-300">
+                Read Article
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </div>
+            </div>
+          </article>
+        </a>
+
+        <!-- Remaining articles grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {insights.slice(1).map((insight) => (
+            <a href={`/TBSBV/insights/${insight.slug}/`} class="group block">
+              <article class="bg-slate-900 border border-slate-800 hover:border-cyan-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-cyan-500/10 overflow-hidden h-full flex flex-col">
+                <!-- Image -->
+                <div class="relative h-52 overflow-hidden flex-shrink-0">
+                  <img src={insight.image} alt={insight.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent pointer-events-none"></div>
+                  <div class={`absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r ${insight.gradient} text-white text-xs font-bold uppercase tracking-wider`}>
+                    {insight.category}
+                  </div>
+                </div>
+
+                <!-- Top accent line -->
+                <div class={`h-0.5 bg-gradient-to-r ${insight.gradient}`}></div>
+
+                <!-- Content -->
+                <div class="p-6 sm:p-8 flex flex-col flex-1">
+                  <div class="flex items-center gap-3 text-xs text-slate-500 mb-4">
+                    <span>{insight.date}</span>
+                    <span class="w-1 h-1 bg-slate-600 rounded-full"></span>
+                    <span>{insight.readTime}</span>
+                  </div>
+                  <h2 class="text-xl font-bold text-white mb-3 leading-tight group-hover:text-cyan-400 transition-colors duration-300 flex-1">
+                    {insight.title}
+                  </h2>
+                  <p class="text-slate-400 text-sm leading-relaxed mb-6">{insight.excerpt}</p>
+                  <div class="inline-flex items-center gap-2 text-cyan-400 text-sm font-semibold group-hover:gap-3 transition-all duration-300 mt-auto">
+                    Read Article
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </div>
+                </div>
+              </article>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="py-16 sm:py-20 lg:py-28">
+      <div class="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+        <div class="bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700 p-10 sm:p-14 lg:p-20 text-center relative overflow-hidden">
+          <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle, rgba(6, 182, 212, 0.6) 1px, transparent 1px); background-size: 32px 32px;"></div>
+          <div class="relative z-10">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-cyan-500/10 border border-cyan-500/20 mb-6 mx-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Need Expert Guidance?</h2>
+            <p class="text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
+              Our team is available for confidential consultations. Whether you are facing an active threat or planning ahead, we are here to help.
+            </p>
+            <a href="/TBSBV/#contact" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold text-sm hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300 hover:scale-105">
+              Start a Confidential Consultation
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+
+  </main>
+</BaseLayout>

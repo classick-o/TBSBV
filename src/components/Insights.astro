@@ -1,37 +1,7 @@
 <!-- Source: initial-1/TBSBV 4 -->
 ---
-const insights = [
-  {
-    category: "Cybersecurity Trends",
-    title: "The Rise of AI-Powered Cyber Attacks in 2026",
-    excerpt:
-      "How machine learning is being weaponized by threat actors and what organizations can do to stay protected.",
-    readTime: "6 min read",
-    date: "Jan 28, 2026",
-    gradient: "from-cyan-500 to-blue-500",
-    image: "https://images.unsplash.com/photo-1658552963426-1083cf9c495e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGN5YW4lMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc3MDA1MzM2MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-  },
-  {
-    category: "Due Diligence",
-    title: "Hidden Red Flags in M&A Transactions",
-    excerpt:
-      "Key warning signs that every investor should watch for during pre-acquisition due diligence investigations.",
-    readTime: "8 min read",
-    date: "Jan 15, 2026",
-    gradient: "from-blue-500 to-indigo-500",
-    image: "https://images.unsplash.com/photo-1653549893012-b8b4fbe97630?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGJsdWUlMjBuZXR3b3JrfGVufDF8fHx8MTc3MDA1MzM2MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-  },
-  {
-    category: "Digital Forensics",
-    title: "Blockchain Forensics: Tracing Crypto Fraud",
-    excerpt:
-      "Advanced techniques for tracking cryptocurrency transactions and recovering stolen digital assets.",
-    readTime: "10 min read",
-    date: "Jan 5, 2026",
-    gradient: "from-indigo-500 to-purple-500",
-    image: "https://images.unsplash.com/photo-1629487015513-7075665af4b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGluZGlnbyUyMHBhdHRlcm5zfGVufDF8fHx8MTc3MDA1MzM2Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-  },
-];
+import { insights as allInsights } from '../data/insights';
+const insights = allInsights.slice(0, 3);
 ---
 
 <section
@@ -121,7 +91,7 @@ const insights = [
 
             <!-- Read More Link -->
             <a
-              href="#contact"
+              href={`/TBSBV/insights/${insight.slug}/`}
               class="inline-flex items-center gap-2 text-cyan-600 font-semibold group-hover:gap-3 transition-all"
             >
               Read Article
@@ -130,6 +100,14 @@ const insights = [
           </div>
         </article>
       ))}
+    </div>
+
+    <!-- View All link -->
+    <div class="text-center mb-20">
+      <a href="/TBSBV/insights/" class="inline-flex items-center gap-2 px-8 py-3 border border-slate-300 text-slate-700 font-semibold hover:border-cyan-500 hover:text-cyan-600 transition-all duration-300 text-sm">
+        View All Insights
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
     </div>
 
     <!-- Newsletter CTA -->
