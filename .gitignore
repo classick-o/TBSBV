@@ -2,3 +2,8 @@ node_modules
 dist
 .claude
 .astro
+.brandbook
+brandbook/
+brandbook.html
+brandbook-pdf.html
+brandbook-prompt.md
