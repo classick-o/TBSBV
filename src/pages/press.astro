@@ -1,0 +1,304 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Press | TBSBV — Transparent Business Solutions B.V.';
+const description = 'Media coverage of Transparent Business Solutions B.V. — read what leading international publications say about our work in fraud recovery, asset repatriation, and investigative consulting.';
+const canonicalURL = 'https://classick-o.github.io/TBSBV/press/';
+const ogImage = 'https://classick-o.github.io/TBSBV/assets/logo/logo-png.png';
+
+const articles = [
+  {
+    publication: 'Toronto Guardian',
+    publicationInitial: 'TG',
+    date: 'January 8, 2026',
+    author: 'Joel Levy',
+    title: 'From Fraud to Justice: Transparent Business Solutions Helps Victims Worldwide Recover Their Lost Funds',
+    summary: 'Transparent Business Solutions B.V. achieved a landmark recovery in the Tredexo investment fraud case through blockchain forensics and international cooperation. A Georgian court ordered the principal offender to compensate identified victims, demonstrating that recovery is possible when victims act quickly and partner with the right specialists.',
+    url: 'https://torontoguardian.com/2026/01/from-fraud-to-justice-transparent-business-solutions-helps-victims-worldwide-recover-their-lost-funds/',
+    category: 'Fraud Recovery',
+  },
+  {
+    publication: 'The Jerusalem Post',
+    publicationInitial: 'JP',
+    date: 'April 22, 2021',
+    author: 'Gil Zohar',
+    title: 'Afghanistan Wants to Repatriate Stolen Medieval Hebrew Prayer Book',
+    summary: 'Leon Hill, in-house counsel for Transparent Business Solutions B.V., confirmed the firm is in negotiations to represent Kabul in the repatriation of a 1,200-year-old Hebrew prayer book currently held by Washington D.C.\'s Museum of the Bible — a high-profile international asset recovery case drawing global attention.',
+    url: 'https://www.jpost.com/international/afghanistan-wants-to-repatriate-stolen-medieval-hebrew-prayer-book-665963',
+    category: 'Asset Recovery',
+  },
+  {
+    publication: 'ReputationUP',
+    publicationInitial: 'RU',
+    date: 'February 15, 2024',
+    author: 'ReputationUP Editorial',
+    title: 'Strategic Alliance: ReputationUP and Transparent Business Solutions B.V.',
+    summary: 'ReputationUP announced a strategic partnership with Transparent Business Solutions B.V., combining expertise in online reputation management with investigative consulting and digital security. The alliance integrates cyber investigation, due diligence, and fraud prevention capabilities to protect and enhance the digital reputations of businesses worldwide.',
+    url: 'https://reputationup.com/strategic-alliance-transparent-business-solutions-b-v/',
+    category: 'Strategic Partnership',
+  },
+];
+
+const pressSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": title,
+  "description": description,
+  "url": canonicalURL,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Transparent Business Solutions B.V.",
+    "url": "https://classick-o.github.io/TBSBV/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": ogImage
+    }
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": articles.map((a, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "url": a.url,
+      "name": a.title,
+      "description": a.summary
+    }))
+  }
+};
+---
+
+<BaseLayout title={title} description={description} ogImage={ogImage} jsonLd={`<script type="application/ld+json">${JSON.stringify(pressSchema)}</script>`}>
+
+  <!-- Header -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-xl border-b border-slate-800/50 shadow-2xl">
+    <div class="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-20">
+      <div class="flex items-center justify-between h-20 lg:h-24">
+        <a href="/TBSBV/" class="flex items-center group transition-all duration-300 hover:opacity-80">
+          <img src="/TBSBV/assets/logo/logo.svg" alt="TBSBV — Transparent Business Solutions" class="h-10 sm:h-12 w-auto" />
+        </a>
+        <nav class="hidden lg:flex items-center gap-8 xl:gap-10">
+          <a href="/TBSBV/services/" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Services</a>
+          <a href="/TBSBV/#why-choose-us" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Why Us</a>
+          <a href="/TBSBV/#case-studies" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Case Studies</a>
+          <a href="/TBSBV/#process" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Process</a>
+          <a href="/TBSBV/insights/" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Insights</a>
+          <a href="/TBSBV/partners/" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Partners</a>
+          <a href="/TBSBV/press/" class="text-sm font-semibold text-cyan-400 transition-colors duration-200">Press</a>
+        </nav>
+        <a href="/TBSBV/#contact" class="hidden lg:inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold text-xs hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-300 hover:scale-105">
+          Request Consultation
+        </a>
+        <!-- Mobile Menu Button -->
+        <button
+          id="menu-toggle"
+          class="lg:hidden p-2 hover:bg-slate-800 transition-colors"
+          aria-label="Toggle menu"
+        >
+          <span id="menu-icon-open">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          </span>
+          <span id="menu-icon-close" class="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav id="mobile-nav" class="hidden lg:hidden py-6 border-t border-slate-800 bg-slate-950">
+      <a href="/TBSBV/services/" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Services</a>
+      <a href="/TBSBV/#why-choose-us" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Why Us</a>
+      <a href="/TBSBV/#case-studies" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Case Studies</a>
+      <a href="/TBSBV/#process" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Process</a>
+      <a href="/TBSBV/insights/" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Insights</a>
+      <a href="/TBSBV/partners/" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Partners</a>
+      <a href="/TBSBV/press/" class="block py-3 text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Press</a>
+      <a href="/TBSBV/#contact" class="block mt-4 mx-4 text-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold">Get Started</a>
+    </nav>
+  </header>
+
+  <script>
+    const header = document.getElementById('main-header');
+    const menuBtn = document.getElementById('menu-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+
+    menuBtn?.addEventListener('click', () => {
+      const isOpen = !mobileNav.classList.contains('hidden');
+      mobileNav.classList.toggle('hidden');
+      if (isOpen) {
+        menuIconOpen.classList.remove('hidden');
+        menuIconClose.classList.add('hidden');
+      } else {
+        menuIconOpen.classList.add('hidden');
+        menuIconClose.classList.remove('hidden');
+      }
+    });
+
+    mobileNav?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.add('hidden');
+        menuIconOpen.classList.remove('hidden');
+        menuIconClose.classList.add('hidden');
+      });
+    });
+  </script>
+
+  <main class="bg-white min-h-screen pt-20 lg:pt-24">
+
+    <!-- Hero -->
+    <section class="relative py-20 sm:py-28 lg:py-36 bg-white overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.015]">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle, rgb(6, 182, 212) 1px, transparent 1px); background-size: 40px 40px;"></div>
+      </div>
+      <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-cyan-100/30 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-br from-blue-100/30 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 text-center">
+        <div class="inline-flex items-center gap-2 px-5 py-2 bg-cyan-50 border border-cyan-200 mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-600"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>
+          <span class="text-xs font-bold text-cyan-600 tracking-[0.2em] uppercase">Media Coverage</span>
+        </div>
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold text-slate-900 leading-[1.1] tracking-tight mb-6">
+          TBSBV in the
+          <span class="bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent"> Press</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
+          Our work in fraud recovery, international asset repatriation, and investigative consulting has been recognized by leading publications worldwide.
+        </p>
+      </div>
+    </section>
+
+    <!-- Articles Grid -->
+    <section class="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white to-slate-50 border-t border-slate-200">
+      <div class="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {articles.map((article) => (
+            <article class="group bg-white border-2 border-slate-200 hover:border-cyan-300 transition-all duration-500 hover:shadow-xl hover:shadow-cyan-500/10 flex flex-col">
+
+              <!-- Top accent line on hover -->
+              <div class="h-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+              <!-- Publication header -->
+              <div class="p-6 pb-5 border-b border-slate-100 flex items-center gap-4 bg-slate-50">
+                <div class="w-12 h-12 flex-shrink-0 bg-gradient-to-br from-cyan-600 to-blue-600 flex items-center justify-center">
+                  <span class="text-white font-bold text-sm tracking-tight">{article.publicationInitial}</span>
+                </div>
+                <div class="min-w-0">
+                  <div class="text-sm font-bold text-slate-900 truncate">{article.publication}</div>
+                  <div class="text-xs text-slate-500 mt-0.5">{article.date}</div>
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class="p-6 sm:p-8 flex flex-col flex-1">
+                <!-- Category label -->
+                <span class="text-xs font-bold text-cyan-600 uppercase tracking-wider mb-3">
+                  {article.category}
+                </span>
+
+                <!-- Title -->
+                <h2 class="text-lg font-bold text-slate-900 leading-snug mb-4 group-hover:text-cyan-700 transition-colors duration-300">
+                  {article.title}
+                </h2>
+
+                <!-- Summary -->
+                <p class="text-slate-600 text-sm leading-relaxed flex-1 mb-6">
+                  {article.summary}
+                </p>
+
+                <!-- Author + Read link -->
+                <div class="flex items-center justify-between gap-3 pt-4 border-t border-slate-100">
+                  <span class="text-xs text-slate-500">By {article.author}</span>
+                  <a
+                    href={article.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-600 hover:text-cyan-800 transition-colors duration-200"
+                  >
+                    Read Article
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Media Enquiries CTA -->
+    <section class="py-16 sm:py-20 lg:py-28 bg-white border-t border-slate-200">
+      <div class="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+          <!-- Left: Content -->
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-500"></div>
+              <span class="text-xs font-bold text-cyan-600 tracking-[0.2em] uppercase">Media Enquiries</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight mb-6">
+              Covering a Story
+              <span class="bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent"> About Us?</span>
+            </h2>
+            <p class="text-slate-600 text-lg leading-relaxed mb-4 max-w-lg">
+              We welcome press enquiries and are happy to provide expert commentary on fraud recovery, digital investigations, cybersecurity, and international asset repatriation.
+            </p>
+            <p class="text-slate-500 text-base leading-relaxed mb-10 max-w-lg">
+              Our team is available for interviews, background briefings, and expert quotes. All media requests are handled confidentially and promptly.
+            </p>
+            <a href="/TBSBV/#contact" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold text-sm hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300 hover:scale-105">
+              Contact Our Press Team
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <!-- Right: Decorative panel -->
+          <div class="relative">
+            <div class="absolute -top-4 -left-4 w-16 h-16 border-t-4 border-l-4 border-cyan-500 pointer-events-none z-10"></div>
+            <div class="absolute -bottom-4 -right-4 w-16 h-16 border-b-4 border-r-4 border-blue-500 pointer-events-none z-10"></div>
+
+            <div class="bg-slate-900 p-8 sm:p-12">
+              <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 flex-shrink-0 bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  </div>
+                  <div>
+                    <div class="text-white font-bold text-sm mb-1">Phone</div>
+                    <div class="text-slate-400 text-sm">+31 70 7013260</div>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 flex-shrink-0 bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  </div>
+                  <div>
+                    <div class="text-white font-bold text-sm mb-1">Email</div>
+                    <div class="text-slate-400 text-sm">info@tbsbv.com</div>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 flex-shrink-0 bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                  </div>
+                  <div>
+                    <div class="text-white font-bold text-sm mb-1">Response Time</div>
+                    <div class="text-slate-400 text-sm">We respond promptly to all press enquiries</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+
+  </main>
+</BaseLayout>
