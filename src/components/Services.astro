@@ -3,48 +3,80 @@
 const services = [
   {
     title: "Due Diligence",
-    description:
-      "Comprehensive background checks and risk assessments to protect your business interests. We uncover hidden risks before they become problems.",
+    description: "We conduct comprehensive due diligence assessments for individuals, businesses, investment opportunities, and digital asset platforms.",
+    featuresIntro: "Our process includes:",
     features: [
-      "Corporate Intelligence",
-      "Risk Assessment",
-      "Background Verification",
-      "Asset Tracing",
+      "Corporate structure and beneficial ownership review",
+      "Regulatory status verification",
+      "Litigation and enforcement screening",
+      "Risk exposure analysis",
+      "Online and dark web presence checks",
     ],
+    closing: "Our due diligence reports provide clear risk evaluations to support informed decision-making and protect against financial, reputational, and compliance exposure.",
     gradient: "from-cyan-500 to-blue-500",
-    bgGradient: "from-cyan-500/10 to-blue-500/10",
-    image:
-      "https://images.unsplash.com/photo-1734792314947-883f84148b3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGdlb21ldHJpYyUyMGJsdWV8ZW58MXx8fHwxNzcwMDUzMzYwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    image: "https://images.unsplash.com/photo-1734792314947-883f84148b3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGdlb21ldHJpYyUyMGJsdWV8ZW58MXx8fHwxNzcwMDUzMzYwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    hoverColor: "group-hover:text-cyan-400",
+    linkColor: "text-cyan-400",
+    dotBg: "bg-cyan-500/30",
+    dotColor: "bg-cyan-400",
   },
   {
-    title: "Cyber Investigation",
-    description:
-      "Advanced digital forensics and cyber threat analysis. Our experts trace digital footprints and recover critical evidence.",
+    title: "Cyber Investigations",
+    description: "Our cyber investigations team conducts in-depth digital inquiries into online fraud, financial crime, impersonation schemes, and coordinated scam operations.",
+    featuresIntro: "We analyze:",
     features: [
-      "Digital Forensics",
-      "Cyber Threat Analysis",
-      "Incident Response",
-      "Evidence Recovery",
+      "Digital footprints and technical indicators",
+      "Email headers, domains, and infrastructure links",
+      "Social engineering patterns",
+      "Online platform abuse and impersonation activity",
     ],
+    closing: "By combining technical analysis with investigative strategy, we uncover actionable intelligence to support investigative and legal action, and regulatory escalation.",
     gradient: "from-blue-500 to-indigo-500",
-    bgGradient: "from-blue-500/10 to-indigo-500/10",
-    image:
-      "https://images.unsplash.com/photo-1762716514229-739f6769e282?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGRpZ2l0YWwlMjBncmFkaWVudHxlbnwxfHx8fDE3NzAwNTMzNjB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    image: "https://images.unsplash.com/photo-1762716514229-739f6769e282?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGRpZ2l0YWwlMjBncmFkaWVudHxlbnwxfHx8fDE3NzAwNTMzNjB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    hoverColor: "group-hover:text-blue-600",
+    linkColor: "text-blue-600",
+    dotBg: "bg-blue-100",
+    dotColor: "bg-blue-600",
+    iconPath: `<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>`,
   },
   {
-    title: "Integrity & Reputation Management",
-    description:
-      "Protect and enhance your brand's reputation in the digital world. We monitor, manage, and mitigate reputational risks.",
+    title: "Crypto Tracing",
+    description: "We provide advanced cryptocurrency tracing services to track digital asset movements across blockchain networks. Using forensic analytics tools and investigative methodologies, we identify wallet flows, linked addresses, exchange touchpoints, and asset consolidation patterns.",
+    featuresIntro: "Our crypto tracing services are designed to:",
     features: [
-      "Brand Monitoring",
-      "Crisis Management",
-      "Threat Mitigation",
-      "Reputation Recovery",
+      "Trace stolen or misappropriated digital assets",
+      "Identify exchange off-ramps and custodial endpoints",
+      "Map transaction pathways across multiple blockchains",
+      "Produce structured forensic reports suitable for legal and regulatory use",
     ],
+    closing: "Whether supporting fraud victims, legal teams, or corporate investigations, we deliver clear, evidence-based blockchain intelligence.",
+    gradient: "from-teal-500 to-cyan-500",
+    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0",
+    hoverColor: "group-hover:text-teal-600",
+    linkColor: "text-teal-600",
+    dotBg: "bg-teal-100",
+    dotColor: "bg-teal-600",
+    iconPath: `<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>`,
+  },
+  {
+    title: "Reputation Management",
+    description: "We assist individuals and organizations in protecting and restoring their digital reputation.",
+    featuresIntro: "Our services include:",
+    features: [
+      "Online reputation risk assessments",
+      "Monitoring and identification of defamatory or harmful content",
+      "Strategic content suppression and correction guidance",
+      "Digital footprint optimization",
+      "Crisis response support",
+    ],
+    closing: "In an increasingly digital world, reputational integrity is critical. We help clients proactively manage risk and respond effectively when issues arise.",
     gradient: "from-indigo-500 to-purple-500",
-    bgGradient: "from-indigo-500/10 to-purple-500/10",
-    image:
-      "https://images.unsplash.com/photo-1687463221020-b8769b32c622?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHB1cnBsZSUyMHNoYXBlc3xlbnwxfHx8fDE3NzAwNTMzNjF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    image: "https://images.unsplash.com/photo-1687463221020-b8769b32c622?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHB1cnBsZSUyMHNoYXBlc3xlbnwxfHx8fDE3NzAwNTMzNjF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    hoverColor: "group-hover:text-indigo-600",
+    linkColor: "text-indigo-600",
+    dotBg: "bg-indigo-100",
+    dotColor: "bg-indigo-600",
+    iconPath: `<path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/>`,
   },
 ];
 ---
@@ -63,25 +95,17 @@ const services = [
 
   <div class="relative z-10 max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-20">
     <!-- Section Header -->
-    <div
-      data-animate
-      class="mb-4 sm:mb-6 lg:mb-8"
-      style="--delay: 0s;"
-    >
+    <div data-animate class="mb-4 sm:mb-6 lg:mb-8" style="--delay: 0s;">
       <div class="flex items-start justify-between flex-wrap gap-8">
         <div class="max-w-3xl">
           <div class="inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-cyan-50 to-blue-50 border border-cyan-100 mb-6">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-cyan-600"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
-            <span class="text-xs font-bold text-cyan-600 tracking-[0.2em] uppercase">
-              Our Capabilities
-            </span>
+            <span class="text-xs font-bold text-cyan-600 tracking-[0.2em] uppercase">Our Capabilities</span>
           </div>
           <h2 class="text-3xl sm:text-5xl lg:text-7xl font-bold text-slate-900 mb-6 leading-[1.05] tracking-[-0.02em]">
             Solutions That
             <br />
-            <span class="bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
-              Protect
-            </span>
+            <span class="bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">Protect</span>
           </h2>
         </div>
         <div class="max-w-md pt-8">
@@ -93,186 +117,181 @@ const services = [
       </div>
     </div>
 
-    <!-- Bento Box Grid - Asymmetric Layout -->
+    <!-- Bento Box Grid -->
     <div class="grid grid-cols-12 gap-6 mb-8">
-      <!-- Large Card 1 - Due Diligence -->
+
+      <!-- Card 1: Due Diligence - large dark image card (col-7) -->
       <div
         data-animate
         style="--delay: 0.1s;"
         class="col-span-12 lg:col-span-7 group relative bg-slate-900 overflow-hidden hover:shadow-3xl transition-all duration-700"
       >
-        <!-- Image Background -->
-        <div class="relative h-[480px] sm:h-[420px] lg:h-[500px] overflow-hidden">
-          <img
-            src={services[0].image}
-            alt={services[0].title}
-            loading="lazy"
-            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-          />
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
+        <div class="relative h-[320px] sm:h-[280px] lg:h-[340px] overflow-hidden">
+          <img src={services[0].image} alt={services[0].title} loading="lazy"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/70 to-transparent"></div>
         </div>
-
-        <!-- Content Overlay -->
-        <div class="absolute bottom-0 left-0 right-0 p-5 sm:p-8 lg:p-12">
-          <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-cyan-400"><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M4.268 21a2 2 0 0 0 1.727 1H18a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"/><path d="m9 18-1.5-1.5"/><circle cx="5" cy="14" r="3"/></svg>
-            <span class="text-sm font-bold text-cyan-400">CORE SERVICE</span>
+        <div class="p-5 sm:p-8 lg:p-10">
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-cyan-400"><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M4.268 21a2 2 0 0 0 1.727 1H18a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"/><path d="m9 18-1.5-1.5"/><circle cx="5" cy="14" r="3"/></svg>
+            <span class="text-xs font-bold text-cyan-400">CORE SERVICE</span>
           </div>
-
-          <h3 class="text-2xl sm:text-3xl lg:text-5xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors">
+          <h3 class={`text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 ${services[0].hoverColor} transition-colors`}>
             {services[0].title}
           </h3>
-
-          <p class="text-sm sm:text-base lg:text-xl text-slate-300 mb-6 sm:mb-8 leading-relaxed max-w-2xl">
+          <p class="text-sm sm:text-base text-slate-300 mb-4 leading-relaxed">
             {services[0].description}
           </p>
-
-          <div class="flex flex-wrap gap-2 sm:gap-3 mb-8">
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">{services[0].featuresIntro}</p>
+          <div class="space-y-2 mb-4">
             {services[0].features.map((feature) => (
-              <div class="px-2.5 py-1 sm:px-4 sm:py-2 bg-white/5 backdrop-blur-sm border border-white/10">
-                <span class="text-xs sm:text-sm text-white font-medium">{feature}</span>
+              <div class="flex items-start gap-3">
+                <div class={`w-5 h-5 ${services[0].dotBg} flex items-center justify-center flex-shrink-0 mt-0.5`}>
+                  <div class={`w-2 h-2 ${services[0].dotColor}`}></div>
+                </div>
+                <span class="text-sm text-slate-300 leading-snug">{feature}</span>
               </div>
             ))}
           </div>
-
-          <a
-            href="/TBSBV/services/"
-            class="inline-flex items-center gap-2 text-cyan-400 font-bold text-lg group-hover:gap-4 transition-all"
-          >
+          <p class="text-sm text-slate-400 leading-relaxed mb-6">{services[0].closing}</p>
+          <a href="/TBSBV/services/#due-diligence" class={`inline-flex items-center gap-2 ${services[0].linkColor} font-bold text-base group-hover:gap-4 transition-all`}>
             Explore Service
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="m9 18 6-6-6-6"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="m9 18 6-6-6-6"/></svg>
           </a>
         </div>
       </div>
 
-      <!-- Tall Card 2 - Cyber Investigation -->
+      <!-- Card 2: Cyber Investigations - tall white card (col-5) -->
       <div
         data-animate
         style="--delay: 0.2s;"
         class="col-span-12 lg:col-span-5 group relative bg-white border-2 border-slate-200 hover:border-cyan-300 overflow-hidden hover:shadow-3xl transition-all duration-700"
       >
-        <div class="relative h-64 overflow-hidden">
-          <img
-            src={services[1].image}
-            alt={services[1].title}
-            loading="lazy"
-            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-          />
+        <div class="relative h-52 overflow-hidden">
+          <img src={services[1].image} alt={services[1].title} loading="lazy"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
           <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white"></div>
         </div>
-
-        <div class="p-5 sm:p-8 lg:p-10">
-          <div class="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 sm:w-8 sm:h-8 text-white"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <div class="p-5 sm:p-8">
+          <div class={`w-12 h-12 bg-gradient-to-br ${services[1].gradient} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white" set:html={services[1].iconPath} />
           </div>
-
-          <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mb-3 sm:mb-4 group-hover:text-blue-600 transition-colors">
+          <h3 class={`text-xl sm:text-2xl font-bold text-slate-900 mb-3 ${services[1].hoverColor} transition-colors`}>
             {services[1].title}
           </h3>
-
-          <p class="text-sm sm:text-base lg:text-lg text-slate-600 mb-6 sm:mb-8 leading-relaxed">
-            {services[1].description}
-          </p>
-
-          <div class="space-y-3 mb-8 pb-8 border-b-2 border-slate-100">
+          <p class="text-sm text-slate-600 mb-4 leading-relaxed">{services[1].description}</p>
+          <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">{services[1].featuresIntro}</p>
+          <div class="space-y-2 mb-4 pb-4 border-b-2 border-slate-100">
             {services[1].features.map((feature) => (
-              <div class="flex items-center gap-3">
-                <div class="w-6 h-6 bg-blue-100 flex items-center justify-center">
-                  <div class="w-2 h-2 bg-blue-600"></div>
+              <div class="flex items-start gap-3">
+                <div class={`w-5 h-5 ${services[1].dotBg} flex items-center justify-center flex-shrink-0 mt-0.5`}>
+                  <div class={`w-2 h-2 ${services[1].dotColor}`}></div>
                 </div>
-                <span class="text-slate-700 font-medium">{feature}</span>
+                <span class="text-sm text-slate-700 leading-snug">{feature}</span>
               </div>
             ))}
           </div>
-
-          <a
-            href="/TBSBV/services/"
-            class="inline-flex items-center gap-2 text-blue-600 font-bold hover:gap-4 transition-all"
-          >
+          <p class="text-sm text-slate-600 leading-relaxed mb-5">{services[1].closing}</p>
+          <a href="/TBSBV/services/#cyber-investigation" class={`inline-flex items-center gap-2 ${services[1].linkColor} font-bold hover:gap-4 transition-all`}>
             Learn More
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="m9 18 6-6-6-6"/></svg>
           </a>
         </div>
       </div>
 
-      <!-- Wide Card 3 - Integrity & Reputation -->
+      <!-- Card 3: Crypto Tracing - tall white card (col-5) -->
       <div
         data-animate
         style="--delay: 0.3s;"
-        class="col-span-12 group relative bg-gradient-to-br from-indigo-50 to-purple-50 border-2 border-indigo-100 overflow-hidden hover:shadow-3xl transition-all duration-700"
+        class="col-span-12 lg:col-span-5 group relative bg-white border-2 border-slate-200 hover:border-teal-300 overflow-hidden hover:shadow-3xl transition-all duration-700"
       >
-        <div class="grid lg:grid-cols-2 gap-8">
-          <!-- Content -->
-          <div class="p-5 sm:p-8 lg:p-12 flex flex-col justify-center order-2 lg:order-1">
-            <div class="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 sm:w-8 sm:h-8 text-white"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg>
-            </div>
-
-            <h3 class="text-2xl sm:text-3xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6 group-hover:text-indigo-600 transition-colors">
-              {services[2].title}
-            </h3>
-
-            <p class="text-sm sm:text-base lg:text-xl text-slate-700 mb-6 sm:mb-8 leading-relaxed">
-              {services[2].description}
-            </p>
-
-            <div class="grid grid-cols-2 gap-4 mb-8">
-              {services[2].features.map((feature) => (
-                <div class="flex items-center gap-3">
-                  <div class="w-2 h-2 bg-gradient-to-r from-indigo-600 to-purple-600"></div>
-                  <span class="text-slate-700 font-medium">{feature}</span>
+        <div class="relative h-52 overflow-hidden">
+          <img src={services[2].image} alt={services[2].title} loading="lazy"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
+          <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white"></div>
+        </div>
+        <div class="p-5 sm:p-8">
+          <div class={`w-12 h-12 bg-gradient-to-br ${services[2].gradient} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white" set:html={services[2].iconPath} />
+          </div>
+          <h3 class={`text-xl sm:text-2xl font-bold text-slate-900 mb-3 ${services[2].hoverColor} transition-colors`}>
+            {services[2].title}
+          </h3>
+          <p class="text-sm text-slate-600 mb-4 leading-relaxed">{services[2].description}</p>
+          <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">{services[2].featuresIntro}</p>
+          <div class="space-y-2 mb-4 pb-4 border-b-2 border-slate-100">
+            {services[2].features.map((feature) => (
+              <div class="flex items-start gap-3">
+                <div class={`w-5 h-5 ${services[2].dotBg} flex items-center justify-center flex-shrink-0 mt-0.5`}>
+                  <div class={`w-2 h-2 ${services[2].dotColor}`}></div>
                 </div>
-              ))}
-            </div>
-
-            <a
-              href="/TBSBV/services/"
-              class="inline-flex items-center gap-2 text-indigo-600 font-bold text-lg group-hover:gap-4 transition-all"
-            >
-              Discover More
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="m9 18 6-6-6-6"/></svg>
-            </a>
+                <span class="text-sm text-slate-700 leading-snug">{feature}</span>
+              </div>
+            ))}
           </div>
-
-          <!-- Image -->
-          <div class="relative h-96 lg:h-auto overflow-hidden order-1 lg:order-2">
-            <img
-              src={services[2].image}
-              alt={services[2].title}
-              loading="lazy"
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-            />
-            <div class="absolute inset-0 bg-gradient-to-r from-indigo-50/80 to-transparent"></div>
-          </div>
+          <p class="text-sm text-slate-600 leading-relaxed mb-5">{services[2].closing}</p>
+          <a href="/TBSBV/services/#crypto-tracing" class={`inline-flex items-center gap-2 ${services[2].linkColor} font-bold hover:gap-4 transition-all`}>
+            Learn More
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="m9 18 6-6-6-6"/></svg>
+          </a>
         </div>
       </div>
+
+      <!-- Card 4: Reputation Management - large dark card (col-7) -->
+      <div
+        data-animate
+        style="--delay: 0.4s;"
+        class="col-span-12 lg:col-span-7 group relative bg-slate-900 overflow-hidden hover:shadow-3xl transition-all duration-700"
+      >
+        <div class="relative h-[240px] sm:h-[220px] lg:h-[260px] overflow-hidden">
+          <img src={services[3].image} alt={services[3].title} loading="lazy"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/70 to-transparent"></div>
+        </div>
+        <div class="p-5 sm:p-8 lg:p-10">
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-indigo-400" set:html={services[3].iconPath} />
+            <span class="text-xs font-bold text-indigo-400">REPUTATION</span>
+          </div>
+          <h3 class={`text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 ${services[3].hoverColor} transition-colors`}>
+            {services[3].title}
+          </h3>
+          <p class="text-sm sm:text-base text-slate-300 mb-4 leading-relaxed">
+            {services[3].description}
+          </p>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">{services[3].featuresIntro}</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
+            {services[3].features.map((feature) => (
+              <div class="flex items-start gap-3">
+                <div class={`w-5 h-5 ${services[3].dotBg} flex items-center justify-center flex-shrink-0 mt-0.5`}>
+                  <div class={`w-2 h-2 ${services[3].dotColor}`}></div>
+                </div>
+                <span class="text-sm text-slate-300 leading-snug">{feature}</span>
+              </div>
+            ))}
+          </div>
+          <p class="text-sm text-slate-400 leading-relaxed mb-6">{services[3].closing}</p>
+          <a href="/TBSBV/services/#reputation-management" class={`inline-flex items-center gap-2 ${services[3].linkColor} font-bold text-base group-hover:gap-4 transition-all`}>
+            Discover More
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="m9 18 6-6-6-6"/></svg>
+          </a>
+        </div>
+      </div>
+
     </div>
 
     <!-- Bottom CTA -->
-    <div
-      data-animate
-      style="--delay: 0.5s;"
-      class="relative overflow-hidden"
-    >
+    <div data-animate style="--delay: 0.5s;" class="relative overflow-hidden">
       <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
       <div class="absolute inset-0 opacity-10">
-        <div
-          class="absolute inset-0"
-          style="background-image: linear-gradient(45deg, rgba(56, 189, 248, 0.3) 1px, transparent 1px), linear-gradient(-45deg, rgba(56, 189, 248, 0.3) 1px, transparent 1px); background-size: 40px 40px;"
-        ></div>
+        <div class="absolute inset-0" style="background-image: linear-gradient(45deg, rgba(56, 189, 248, 0.3) 1px, transparent 1px), linear-gradient(-45deg, rgba(56, 189, 248, 0.3) 1px, transparent 1px); background-size: 40px 40px;"></div>
       </div>
-
       <div class="relative p-8 sm:p-12 lg:p-20 text-center">
-        <h3 class="text-2xl sm:text-3xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
-          Need a Custom Solution?
-        </h3>
+        <h3 class="text-2xl sm:text-3xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">Need a Custom Solution?</h3>
         <p class="text-sm sm:text-base lg:text-xl text-slate-300 mb-6 sm:mb-10 max-w-2xl mx-auto">
           Every organization faces unique challenges. Let's create a tailored strategy for your specific needs.
         </p>
-        <a
-          href="#contact"
-          class="inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold text-sm hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 hover:-translate-y-1"
-        >
+        <a href="#contact" class="inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold text-sm hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 hover:-translate-y-1">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           <span>Schedule a Consultation</span>
         </a>
