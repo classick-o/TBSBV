@@ -108,7 +108,7 @@ export const insights: Insight[] = [
     dateISO: "2026-01-05",
     gradient: "from-indigo-500 to-purple-500",
     image:
-      "https://images.unsplash.com/photo-1629487015513-7075665af4b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGluZGlnbyUyMHBhdHRlcm5zfGVufDF8fHx8MTc3MDA1MzM2Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=2232&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     body: `
 <p>A common misconception about cryptocurrency is that it enables anonymous crime. In reality, public blockchains are among the most transparent financial ledgers ever created. Every transaction is permanently recorded, publicly visible, and — crucially — traceable. Blockchain forensics is the discipline of following that trail, and it has become one of the most powerful tools in financial crime investigation.</p>
 
@@ -163,7 +163,7 @@ export const insights: Insight[] = [
     dateISO: "2025-12-20",
     gradient: "from-cyan-500 to-teal-500",
     image:
-      "https://images.unsplash.com/photo-1549971723-1c9327e72f54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGJsdWUlMjBsaWdodHxlbnwxfHx8fDE3Njk5NTQ4OTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1640834203089-cd5f2d9608ac?q=80&w=1772&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     body: `
 <p>Online investment fraud has reached epidemic proportions across Europe and globally. From binary options platforms to pig butchering scams, from fake crypto exchanges to Ponzi schemes dressed as trading algorithms — the methods evolve constantly while the damage to victims remains devastating. If you or your organization has been defrauded, understanding the recovery process is the first step toward justice.</p>
 
@@ -322,7 +322,7 @@ export const insights: Insight[] = [
     dateISO: "2025-11-10",
     gradient: "from-teal-500 to-blue-500",
     image:
-      "https://images.unsplash.com/photo-1734792314947-883f84148b3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGdlb21ldHJpYyUyMGJsdWV8ZW58MXx8fHwxNzcwMDUzMzYwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1639762681057-408e52192e55?q=80&w=2232&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     body: `
 <p>The cryptocurrency and blockchain sector has produced extraordinary investment returns — and extraordinary fraud. For every legitimate project that has created lasting value, dozens of fraudulent schemes, rug pulls, and poorly conceived ventures have destroyed investor capital. As institutional and retail investors continue to allocate to digital assets, rigorous due diligence is not optional — it is the difference between informed investment and expensive speculation.</p>
 

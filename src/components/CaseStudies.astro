@@ -1,5 +1,6 @@
 <!-- Source: initial-1/TBSBV 4 -->
 ---
+import AnimatedWaveLines from './AnimatedWaveLines.astro';
 const cases = [
   {
     category: "Cyber Investigation",
@@ -15,7 +16,7 @@ const cases = [
       "Actionable intelligence delivered to relevant authorities and compliance teams",
     ],
     gradient: "from-cyan-500 to-blue-500",
-    image: "https://images.unsplash.com/photo-1687093777245-bc60c636ddf0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHRlYWwlMjBzaGFwZXN8ZW58MXx8fHwxNzcwMDUzMzYyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    image: "https://images.unsplash.com/photo-1710957987034-cea509422852?q=80&w=2232&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     category: "Due Diligence",
@@ -31,7 +32,7 @@ const cases = [
       "Enhanced decision-making confidence for stakeholders",
     ],
     gradient: "from-blue-500 to-indigo-500",
-    image: "https://images.unsplash.com/photo-1549971723-1c9327e72f54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGJsdWUlMjBsaWdodHxlbnwxfHx8fDE3Njk5NTQ4OTJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    image: "https://images.unsplash.com/photo-1634848577969-bc28ee71ffc1?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     category: "Reputation Management",
@@ -46,7 +47,7 @@ const cases = [
       "Legal recourse secured",
     ],
     gradient: "from-indigo-500 to-purple-500",
-    image: "https://images.unsplash.com/photo-1646038572815-43fe759e459b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHB1cnBsZSUyMGdyYWRpZW50fGVufDF8fHx8MTc2OTk1NDg5MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    image: "https://images.unsplash.com/photo-1676911809746-85d90edbbe4a?q=80&w=1049&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 ---
@@ -143,12 +144,8 @@ const cases = [
     </div>
 
     <!-- Bottom CTA Banner -->
-    <div data-animate class="mt-10 relative overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900"></div>
-      <div class="absolute inset-0">
-        <div class="absolute top-0 right-0 w-[400px] h-full bg-gradient-to-l from-cyan-500/10 to-transparent"></div>
-        <div class="absolute bottom-0 left-0 w-[400px] h-full bg-gradient-to-r from-blue-500/10 to-transparent"></div>
-      </div>
+    <div data-animate class="mt-10 relative overflow-hidden bg-gradient-to-r from-slate-950 via-blue-950 to-slate-950">
+      <AnimatedWaveLines />
 
       <div class="relative p-8 sm:p-10 lg:p-14">
         <div class="max-w-4xl mx-auto text-center">

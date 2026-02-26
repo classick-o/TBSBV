@@ -194,7 +194,6 @@
   const INITIAL_Y_ROTATION = -Math.PI / 6;
   const FLOAT_AMPLITUDE = 0.15;
   const FLOAT_SPEED = 0.8;
-  const ROTATE_SPEED = 0.4;
 
   const logo3dCanvas = document.getElementById('logo-3d-canvas') as HTMLCanvasElement;
   const container = document.getElementById('logo-3d-container') as HTMLElement;
@@ -342,7 +341,6 @@
       const elapsed = clock.getElapsedTime();
 
       if (model) {
-        model.rotation.y = INITIAL_Y_ROTATION + elapsed * ROTATE_SPEED;
         model.position.y = Math.sin(elapsed * FLOAT_SPEED) * FLOAT_AMPLITUDE;
         model.position.z = Math.cos(elapsed * FLOAT_SPEED * 0.7) * 0.1;
       }

@@ -1,5 +1,6 @@
 <!-- Source: initial-1/TBSBV 4 -->
 ---
+import AnimatedWaveLines from './AnimatedWaveLines.astro';
 const services = [
   {
     title: "Due Diligence",
@@ -14,7 +15,7 @@ const services = [
     ],
     closing: "Our due diligence reports provide clear risk evaluations to support informed decision-making and protect against financial, reputational, and compliance exposure.",
     gradient: "from-cyan-500 to-blue-500",
-    image: "https://images.unsplash.com/photo-1734792314947-883f84148b3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGdlb21ldHJpYyUyMGJsdWV8ZW58MXx8fHwxNzcwMDUzMzYwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    image: "https://images.unsplash.com/photo-1634848577969-bc28ee71ffc1?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     hoverColor: "group-hover:text-cyan-400",
     linkColor: "text-cyan-400",
     dotBg: "bg-cyan-500/30",
@@ -32,7 +33,7 @@ const services = [
     ],
     closing: "By combining technical analysis with investigative strategy, we uncover actionable intelligence to support investigative and legal action, and regulatory escalation.",
     gradient: "from-blue-500 to-indigo-500",
-    image: "https://images.unsplash.com/photo-1762716514229-739f6769e282?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGRpZ2l0YWwlMjBncmFkaWVudHxlbnwxfHx8fDE3NzAwNTMzNjB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    image: "https://images.unsplash.com/photo-1710957987034-cea509422852?q=80&w=2232&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     hoverColor: "group-hover:text-blue-600",
     linkColor: "text-blue-600",
     dotBg: "bg-blue-100",
@@ -51,7 +52,7 @@ const services = [
     ],
     closing: "Whether supporting fraud victims, legal teams, or corporate investigations, we deliver clear, evidence-based blockchain intelligence.",
     gradient: "from-teal-500 to-cyan-500",
-    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0",
+    image: "https://images.unsplash.com/photo-1617228679684-890412dc57a5?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     hoverColor: "group-hover:text-teal-600",
     linkColor: "text-teal-600",
     dotBg: "bg-teal-100",
@@ -71,7 +72,7 @@ const services = [
     ],
     closing: "In an increasingly digital world, reputational integrity is critical. We help clients proactively manage risk and respond effectively when issues arise.",
     gradient: "from-indigo-500 to-purple-500",
-    image: "https://images.unsplash.com/photo-1687463221020-b8769b32c622?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHB1cnBsZSUyMHNoYXBlc3xlbnwxfHx8fDE3NzAwNTMzNjF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    image: "https://images.unsplash.com/photo-1676911809746-85d90edbbe4a?q=80&w=1049&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     hoverColor: "group-hover:text-indigo-600",
     linkColor: "text-indigo-600",
     dotBg: "bg-indigo-100",
@@ -281,11 +282,8 @@ const services = [
     </div>
 
     <!-- Bottom CTA -->
-    <div data-animate style="--delay: 0.5s;" class="relative overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
-      <div class="absolute inset-0 opacity-10">
-        <div class="absolute inset-0" style="background-image: linear-gradient(45deg, rgba(56, 189, 248, 0.3) 1px, transparent 1px), linear-gradient(-45deg, rgba(56, 189, 248, 0.3) 1px, transparent 1px); background-size: 40px 40px;"></div>
-      </div>
+    <div data-animate style="--delay: 0.5s;" class="relative overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950">
+      <AnimatedWaveLines />
       <div class="relative p-8 sm:p-12 lg:p-20 text-center">
         <h3 class="text-2xl sm:text-3xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">Need a Custom Solution?</h3>
         <p class="text-sm sm:text-base lg:text-xl text-slate-300 mb-6 sm:mb-10 max-w-2xl mx-auto">
