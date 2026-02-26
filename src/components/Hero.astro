@@ -194,6 +194,8 @@
   const INITIAL_Y_ROTATION = -Math.PI / 6;
   const FLOAT_AMPLITUDE = 0.15;
   const FLOAT_SPEED = 0.8;
+  const SWING_AMPLITUDE = Math.PI / 5;  // ~36 degrees, only right of original
+  const SWING_SPEED = 0.35;             // slow, ~18s full cycle
 
   const logo3dCanvas = document.getElementById('logo-3d-canvas') as HTMLCanvasElement;
   const container = document.getElementById('logo-3d-container') as HTMLElement;
@@ -343,6 +345,7 @@
       if (model) {
         model.position.y = Math.sin(elapsed * FLOAT_SPEED) * FLOAT_AMPLITUDE;
         model.position.z = Math.cos(elapsed * FLOAT_SPEED * 0.7) * 0.1;
+        model.rotation.y = INITIAL_Y_ROTATION + ((1 - Math.cos(elapsed * SWING_SPEED * 2)) / 2) * SWING_AMPLITUDE;
       }
 
       // Smooth light orbiting — wide, organic movement
