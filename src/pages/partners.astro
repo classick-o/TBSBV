@@ -234,11 +234,12 @@ const partnersSchema = {
 
               <!-- Logo area -->
               <div class="p-8 pb-6 border-b border-slate-200 flex items-center justify-center h-36 bg-slate-50">
-                <Image
+                <img
                   src={partner.image}
-                  alt={partner.name}
+                  alt={`${partner.name} — TBSBV partner`}
                   loading="lazy"
-                  inferSize
+                  width="200"
+                  height="96"
                   class="max-h-24 max-w-[200px] w-auto object-contain"
                 />
               </div>
