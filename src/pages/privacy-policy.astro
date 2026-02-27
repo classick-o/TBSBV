@@ -1,0 +1,209 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Privacy Policy | TBSBV — Transparent Business Solutions B.V.';
+const description = 'Privacy Policy for Transparent Business Solutions B.V. — how we collect, use, store, and protect your personal information.';
+const canonicalURL = 'https://classick-o.github.io/TBSBV/privacy-policy/';
+const ogImage = 'https://classick-o.github.io/TBSBV/assets/logo/logo-png.png';
+---
+
+<BaseLayout title={title} description={description} ogImage={ogImage}>
+
+  <!-- Header -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-xl border-b border-slate-800/50 shadow-2xl">
+    <div class="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-20">
+      <div class="flex items-center justify-between h-20 lg:h-24">
+        <a href="/TBSBV/" class="flex items-center group transition-all duration-300 hover:opacity-80">
+          <img src="/TBSBV/assets/logo/logo.svg" alt="TBSBV — Transparent Business Solutions" class="h-10 sm:h-12 w-auto" />
+        </a>
+        <nav class="hidden lg:flex items-center gap-8 xl:gap-10">
+          <a href="/TBSBV/services/" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Services</a>
+          <a href="/TBSBV/#why-choose-us" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Why Us</a>
+          <a href="/TBSBV/#case-studies" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Case Studies</a>
+          <a href="/TBSBV/#process" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Process</a>
+          <a href="/TBSBV/insights/" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Insights</a>
+          <a href="/TBSBV/partners/" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Partners</a>
+          <a href="/TBSBV/press/" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Press</a>
+        </nav>
+        <a href="/TBSBV/#contact" class="hidden lg:inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold text-xs hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-300 hover:scale-105">
+          Request Consultation
+        </a>
+        <button id="menu-toggle" class="lg:hidden p-2 hover:bg-slate-800 transition-colors" aria-label="Toggle menu">
+          <span id="menu-icon-open">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          </span>
+          <span id="menu-icon-close" class="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </span>
+        </button>
+      </div>
+    </div>
+    <nav id="mobile-nav" class="hidden lg:hidden py-6 border-t border-slate-800 bg-slate-950">
+      <a href="/TBSBV/services/" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Services</a>
+      <a href="/TBSBV/#why-choose-us" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Why Us</a>
+      <a href="/TBSBV/#case-studies" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Case Studies</a>
+      <a href="/TBSBV/#process" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Process</a>
+      <a href="/TBSBV/insights/" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Insights</a>
+      <a href="/TBSBV/partners/" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Partners</a>
+      <a href="/TBSBV/press/" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Press</a>
+      <a href="/TBSBV/#contact" class="block mt-4 mx-4 text-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold">Get Started</a>
+    </nav>
+  </header>
+
+  <script>
+    const menuBtn = document.getElementById('menu-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+    menuBtn?.addEventListener('click', () => {
+      const isOpen = !mobileNav!.classList.contains('hidden');
+      mobileNav!.classList.toggle('hidden');
+      if (isOpen) { menuIconOpen!.classList.remove('hidden'); menuIconClose!.classList.add('hidden'); }
+      else { menuIconOpen!.classList.add('hidden'); menuIconClose!.classList.remove('hidden'); }
+    });
+    mobileNav?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav!.classList.add('hidden');
+        menuIconOpen!.classList.remove('hidden');
+        menuIconClose!.classList.add('hidden');
+      });
+    });
+  </script>
+
+  <!-- Hero -->
+  <section class="pt-32 pb-12 sm:pt-36 sm:pb-16 bg-gradient-to-b from-slate-950 to-slate-900 border-b border-slate-800">
+    <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold tracking-widest uppercase mb-6">
+        Legal
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">Privacy Policy</h1>
+      <p class="text-slate-400 text-base sm:text-lg">How we collect, use, store, and protect your personal information.</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-14 sm:py-20 bg-slate-950">
+    <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+      <div class="space-y-10 text-slate-400 leading-relaxed">
+
+        <!-- Introduction -->
+        <div>
+          <p>This Privacy Policy explains how Transparent Business Solutions B.V. ("Company", "we", or "us") collects, uses, stores, and discloses personal information from our users ("users" or "you") when you interact with our website, tbsbv.com (our "website") or our application (our "app", and together with our website, our "services"). This Privacy Policy is effective as of 27-02-2026.</p>
+        </div>
+
+        <!-- Information We Collect -->
+        <div>
+          <h2 class="text-xl font-bold text-white mb-5 pb-2 border-b border-slate-800">Information We Collect and Use</h2>
+          <div class="space-y-4">
+            <p>Our Services don't collect any personal information, except (i) your name and email address to create your account, or (ii) your email address if you subscribe to our newsletter.</p>
+            <p>When you use our Services, our servers may automatically log the standard data provided by your web browser. This data is considered "non-identifying information", as it does not personally identify you on its own. It may include your computer's Internet Protocol (IP) address, your browser type and version, the pages you visit, the time and date of your visit, the time spent on each page, and other details.</p>
+            <p>We may also collect data about the device you are using to access our Services. This data may include the device type, operating system, unique device identifiers, device settings, and geo-location data. What we collect can depend on the individual settings of your device and software. We recommend checking the policies of your device manufacturer or software provider to learn what information they make available to us.</p>
+          </div>
+        </div>
+
+        <!-- How We Collect -->
+        <div>
+          <h2 class="text-xl font-bold text-white mb-5 pb-2 border-b border-slate-800">How We Collect or Receive Information</h2>
+          <p>We collect information from your use of our services, using cookies, and when you provide it to us through communication via email, phone, or in person. We may also receive personal information from third parties.</p>
+        </div>
+
+        <!-- How We Use -->
+        <div>
+          <h2 class="text-xl font-bold text-white mb-5 pb-2 border-b border-slate-800">How We Use Your Information</h2>
+          <p>We use your information to contact you, to improve our business and services, to fulfil our contractual obligations, to improve our product and communicate improvements, to analyze your use of our services, and in connection with our legal rights and obligations. We also use aggregated usage information to monitor and track usage demand trends so that we can scale the system accordingly.</p>
+        </div>
+
+        <!-- Why We Disclose -->
+        <div>
+          <h2 class="text-xl font-bold text-white mb-5 pb-2 border-b border-slate-800">Why We Disclose Your Information to Third Parties</h2>
+          <p>Only to the extent necessary to run our business, to fulfill any contracts we enter into with you or our service providers, or where required by law or to enforce our legal rights.</p>
+        </div>
+
+        <!-- Do We Sell -->
+        <div>
+          <h2 class="text-xl font-bold text-white mb-5 pb-2 border-b border-slate-800">Do We Sell Your Information?</h2>
+          <p class="font-semibold text-slate-200">No.</p>
+          <p class="mt-2">We do not sell your information to third parties outside of the course of a business sale or purchase of a similar transaction.</p>
+        </div>
+
+        <!-- GDPR -->
+        <div>
+          <h2 class="text-xl font-bold text-white mb-5 pb-2 border-b border-slate-800">How We Secure Your Information</h2>
+          <div class="space-y-4">
+            <p>Transparent Business Solutions B.V. complies with the principles of data protection set out in the GDPR (General Data Protection Regulation). According to the GDPR, we process your personal information as a Processor or a Controller.</p>
+            <p>The processing of your personal information must be based on lawful grounds. Your personal information is collected and used on the basis of the legal basis that applies to it. Any personal information collected by us will be necessary and not excessive for the purpose for which it is being collected, and with your express consent. Safeguarding your data is our top priority.</p>
+            <p>In addition, we may process your personal information to comply with a contractual or legal obligation, or if it is necessary to protect our legitimate interests. Unless we have your explicit consent, or if it is being collected subject to and in accordance with the GDPR, we do not collect or process personal information about you that is considered "Sensitive Personal Information" under the GDPR.</p>
+            <p>We take commercially reasonable measures to protect all collected information from loss, theft, misuse and unauthorized access. Our technical and organizational measures include:</p>
+            <ul class="list-disc list-outside ml-5 space-y-2">
+              <li>Storing information on secure servers</li>
+              <li>Encrypting transfers of data to or from the Company's servers</li>
+              <li>Restricting access to your information and only sharing it to the minimum extent necessary, on an anonymized basis when possible</li>
+              <li>Verifying the identity and need of any individual who may request access to your information prior to providing them with such access</li>
+            </ul>
+            <p>We cannot guarantee the security of the internet, and any information you submit to us over the internet is transmitted entirely at your own risk.</p>
+          </div>
+        </div>
+
+        <!-- Your Rights -->
+        <div>
+          <h2 class="text-xl font-bold text-white mb-5 pb-2 border-b border-slate-800">Your Rights</h2>
+          <p class="mb-4">You have the following rights with regard to your information:</p>
+          <ul class="list-disc list-outside ml-5 space-y-2">
+            <li>To have your information corrected and/or completed</li>
+            <li>To access your information and understand how we use it</li>
+            <li>To have your information deleted or the use of your information restricted</li>
+            <li>To receive your information in an accessible format</li>
+            <li>To withdraw the consent you provided to the use of your information</li>
+            <li>To object to the use of your information</li>
+            <li>To complain to us and/or to a supervisory authority about the use of your information</li>
+          </ul>
+        </div>
+
+        <!-- Retention -->
+        <div>
+          <h2 class="text-xl font-bold text-white mb-5 pb-2 border-b border-slate-800">How Long We Store Your Information</h2>
+          <div class="space-y-4">
+            <p><span class="font-semibold text-slate-200">Account Credentials:</span> When you set up an account to use the Services, we will retain your information for at least as long as your account remains active and for a period of five (5) years thereafter.</p>
+            <p><span class="font-semibold text-slate-200">Inquiries and Correspondence:</span> When you send us an email, fill out our contact form, call us, or correspond with us regarding any matter, we will retain your information for at least as long as it takes to respond to and resolve your inquiry and for five (5) years thereafter.</p>
+            <p>We will store your information for no longer than necessary and will assess the need for retention based on: legal record-keeping obligations, consent or other legal basis, the value of the information, contractual obligations, accuracy considerations, industry standards, and the risk and cost of continued storage.</p>
+          </div>
+        </div>
+
+        <!-- Right to Object -->
+        <div>
+          <h2 class="text-xl font-bold text-white mb-5 pb-2 border-b border-slate-800">Right to Object</h2>
+          <p>You may exercise the right to object to us using or processing your information for direct marketing purposes by sending an email to <a href="mailto:info@tbsbv.com" class="text-cyan-400 hover:underline">info@tbsbv.com</a> or by clicking the unsubscribe link listed at the bottom of any marketing email that we send to you.</p>
+        </div>
+
+        <!-- Children's Privacy -->
+        <div>
+          <h2 class="text-xl font-bold text-white mb-5 pb-2 border-b border-slate-800">Children's Privacy</h2>
+          <p>We are committed to protecting the privacy of children and comply with the Children's Online Privacy Protection Act of 1998 (COPPA). We neither knowingly nor intentionally contact or collect any information from persons under the age of 18 years old. Our services are not intended to solicit information of any kind from persons under the age of 18.</p>
+        </div>
+
+        <!-- Cookies -->
+        <div>
+          <h2 class="text-xl font-bold text-white mb-5 pb-2 border-b border-slate-800">Cookies</h2>
+          <p>Our website may occasionally use cookies. Cookie files are small files that websites use to identify and track you when you visit them in the future. By changing your browser settings, you can reject cookies that are automatically accepted by most web browsers. For more information, see our <a href="/TBSBV/cookie-policy/" class="text-cyan-400 hover:underline">Cookie Policy</a>.</p>
+        </div>
+
+        <!-- Changes -->
+        <div>
+          <h2 class="text-xl font-bold text-white mb-5 pb-2 border-b border-slate-800">Changes to This Policy</h2>
+          <p>This Privacy Policy may change in the future. All modifications to this Policy will be effective upon posting to our website, at our sole discretion. To stay up-to-date on our Privacy Policy, please check back periodically.</p>
+        </div>
+
+        <!-- Contact -->
+        <div class="pt-4 border-t border-slate-800">
+          <h2 class="text-xl font-bold text-white mb-4">Contact</h2>
+          <p>For any questions regarding this Privacy Policy and other official documents of the company, you may contact <a href="mailto:info@tbsbv.com" class="text-cyan-400 hover:underline">info@tbsbv.com</a>.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+
+</BaseLayout>

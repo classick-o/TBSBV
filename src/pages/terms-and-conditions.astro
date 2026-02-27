@@ -1,0 +1,198 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Terms & Conditions | TBSBV — Transparent Business Solutions B.V.';
+const description = 'General Terms and Conditions governing the provision of all services by Transparent Business Solutions B.V.';
+const canonicalURL = 'https://classick-o.github.io/TBSBV/terms-and-conditions/';
+const ogImage = 'https://classick-o.github.io/TBSBV/assets/logo/logo-png.png';
+---
+
+<BaseLayout title={title} description={description} ogImage={ogImage}>
+
+  <!-- Header -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-xl border-b border-slate-800/50 shadow-2xl">
+    <div class="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-20">
+      <div class="flex items-center justify-between h-20 lg:h-24">
+        <a href="/TBSBV/" class="flex items-center group transition-all duration-300 hover:opacity-80">
+          <img src="/TBSBV/assets/logo/logo.svg" alt="TBSBV — Transparent Business Solutions" class="h-10 sm:h-12 w-auto" />
+        </a>
+        <nav class="hidden lg:flex items-center gap-8 xl:gap-10">
+          <a href="/TBSBV/services/" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Services</a>
+          <a href="/TBSBV/#why-choose-us" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Why Us</a>
+          <a href="/TBSBV/#case-studies" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Case Studies</a>
+          <a href="/TBSBV/#process" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Process</a>
+          <a href="/TBSBV/insights/" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Insights</a>
+          <a href="/TBSBV/partners/" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Partners</a>
+          <a href="/TBSBV/press/" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Press</a>
+        </nav>
+        <a href="/TBSBV/#contact" class="hidden lg:inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold text-xs hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-300 hover:scale-105">
+          Request Consultation
+        </a>
+        <button id="menu-toggle" class="lg:hidden p-2 hover:bg-slate-800 transition-colors" aria-label="Toggle menu">
+          <span id="menu-icon-open">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          </span>
+          <span id="menu-icon-close" class="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </span>
+        </button>
+      </div>
+    </div>
+    <nav id="mobile-nav" class="hidden lg:hidden py-6 border-t border-slate-800 bg-slate-950">
+      <a href="/TBSBV/services/" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Services</a>
+      <a href="/TBSBV/#why-choose-us" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Why Us</a>
+      <a href="/TBSBV/#case-studies" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Case Studies</a>
+      <a href="/TBSBV/#process" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Process</a>
+      <a href="/TBSBV/insights/" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Insights</a>
+      <a href="/TBSBV/partners/" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Partners</a>
+      <a href="/TBSBV/press/" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Press</a>
+      <a href="/TBSBV/#contact" class="block mt-4 mx-4 text-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold">Get Started</a>
+    </nav>
+  </header>
+
+  <script>
+    const menuBtn = document.getElementById('menu-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+    menuBtn?.addEventListener('click', () => {
+      const isOpen = !mobileNav!.classList.contains('hidden');
+      mobileNav!.classList.toggle('hidden');
+      if (isOpen) { menuIconOpen!.classList.remove('hidden'); menuIconClose!.classList.add('hidden'); }
+      else { menuIconOpen!.classList.add('hidden'); menuIconClose!.classList.remove('hidden'); }
+    });
+    mobileNav?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav!.classList.add('hidden');
+        menuIconOpen!.classList.remove('hidden');
+        menuIconClose!.classList.add('hidden');
+      });
+    });
+  </script>
+
+  <!-- Hero -->
+  <section class="pt-32 pb-12 sm:pt-36 sm:pb-16 bg-gradient-to-b from-slate-950 to-slate-900 border-b border-slate-800">
+    <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold tracking-widest uppercase mb-6">
+        Legal
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">Terms &amp; Conditions</h1>
+      <p class="text-slate-400 text-base sm:text-lg">General Terms and Conditions governing the provision of all services by Transparent Business Solutions B.V.</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-14 sm:py-20 bg-slate-950">
+    <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+      <div class="space-y-10 text-slate-400 leading-relaxed">
+
+        <!-- Definitions -->
+        <div>
+          <h2 class="text-xl font-bold text-white mb-5 pb-2 border-b border-slate-800">Definitions</h2>
+          <div class="space-y-4">
+            <p><span class="font-semibold text-slate-200">"The Company"</span> refers to Transparent Business Solutions B.V. ("TBS") and its other DBAs.</p>
+            <p><span class="font-semibold text-slate-200">"Service Agreement"</span> means the official documentation detailing the Engagement and extent of our services to our clients, their value and deliverables.</p>
+            <p><span class="font-semibold text-slate-200">"The Engagement"</span> means any agreement, in whatever form, reached between the Consultant and the Client pursuant to which the Consultant agrees to render services to the Client in exchange for a fee plus costs.</p>
+            <p><span class="font-semibold text-slate-200">"Service"</span> means the services to be provided by the Company to the Client as specified in the Service Agreement in whatever form, reached between the Consultant and the Client pursuant to which the Consultant agrees to render services to the Client in exchange for a fee plus costs.</p>
+            <p><span class="font-semibold text-slate-200">"Client"</span> means the user of these Terms and Conditions, the person, company, or organization body who is the intended recipient of the Service and signatory of our Service Agreement.</p>
+            <p><span class="font-semibold text-slate-200">"Our Website"</span> means this website, https://tbsbv.com.</p>
+            <p><span class="font-semibold text-slate-200">"Visitors"</span> means the unique website User that visits our website during a period of time.</p>
+            <p><span class="font-semibold text-slate-200">"The Consultant"</span> means the personnel performing services for the Client under the Service Agreement.</p>
+            <p><span class="font-semibold text-slate-200">"Sensitive Information"</span> — Under the General Data Protection Regulation (GDPR) (EU) 2016/679, the UK Data Protection Act 2018, and California Consumer Privacy Act (CCPA), refers to specific types of personal data subject to stricter protection. This includes but is not fully limited to: Racial or ethnic origin, political opinions, religious or philosophical beliefs, trade union membership, genetic data, biometric data, health data, sex life or sexual orientation. At TBS we emphasise the importance of safeguarding this data against unauthorised access or misuse.</p>
+          </div>
+        </div>
+
+        <!-- General -->
+        <div>
+          <h2 class="text-xl font-bold text-white mb-5 pb-2 border-b border-slate-800">General</h2>
+          <p>These General Terms and Conditions govern the provision of all services from The Company, implemented or not by the Consultant to the Client and apply to all legal relationships between the Company and the Client as to provide the services specified in our Service Agreement.</p>
+          <p class="mt-4">This Policy does not apply to Visitors only consuming our website content and visiting our pages on the public domain. For more information on privacy, copyright and automated cookies visit our <a href="/TBSBV/privacy-policy/" class="text-cyan-400 hover:underline">Privacy Policy</a>.</p>
+        </div>
+
+        <!-- Performance of the Project -->
+        <div>
+          <h2 class="text-xl font-bold text-white mb-5 pb-2 border-b border-slate-800">Performance of the Project</h2>
+          <div class="space-y-4">
+            <p>The Consultant shall determine the manner in which and the person by whom the Engagement will be carried out, taking into account, as far as is feasible, the reasonable requests expressed by the Client.</p>
+            <p>The Consultant shall complete the Project with reasonable skill, care, and diligence in accordance with the Contract.</p>
+            <p>The Client hereby accepts that the time schedule allocated for the performance of an Engagement may be subject to change in case of an amendment to the Engagement and/or the services to be provided thereunder after the conclusion of the Engagement.</p>
+            <p>The Client is responsible for ensuring that the Consultant, during the performance of the Services, is treated like the independent contractor that they are. If the Consultant performing the Services for the Client were to qualify as an employment agreement due to the way the Client and the Consultant work together in practice, The Company is not liable towards the Client for any costs or damages (direct or indirect) as a result of this qualification.</p>
+            <p>In case of any change of circumstances under which the Engagement is to be performed which cannot be attributed to the Consultant, the Consultant may make any such amendments to the Engagement as it deems necessary to adhere to the agreed quality standard and specifications. Any costs arising from or related to this change of circumstances will be fully borne by the client.</p>
+            <p>The Consultant may, at its discretion and, where possible, in consultation with the Client, replace the person or persons charged with performing the Engagement, if the Consultant believes that such replacement would benefit the performance of the Engagement.</p>
+          </div>
+        </div>
+
+        <!-- Subcontractors -->
+        <div>
+          <h2 class="text-xl font-bold text-white mb-5 pb-2 border-b border-slate-800">Subcontractors</h2>
+          <div class="space-y-4">
+            <p>The Consultant shall be free to involve Subcontractors, availing of specific expertise, in the performance of the Project, provided that the Consultant shall have these third parties enter into confidentiality obligations similar to those applicable to the Consultant. If requested by the Client, the Consultant shall identify these Subcontractors, specifying in each case their specific expertise.</p>
+            <p>The Company expressly state that there is no hierarchy or employment relationship with these subcontractors in any way, directly or indirectly. Just as the Consultant, they are treated like the independent contractors that they are. Therefore, the costs of these subcontractors shall be under the responsibility of The Company, as their relationship is within the scope of the one they have with The Consultant.</p>
+          </div>
+        </div>
+
+        <!-- Client's Obligation -->
+        <div>
+          <h2 class="text-xl font-bold text-white mb-5 pb-2 border-b border-slate-800">Client's Obligation</h2>
+          <div class="space-y-4">
+            <p>The Client shall at all times duly make available to the Consultant all information and documents that the Consultant deems necessary to be able to carry out the Engagement correctly, in the specified form and manner. Also, the Client shall provide a safe working environment and all cooperation required for the proper and timely performance of the Engagement.</p>
+            <p>The Client shall duly inform the Consultant of any facts and circumstances that may be relevant in connection with the execution of the Engagement.</p>
+            <p>The Client shall guarantee the correctness, completeness, and reliability of any information provided to the Consultant.</p>
+          </div>
+        </div>
+
+        <!-- Fees and Expenses -->
+        <div>
+          <h2 class="text-xl font-bold text-white mb-5 pb-2 border-b border-slate-800">Fees and Expenses</h2>
+          <div class="space-y-4">
+            <p>The Client shall pay the Consultant fees at the rate and deadlines specified in the Service Agreement.</p>
+            <p>In case the Consultancy incurs any extra expenses during the performance of the Services, The Client needs to approve these first.</p>
+          </div>
+        </div>
+
+        <!-- Confidentiality -->
+        <div>
+          <h2 class="text-xl font-bold text-white mb-5 pb-2 border-b border-slate-800">Confidentiality</h2>
+          <div class="space-y-4">
+            <p>In the course of performing Services, the parties recognize that the Company may come in contact with or become familiar with information which the Client or its subsidiaries or affiliates may consider confidential. This information may include, but is not limited to, sensitive information pertaining to the Client's personal data, of its products and services.</p>
+            <p>The Company covenants that, during and following the term of the Contract, the Company will hold in confidence all Confidential Information and will not disclose it to any person or use it other than for the purpose of providing the Services hereunder, except with the specific prior written consent of the Client and/or if the information became public knowledge.</p>
+            <p>In cases where disclosure is legally required, the disclosing party shall promptly notify the other party of the disclosure requirement, providing sufficient time for the other party to seek protective measures or other appropriate remedies.</p>
+            <p>Any information or document received by the Client from the Company in the context of the performance of the contract is identified as confidential. The Client will hold all Company Confidential Information in confidence and will not use, copy, publish, summarize, or disclose any such information to any third party except with the specific prior written consent of the Company.</p>
+            <p>On our Data Protection Addendum and <a href="/TBSBV/privacy-policy/" class="text-cyan-400 hover:underline">Privacy Policy</a> we detail our governance and handling of sensitive information, all under the guidance of our Designated Data Protection Officer (DPO) and in accordance with the European GDPR.</p>
+            <p>The provisions of this Article shall apply during the term of the Service Contract and for a period of five (5) years thereafter.</p>
+            <p>Due to the nature of the business, the Consultant's customer service representatives (sales agents) can use pseudo/alias names in order to protect their identity.</p>
+          </div>
+        </div>
+
+        <!-- Cancellation and Refunds -->
+        <div>
+          <h2 class="text-xl font-bold text-white mb-5 pb-2 border-b border-slate-800">Cancellation and Refunds</h2>
+          <div class="space-y-4">
+            <p>The Company will provide services under the Service Agreement which shall include, but are not limited to, consulting, advisory, investigative and other time-sensitive activities. Their matter presents an urgency and a diligent approach that requires an immediate start, which shall commence upon acceptance of this agreement by the Client.</p>
+            <p class="text-slate-300 font-medium">The Client agrees that all fees paid to The Company for the provision of services are non-refundable. This policy applies regardless of the outcome or duration of the services provided, as no refunds will be issued under any circumstances, including but not limited to cancellation, dissatisfaction, or termination of services by either party.</p>
+            <p>The Company will seek to satisfy every Client in a reasonable manner, considering any Force Majeure and other unforeseeable events suffered by The Client, as those are communicated in due time during the term of the Service Agreement.</p>
+          </div>
+        </div>
+
+        <!-- Disclaimer -->
+        <div>
+          <h2 class="text-xl font-bold text-white mb-5 pb-2 border-b border-slate-800">Disclaimer</h2>
+          <div class="space-y-4">
+            <p>The Consultant, and any person put forward by the Consultant to perform the Project, shall not be liable if the services provided or the results generated by him in the Project are not absolutely correct, nor does the Consultant warrant, either expressed or implied, that the performance by him of the Project will not infringe upon intellectual property rights of any third party.</p>
+            <p>The Company is not liable for any damages (direct or indirect) incurred by the Client that are caused by the Consultant. The Company is only liable to the Client for direct damages and only insofar as these direct damages are directly related to any gross negligence or willful misconduct by The Company, its leading personnel or executive staff, in its role as an intermediary between the Client and the Consultant.</p>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="pt-4 border-t border-slate-800">
+          <p>For questions or more information about these Terms &amp; Conditions, please contact the Customer Support Department at <a href="mailto:info@tbsbv.com" class="text-cyan-400 hover:underline">info@tbsbv.com</a>.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+
+</BaseLayout>

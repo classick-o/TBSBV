@@ -1,0 +1,166 @@
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" class="hidden fixed bottom-6 left-1/2 z-[9999] w-full max-w-sm px-4" style="transform: translate(-50%, 20px);">
+
+  <!-- Main panel -->
+  <div id="cookie-main" class="bg-slate-950 border border-slate-700/60 shadow-2xl shadow-black/60 p-6">
+    <h3 class="text-base font-bold text-white mb-2">We Value Your Privacy</h3>
+    <p class="text-sm text-slate-400 leading-relaxed mb-5">
+      We use cookies to enhance your browsing experience, serve personalised content, and analyse our traffic.
+      By clicking "Accept All", you consent to our use of cookies.
+    </p>
+    <div class="flex items-center gap-2">
+      <button id="cookie-customise" class="flex-1 px-3 py-2 border border-slate-600 text-slate-300 text-xs font-semibold hover:border-cyan-400 hover:text-cyan-400 transition-colors">
+        Customise
+      </button>
+      <button id="cookie-reject" class="flex-1 px-3 py-2 border border-slate-600 text-slate-300 text-xs font-semibold hover:border-cyan-400 hover:text-cyan-400 transition-colors">
+        Reject All
+      </button>
+      <button id="cookie-accept" class="flex-1 px-3 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-xs font-bold hover:shadow-lg hover:shadow-cyan-500/30 transition-all hover:scale-105">
+        Accept All
+      </button>
+    </div>
+  </div>
+
+  <!-- Custom panel -->
+  <div id="cookie-custom-panel" class="hidden bg-slate-950 border border-slate-700/60 shadow-2xl shadow-black/60 p-6">
+    <h3 class="text-base font-bold text-white mb-1">Cookie Preferences</h3>
+    <p class="text-xs text-slate-500 mb-5">Manage your cookie preferences below. Essential cookies cannot be disabled.</p>
+    <div class="space-y-4 mb-5">
+
+      <!-- Essential (always on) -->
+      <div class="flex items-center justify-between">
+        <div>
+          <div class="text-sm font-semibold text-white">Essential</div>
+          <div class="text-xs text-slate-500">Required for the website to function</div>
+        </div>
+        <div class="relative w-10 h-5 bg-cyan-500 rounded-full cursor-not-allowed opacity-60 flex-shrink-0">
+          <div class="absolute right-0.5 top-0.5 w-4 h-4 bg-white rounded-full"></div>
+        </div>
+      </div>
+
+      <!-- Analytics -->
+      <div class="flex items-center justify-between">
+        <div>
+          <div class="text-sm font-semibold text-white">Analytics</div>
+          <div class="text-xs text-slate-500">Help us understand website usage</div>
+        </div>
+        <button id="toggle-analytics" data-state="off" class="relative w-10 h-5 bg-slate-700 rounded-full transition-colors flex-shrink-0" aria-label="Toggle analytics">
+          <div class="toggle-dot absolute left-0.5 top-0.5 w-4 h-4 bg-white rounded-full transition-transform"></div>
+        </button>
+      </div>
+
+      <!-- Marketing -->
+      <div class="flex items-center justify-between">
+        <div>
+          <div class="text-sm font-semibold text-white">Marketing</div>
+          <div class="text-xs text-slate-500">Personalised advertisements</div>
+        </div>
+        <button id="toggle-marketing" data-state="off" class="relative w-10 h-5 bg-slate-700 rounded-full transition-colors flex-shrink-0" aria-label="Toggle marketing">
+          <div class="toggle-dot absolute left-0.5 top-0.5 w-4 h-4 bg-white rounded-full transition-transform"></div>
+        </button>
+      </div>
+
+      <!-- Functional -->
+      <div class="flex items-center justify-between">
+        <div>
+          <div class="text-sm font-semibold text-white">Functional</div>
+          <div class="text-xs text-slate-500">Enhanced features and preferences</div>
+        </div>
+        <button id="toggle-functional" data-state="off" class="relative w-10 h-5 bg-slate-700 rounded-full transition-colors flex-shrink-0" aria-label="Toggle functional">
+          <div class="toggle-dot absolute left-0.5 top-0.5 w-4 h-4 bg-white rounded-full transition-transform"></div>
+        </button>
+      </div>
+
+    </div>
+    <div class="flex items-center gap-2">
+      <button id="cookie-save-prefs" class="flex-1 px-3 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-xs font-bold hover:shadow-lg hover:shadow-cyan-500/30 transition-all">
+        Save Preferences
+      </button>
+      <button id="cookie-reject-all-custom" class="flex-1 px-3 py-2 border border-slate-600 text-slate-300 text-xs font-semibold hover:border-cyan-400 hover:text-cyan-400 transition-colors">
+        Reject All
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<style>
+  #cookie-banner {
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease;
+    opacity: 0;
+  }
+  #cookie-banner.banner-visible {
+    transform: translate(-50%, 0) !important;
+    opacity: 1;
+  }
+</style>
+
+<script>
+  const CONSENT_KEY = 'tbsbv-cookie-consent';
+  const banner = document.getElementById('cookie-banner');
+
+  function hideBanner() {
+    if (!banner) return;
+    banner.style.transform = 'translate(-50%, 20px)';
+    banner.style.opacity = '0';
+    setTimeout(() => banner.classList.add('hidden'), 500);
+  }
+
+  function saveConsent(prefs: { analytics: boolean; marketing: boolean; functional: boolean }) {
+    localStorage.setItem(CONSENT_KEY, JSON.stringify({ essential: true, ...prefs }));
+    hideBanner();
+  }
+
+  // Show banner if no consent stored
+  if (!localStorage.getItem(CONSENT_KEY) && banner) {
+    banner.classList.remove('hidden');
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        banner.classList.add('banner-visible');
+      });
+    });
+  }
+
+  // Accept All
+  document.getElementById('cookie-accept')?.addEventListener('click', () => {
+    saveConsent({ analytics: true, marketing: true, functional: true });
+  });
+
+  // Reject All (main panel)
+  document.getElementById('cookie-reject')?.addEventListener('click', () => {
+    saveConsent({ analytics: false, marketing: false, functional: false });
+  });
+
+  // Customise — show detail panel
+  document.getElementById('cookie-customise')?.addEventListener('click', () => {
+    document.getElementById('cookie-main')?.classList.add('hidden');
+    document.getElementById('cookie-custom-panel')?.classList.remove('hidden');
+  });
+
+  // Toggle switches
+  ['analytics', 'marketing', 'functional'].forEach(id => {
+    const btn = document.getElementById(`toggle-${id}`) as HTMLButtonElement | null;
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const isOn = btn.dataset.state === 'on';
+      btn.dataset.state = isOn ? 'off' : 'on';
+      btn.classList.toggle('bg-cyan-500', !isOn);
+      btn.classList.toggle('bg-slate-700', isOn);
+      const dot = btn.querySelector<HTMLElement>('.toggle-dot');
+      if (dot) dot.style.transform = isOn ? '' : 'translateX(20px)';
+    });
+  });
+
+  // Save Preferences
+  document.getElementById('cookie-save-prefs')?.addEventListener('click', () => {
+    const analytics = (document.getElementById('toggle-analytics') as HTMLButtonElement)?.dataset.state === 'on';
+    const marketing = (document.getElementById('toggle-marketing') as HTMLButtonElement)?.dataset.state === 'on';
+    const functional = (document.getElementById('toggle-functional') as HTMLButtonElement)?.dataset.state === 'on';
+    saveConsent({ analytics, marketing, functional });
+  });
+
+  // Reject All (custom panel)
+  document.getElementById('cookie-reject-all-custom')?.addEventListener('click', () => {
+    saveConsent({ analytics: false, marketing: false, functional: false });
+  });
+</script>
