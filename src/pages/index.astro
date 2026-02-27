@@ -25,24 +25,61 @@ const pageDescription = 'TBSBV delivers world-class cyber investigation, due dil
 /* JSON-LD structured data */
 const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "TBSBV",
-  "alternateName": "Transparent Business Solutions",
-  "url": "https://example.com",
+  "@type": "ProfessionalService",
+  "name": "Transparent Business Solutions B.V.",
+  "alternateName": "TBSBV",
+  "url": "https://tbsbv.com",
+  "logo": "https://tbsbv.com/assets/logo/logo-png.png",
+  "image": "https://tbsbv.com/assets/logo/logo-png.png",
   "description": pageDescription,
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+1-800-TBSBV-01",
-    "contactType": "customer service",
-    "availableLanguage": ["English"]
+  "foundingDate": "2020",
+  "areaServed": "Worldwide",
+  "knowsLanguage": ["en", "nl"],
+  "sameAs": [
+    "https://www.linkedin.com/company/transparent-business-solutions/",
+    "https://www.facebook.com/profile.php?id=61587846142923"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Kalvermarkt 53",
+    "addressLocality": "The Hague",
+    "postalCode": "2511 CB",
+    "addressCountry": "NL"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+31707013260",
+      "contactType": "customer service",
+      "email": "info@tbsbv.com",
+      "availableLanguage": ["English", "Dutch"]
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "TBSBV Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Due Diligence", "url": "https://tbsbv.com/services/due-diligence/" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cyber Investigations", "url": "https://tbsbv.com/services/cyber-investigations/" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Crypto Tracing", "url": "https://tbsbv.com/services/crypto-tracing/" }},
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Reputation Management", "url": "https://tbsbv.com/services/reputation-management/" }}
+    ]
   }
 };
 
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "TBSBV",
-  "url": "https://example.com"
+  "name": "TBSBV — Transparent Business Solutions",
+  "url": "https://tbsbv.com"
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tbsbv.com/" }
+  ]
 };
 
 const faqSchema = {
@@ -62,6 +99,7 @@ const faqSchema = {
 
 const jsonLdHtml = `<script type="application/ld+json">${JSON.stringify(organizationSchema)}</script>
 <script type="application/ld+json">${JSON.stringify(websiteSchema)}</script>
+<script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>
 <script type="application/ld+json">${JSON.stringify(faqSchema)}</script>`;
 ---
 

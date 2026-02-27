@@ -7,6 +7,15 @@ const title = 'Insights & Intelligence | TBSBV';
 const description = 'Expert analysis, cybersecurity trends, due diligence guidance, and consumer rights intelligence from the specialists at Transparent Business Solutions B.V.';
 const canonicalURL = 'https://tbsbv.com/insights/';
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tbsbv.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Insights", "item": canonicalURL }
+  ]
+};
+
 const articleListSchema = {
   "@context": "https://schema.org",
   "@type": "Blog",
@@ -33,7 +42,7 @@ const articleListSchema = {
 
 ---
 
-<BaseLayout title={title} description={description} jsonLd={`<script type="application/ld+json">${JSON.stringify(articleListSchema)}</script>`}>
+<BaseLayout title={title} description={description} jsonLd={`<script type="application/ld+json">${JSON.stringify(articleListSchema)}</script>\n<script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>`}>
 
   <!-- Header -->
   <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-xl border-b border-slate-800/50 shadow-2xl">
@@ -137,7 +146,7 @@ const articleListSchema = {
         <a href={`/insights/${insights[0].slug}/`} class="group block mb-8 lg:mb-10">
           <article class="grid lg:grid-cols-2 gap-0 bg-white border-2 border-slate-200 hover:border-cyan-300 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/10 overflow-hidden">
             <div class="relative h-56 lg:h-64 overflow-hidden">
-              <img src={insights[0].image} alt={insights[0].title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="eager" />
+              <img src={insights[0].image} alt={insights[0].imageAlt || insights[0].title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="eager" />
               <div class="absolute inset-0 bg-gradient-to-r from-transparent to-white/70 pointer-events-none hidden lg:block"></div>
               <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none lg:hidden"></div>
               <div class={`absolute top-6 left-6 inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${insights[0].gradient} text-white text-xs font-bold uppercase tracking-wider`}>
@@ -170,7 +179,7 @@ const articleListSchema = {
               <article class="bg-white border-2 border-slate-200 hover:border-cyan-300 transition-all duration-500 hover:shadow-xl hover:shadow-cyan-500/10 overflow-hidden h-full flex flex-col">
                 <!-- Image -->
                 <div class="relative h-52 overflow-hidden flex-shrink-0">
-                  <img src={insight.image} alt={insight.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                  <img src={insight.image} alt={insight.imageAlt || insight.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                   <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
                   <div class={`absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r ${insight.gradient} text-white text-xs font-bold uppercase tracking-wider`}>
                     {insight.category}

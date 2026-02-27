@@ -24,6 +24,16 @@ const relatedInsights = insights
 const pageTitle = `${insight.title} | TBSBV Insights`;
 const canonicalURL = `https://tbsbv.com/insights/${insight.slug}/`;
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tbsbv.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://tbsbv.com/insights/" },
+    { "@type": "ListItem", "position": 3, "name": insight.title, "item": canonicalURL }
+  ]
+};
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -48,6 +58,8 @@ const articleSchema = {
     }
   },
   "articleSection": insight.category,
+  "keywords": insight.keywords,
+  "wordCount": insight.body.replace(/<[^>]*>/g, '').split(/\s+/).length,
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": canonicalURL
@@ -55,7 +67,7 @@ const articleSchema = {
 };
 ---
 
-<BaseLayout title={pageTitle} description={insight.excerpt} ogType="article" jsonLd={`<script type="application/ld+json">${JSON.stringify(articleSchema)}</script>`}>
+<BaseLayout title={pageTitle} description={insight.excerpt} ogType="article" ogImage={`https://tbsbv.com${insight.image}`} jsonLd={`<script type="application/ld+json">${JSON.stringify(articleSchema)}</script>\n<script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>`}>
 
   <!-- Header -->
   <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-xl border-b border-slate-800/50 shadow-2xl">
@@ -134,7 +146,7 @@ const articleSchema = {
       <div class="relative h-[50vh] sm:h-[55vh] lg:h-[60vh] min-h-[380px] max-h-[600px]">
         <img
           src={insight.image}
-          alt={insight.title}
+          alt={insight.imageAlt || insight.title}
           class="w-full h-full object-cover"
           loading="eager"
         />

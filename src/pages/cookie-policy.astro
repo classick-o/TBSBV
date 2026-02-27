@@ -6,9 +6,27 @@ const title = 'Cookie Policy | TBSBV — Transparent Business Solutions B.V.';
 const description = 'Cookie Policy for TBSBV — what cookies we use, how we use them, and how you can control your cookie preferences.';
 const canonicalURL = 'https://tbsbv.com/cookie-policy/';
 const ogImage = 'https://tbsbv.com/assets/logo/logo-png.png';
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Cookie Policy",
+  "description": description,
+  "url": canonicalURL,
+  "publisher": { "@type": "Organization", "name": "Transparent Business Solutions B.V.", "url": "https://tbsbv.com/" }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tbsbv.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Cookie Policy", "item": canonicalURL }
+  ]
+};
 ---
 
-<BaseLayout title={title} description={description} ogImage={ogImage}>
+<BaseLayout title={title} description={description} ogImage={ogImage} noindex={true} jsonLd={`<script type="application/ld+json">${JSON.stringify(pageSchema)}</script>\n<script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>`}>
 
   <!-- Header -->
   <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-xl border-b border-slate-800/50 shadow-2xl">

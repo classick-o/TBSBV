@@ -30,6 +30,7 @@ const services = [
     cornerA: 'border-t-4 border-r-4 border-cyan-500 -top-4 -right-4',
     cornerB: 'border-b-4 border-l-4 border-blue-500 -bottom-4 -left-4',
     image: '/assets/images/photo-1634848577969.webp',
+    altText: 'TBSBV due diligence assessment — corporate document review and risk evaluation',
     icon: `<path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M4.268 21a2 2 0 0 0 1.727 1H18a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"/><path d="m9 18-1.5-1.5"/><circle cx="5" cy="14" r="3"/>`,
   },
   {
@@ -53,6 +54,7 @@ const services = [
     cornerA: 'border-t-4 border-l-4 border-blue-500 -top-4 -left-4',
     cornerB: 'border-b-4 border-r-4 border-indigo-500 -bottom-4 -right-4',
     image: '/assets/images/photo-1710957987034.webp',
+    altText: 'TBSBV cyber investigation — digital forensics and online fraud analysis',
     icon: `<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>`,
   },
   {
@@ -76,6 +78,7 @@ const services = [
     cornerA: 'border-t-4 border-r-4 border-teal-500 -top-4 -right-4',
     cornerB: 'border-b-4 border-l-4 border-cyan-500 -bottom-4 -left-4',
     image: '/assets/images/photo-1617228679684.webp',
+    altText: 'TBSBV crypto tracing — blockchain forensic analysis and cryptocurrency tracking',
     icon: `<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>`,
   },
   {
@@ -100,6 +103,7 @@ const services = [
     cornerA: 'border-t-4 border-l-4 border-indigo-500 -top-4 -left-4',
     cornerB: 'border-b-4 border-r-4 border-purple-500 -bottom-4 -right-4',
     image: '/assets/images/photo-1676911809746.webp',
+    altText: 'TBSBV reputation management — digital reputation protection and crisis response',
     icon: `<path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/>`,
   },
 ];
@@ -122,13 +126,22 @@ const servicesSchema = {
       "position": i + 1,
       "name": s.title,
       "description": s.description,
-      "url": `${canonicalURL}#${s.id}`
+      "url": `https://tbsbv.com/services/${s.id}/`
     }))
   }
 };
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tbsbv.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": canonicalURL }
+  ]
+};
 ---
 
-<BaseLayout title={title} description={description} ogImage={ogImage} jsonLd={`<script type="application/ld+json">${JSON.stringify(servicesSchema)}</script>`}>
+<BaseLayout title={title} description={description} ogImage={ogImage} jsonLd={`<script type="application/ld+json">${JSON.stringify(servicesSchema)}</script>\n<script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>`}>
 
   <!-- Header -->
   <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-xl border-b border-slate-800/50 shadow-2xl">
@@ -246,7 +259,7 @@ const servicesSchema = {
                 <div class="overflow-hidden">
                   <img
                     src={service.image}
-                    alt={service.title}
+                    alt={service.altText || service.title}
                     class="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-700"
                     loading={index === 0 ? 'eager' : 'lazy'}
                   />

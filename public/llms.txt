@@ -1,0 +1,31 @@
+# TBSBV — Transparent Business Solutions B.V.
+
+> Transparent Business Solutions B.V. (TBSBV) is a licensed Dutch private investigation firm specializing in cybersecurity, cyber investigations, due diligence, crypto tracing, and reputation management. Based in The Hague, Netherlands, serving clients across 45+ countries. Licensed by the Dutch Ministry of Justice and Security under POB number 07373. Registered at KVK: 78091624.
+
+## Services
+
+- [Due Diligence](https://tbsbv.com/services/due-diligence/): Comprehensive corporate and financial assessments including corporate structure and beneficial ownership review, regulatory status verification, litigation and enforcement screening, risk exposure analysis, and online and dark web presence checks.
+- [Cyber Investigations](https://tbsbv.com/services/cyber-investigations/): In-depth digital inquiries into online fraud, financial crime, impersonation schemes, and coordinated scam operations. Analysis of digital footprints, email infrastructure, social engineering patterns, and platform abuse.
+- [Crypto Tracing](https://tbsbv.com/services/crypto-tracing/): Advanced cryptocurrency tracing using blockchain forensics to track stolen digital assets, identify exchange off-ramps and custodial endpoints, map transaction pathways across multiple blockchains, and produce forensic reports for legal and regulatory use.
+- [Reputation Management](https://tbsbv.com/services/reputation-management/): Digital reputation protection including risk assessments, defamatory content monitoring and removal, strategic content suppression, digital footprint optimization, and crisis response support.
+
+## Pages
+
+- [Home](https://tbsbv.com/)
+- [All Services](https://tbsbv.com/services/)
+- [Insights & Articles](https://tbsbv.com/insights/)
+- [Partners](https://tbsbv.com/partners/)
+- [Press](https://tbsbv.com/press/)
+
+## Contact
+
+- Email: info@tbsbv.com
+- Phone: +31 70 7013260
+- WhatsApp: +41 76 762 0191
+- Address: Kalvermarkt 53, 2511 CB, The Hague, The Netherlands
+- KVK: 78091624
+- Licensed Private Investigation Firm — POB: 07373
+
+## Optional
+
+- [Full content for LLMs](https://tbsbv.com/llms-full.txt)

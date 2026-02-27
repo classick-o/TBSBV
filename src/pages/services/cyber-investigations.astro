@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = 'Cyber Investigations | TBSBV — Digital Forensics & Online Fraud';
+const description = 'Expert cyber investigation services for online fraud, financial crime, impersonation schemes, and coordinated scam operations. Digital forensics, OSINT, and actionable intelligence from TBSBV.';
+const canonicalURL = 'https://tbsbv.com/services/cyber-investigations/';
+const ogImage = 'https://tbsbv.com/assets/images/photo-1710957987034.webp';
+
+const features = [
+  'Digital footprints and technical indicators',
+  'Email headers, domains, and infrastructure links',
+  'Social engineering patterns',
+  'Online platform abuse and impersonation activity',
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Cyber Investigations",
+  "alternateName": "Digital Forensics & Online Fraud Investigation",
+  "description": description,
+  "url": canonicalURL,
+  "image": ogImage,
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "Transparent Business Solutions B.V.",
+    "url": "https://tbsbv.com/"
+  },
+  "areaServed": "Worldwide",
+  "serviceType": "Cyber Investigation"
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tbsbv.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://tbsbv.com/services/" },
+    { "@type": "ListItem", "position": 3, "name": "Cyber Investigations", "item": canonicalURL }
+  ]
+};
+
+const jsonLd = `<script type="application/ld+json">${JSON.stringify(serviceSchema)}</script>
+<script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>`;
+---
+
+<BaseLayout title={title} description={description} ogImage={ogImage} jsonLd={jsonLd}>
+
+  <!-- Header -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-xl border-b border-slate-800/50 shadow-2xl">
+    <div class="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-20">
+      <div class="flex items-center justify-between h-20 lg:h-24">
+        <a href="/" class="flex items-center group transition-all duration-300 hover:opacity-80">
+          <img src="/assets/logo/logo.svg" alt="TBSBV — Transparent Business Solutions" class="h-10 sm:h-12 w-auto" />
+        </a>
+        <nav class="hidden lg:flex items-center gap-8 xl:gap-10">
+          <a href="/services/" class="text-sm font-semibold text-cyan-400 transition-colors duration-200">Services</a>
+          <a href="/#why-choose-us" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Why Us</a>
+          <a href="/#case-studies" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Case Studies</a>
+          <a href="/#process" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Process</a>
+          <a href="/insights/" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Insights</a>
+          <a href="/partners/" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Partners</a>
+          <a href="/press/" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Press</a>
+        </nav>
+        <a href="/#contact" class="hidden lg:inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold text-xs hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-300 hover:scale-105">
+          Request Consultation
+        </a>
+        <button id="menu-toggle" class="lg:hidden p-2 hover:bg-slate-800 transition-colors" aria-label="Toggle menu">
+          <span id="menu-icon-open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg></span>
+          <span id="menu-icon-close" class="hidden"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-white"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span>
+        </button>
+      </div>
+    </div>
+    <nav id="mobile-nav" class="hidden lg:hidden py-6 border-t border-slate-800 bg-slate-950">
+      <a href="/services/" class="block py-3 text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Services</a>
+      <a href="/#why-choose-us" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Why Us</a>
+      <a href="/#case-studies" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Case Studies</a>
+      <a href="/#process" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Process</a>
+      <a href="/insights/" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Insights</a>
+      <a href="/partners/" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Partners</a>
+      <a href="/press/" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Press</a>
+      <a href="/#contact" class="block mt-4 mx-4 text-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold">Get Started</a>
+    </nav>
+  </header>
+
+  <script>
+    const menuBtn = document.getElementById('menu-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+    menuBtn?.addEventListener('click', () => {
+      const isOpen = !mobileNav!.classList.contains('hidden');
+      mobileNav!.classList.toggle('hidden');
+      if (isOpen) { menuIconOpen!.classList.remove('hidden'); menuIconClose!.classList.add('hidden'); }
+      else { menuIconOpen!.classList.add('hidden'); menuIconClose!.classList.remove('hidden'); }
+    });
+    mobileNav?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => { mobileNav!.classList.add('hidden'); menuIconOpen!.classList.remove('hidden'); menuIconClose!.classList.add('hidden'); });
+    });
+  </script>
+
+  <main class="bg-white min-h-screen pt-20 lg:pt-24">
+
+    <div class="bg-slate-50 border-b border-slate-200">
+      <div class="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 py-3">
+        <nav class="flex items-center gap-2 text-xs text-slate-500" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-cyan-600 transition-colors">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          <a href="/services/" class="hover:text-cyan-600 transition-colors">Services</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          <span class="text-slate-700 font-medium">Cyber Investigations</span>
+        </nav>
+      </div>
+    </div>
+
+    <section class="relative py-16 sm:py-20 lg:py-28 bg-white overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.015]">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle, rgb(6, 182, 212) 1px, transparent 1px); background-size: 40px 40px;"></div>
+      </div>
+      <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-blue-100/30 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-0.5 bg-gradient-to-r from-blue-500 to-indigo-500"></div>
+              <span class="text-xs font-bold text-blue-600 tracking-[0.2em] uppercase">Digital Forensics & Online Fraud</span>
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.1] tracking-tight mb-6">
+              Cyber
+              <span class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent"> Investigations</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-600 leading-relaxed mb-8">
+              Our cyber investigations team conducts in-depth digital inquiries into online fraud, financial crime, impersonation schemes, and coordinated scam operations. By combining technical analysis with investigative strategy, we uncover actionable intelligence to support legal action and regulatory escalation.
+            </p>
+            <a href="/#contact" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-bold text-sm hover:shadow-xl hover:shadow-blue-500/30 transition-all duration-300 hover:scale-105">
+              Start a Consultation
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+          <div class="relative">
+            <div class="absolute -top-4 -left-4 w-16 h-16 border-t-4 border-l-4 border-blue-500 pointer-events-none z-10"></div>
+            <div class="absolute -bottom-4 -right-4 w-16 h-16 border-b-4 border-r-4 border-indigo-500 pointer-events-none z-10"></div>
+            <div class="overflow-hidden">
+              <img src="/assets/images/photo-1710957987034.webp" alt="TBSBV cyber investigation — digital forensics and online fraud analysis" class="w-full aspect-[4/3] object-cover" loading="eager" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-20 bg-slate-50 border-t border-slate-200">
+      <div class="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-10">What We Analyze</h2>
+        <div class="grid sm:grid-cols-2 gap-6">
+          {features.map((feature) => (
+            <div class="bg-white border-2 border-slate-200 p-6 hover:border-blue-300 transition-colors">
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M20 6 9 17l-5-5"/></svg>
+                </div>
+                <span class="text-slate-700 font-medium leading-relaxed">{feature}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-20 bg-slate-900 relative overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle, rgba(6, 182, 212, 0.6) 1px, transparent 1px); background-size: 32px 32px;"></div>
+      <div class="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Facing an Online Fraud Situation?</h2>
+        <p class="text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
+          Early action is critical. Contact our cyber investigations team for a confidential assessment of your situation.
+        </p>
+        <a href="/#contact" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-bold text-sm hover:shadow-xl hover:shadow-blue-500/30 transition-all duration-300 hover:scale-105">
+          Schedule a Consultation
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <Footer />
+  </main>
+</BaseLayout>

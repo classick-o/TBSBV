@@ -1,0 +1,103 @@
+# TBSBV — Transparent Business Solutions B.V.
+
+> Transparent Business Solutions B.V. (TBSBV) is a licensed Dutch private investigation firm specializing in cybersecurity, cyber investigations, due diligence, crypto tracing, and reputation management. Based in The Hague, Netherlands, serving clients across 45+ countries. Licensed by the Dutch Ministry of Justice and Security under POB number 07373. Registered at KVK: 78091624. Founded in 2020.
+
+## About
+
+TBSBV delivers world-class cyber investigation, due diligence, and integrity management solutions. The firm navigates complex digital threats with confidence across 45+ countries. The team combines cutting-edge technology with expert analysis to deliver unparalleled security and investigative services. TBSBV is ISO 27001, SOC 2, and GDPR compliant.
+
+## Services
+
+### Due Diligence
+URL: https://tbsbv.com/services/due-diligence/
+
+TBSBV conducts comprehensive due diligence assessments for individuals, businesses, investment opportunities, and digital asset platforms. The process includes:
+- Corporate structure and beneficial ownership review
+- Regulatory status verification
+- Litigation and enforcement screening
+- Risk exposure analysis
+- Online and dark web presence checks
+
+Due diligence reports provide clear risk evaluations to support informed decision-making and protect against financial, reputational, and compliance exposure.
+
+### Cyber Investigations
+URL: https://tbsbv.com/services/cyber-investigations/
+
+The cyber investigations team conducts in-depth digital inquiries into online fraud, financial crime, impersonation schemes, and coordinated scam operations. They analyze:
+- Digital footprints and technical indicators
+- Email headers, domains, and infrastructure links
+- Social engineering patterns
+- Online platform abuse and impersonation activity
+
+By combining technical analysis with investigative strategy, TBSBV uncovers actionable intelligence to support legal action and regulatory escalation.
+
+### Crypto Tracing
+URL: https://tbsbv.com/services/crypto-tracing/
+
+TBSBV provides advanced cryptocurrency tracing services to track digital asset movements across blockchain networks. Using forensic analytics tools and investigative methodologies, they identify wallet flows, linked addresses, exchange touchpoints, and asset consolidation patterns. Services include:
+- Tracing stolen or misappropriated digital assets
+- Identifying exchange off-ramps and custodial endpoints
+- Mapping transaction pathways across multiple blockchains
+- Producing structured forensic reports suitable for legal and regulatory use
+
+### Reputation Management
+URL: https://tbsbv.com/services/reputation-management/
+
+TBSBV assists individuals and organizations in protecting and restoring their digital reputation. Services include:
+- Online reputation risk assessments
+- Monitoring and identification of defamatory or harmful content
+- Strategic content suppression and correction guidance
+- Digital footprint optimization
+- Crisis response support
+
+## Frequently Asked Questions
+
+Q: How confidential are your investigations?
+A: Confidentiality is fundamental to our work. All engagements are handled with strict discretion, secure communication protocols, and controlled information access. We operate in compliance with applicable regulatory and data protection frameworks.
+
+Q: What industries do you specialize in?
+A: We work across multiple sectors, including financial services, digital assets, corporate transactions, private equity, and high-net-worth advisory matters. Our focus is less on industry labels and more on complex risk, fraud, and intelligence-driven situations.
+
+Q: How quickly can you respond to urgent cases?
+A: Response times depend on the nature and scope of the matter. In time-sensitive situations, we can mobilize resources rapidly and initiate preliminary assessment immediately. Early action is often critical in financial investigations.
+
+Q: Do you work internationally?
+A: Yes. We regularly handle cross-border matters involving multiple jurisdictions, exchanges, financial institutions, and regulatory environments. Our network and investigative capabilities are structured to support international engagements.
+
+Q: What technology do you use?
+A: We deploy advanced forensic and analytical tools, including blockchain tracing platforms, corporate intelligence databases, open-source intelligence methodologies, and proprietary investigative frameworks.
+
+Q: Can your findings be used in legal proceedings?
+A: Our reports are structured to meet professional standards and may support regulatory, civil, or law enforcement processes where applicable. The admissibility of findings depends on jurisdiction and legal strategy.
+
+Q: How do you price your services?
+A: Fees are determined on a case-by-case basis depending on complexity, jurisdictional scope, urgency, and resource allocation. We provide transparent engagement structures once the matter has been assessed.
+
+## Partners
+
+TBSBV works with a network of global partners including:
+- Carlo Zaccagnini Law Firm (Italy) — criminal tax, bankruptcy law, and cybercrime recovery
+- Mark Solomons — award-winning investigative journalist specializing in fraud and cybercrime
+- YK Law LLP (USA) — business law firm with offices in New York, Los Angeles, San Francisco, Dallas
+- AmCham — American Chamber of Commerce in The Netherlands
+- Leon Hill — in-house legal counsel specializing in fraud prevention and AML
+- Pacific Risk Ltd. — corporate intelligence and due diligence
+- Scam Detector — world's largest fraud prevention resource
+- Guidepost Solutions — forensic accounting and security technology
+
+## Press Coverage
+
+- Toronto Guardian (Jan 2026): "From Fraud to Justice: Transparent Business Solutions Helps Victims Worldwide Recover Their Lost Funds"
+- ReputationUP (Feb 2024): Strategic alliance announcement with TBSBV
+- The Jerusalem Post (Apr 2021): Coverage of TBSBV involvement in international asset repatriation case
+
+## Contact
+
+- Email: info@tbsbv.com
+- Phone: +31 70 7013260
+- WhatsApp: +41 76 762 0191
+- Address: Kalvermarkt 53, 2511 CB, The Hague, The Netherlands
+- KVK: 78091624
+- Licensed Private Investigation Firm — POB: 07373
+- LinkedIn: https://www.linkedin.com/company/transparent-business-solutions/
+- Facebook: https://www.facebook.com/profile.php?id=61587846142923
