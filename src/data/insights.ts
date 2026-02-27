@@ -23,7 +23,7 @@ export const insights: Insight[] = [
     dateISO: "2026-01-28",
     gradient: "from-cyan-500 to-blue-500",
     image:
-      "https://images.unsplash.com/photo-1658552963426-1083cf9c495e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGN5YW4lMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc3MDA1MzM2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "/TBSBV/assets/images/photo-1658552963426.webp",
     body: `
 <p>Artificial intelligence was once the exclusive domain of defenders. Security teams used machine learning to detect anomalies, classify malware, and automate threat responses. In 2026, that advantage is gone. Threat actors — from nation-state groups to financially motivated cybercriminals — have adopted the same tools, turning AI into one of the most disruptive forces in modern cybersecurity.</p>
 
@@ -67,7 +67,7 @@ export const insights: Insight[] = [
     dateISO: "2026-01-15",
     gradient: "from-blue-500 to-indigo-500",
     image:
-      "https://images.unsplash.com/photo-1653549893012-b8b4fbe97630?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGJsdWUlMjBuZXR3b3JrfGVufDF8fHx8MTc3MDA1MzM2MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "/TBSBV/assets/images/photo-1653549893012.webp",
     body: `
 <p>Mergers and acquisitions carry inherent risk. Financial statements can be manipulated, liabilities buried in subsidiaries, and reputational issues scrubbed from public view — at least temporarily. For investors and acquirers who rely solely on standard due diligence, the exposure is significant. The red flags that matter most are rarely found in audited accounts; they emerge from investigative work that goes beyond the deal room.</p>
 
@@ -108,7 +108,7 @@ export const insights: Insight[] = [
     dateISO: "2026-01-05",
     gradient: "from-indigo-500 to-purple-500",
     image:
-      "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=2232&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "/TBSBV/assets/images/photo-1639322537228.webp",
     body: `
 <p>A common misconception about cryptocurrency is that it enables anonymous crime. In reality, public blockchains are among the most transparent financial ledgers ever created. Every transaction is permanently recorded, publicly visible, and — crucially — traceable. Blockchain forensics is the discipline of following that trail, and it has become one of the most powerful tools in financial crime investigation.</p>
 
@@ -163,7 +163,7 @@ export const insights: Insight[] = [
     dateISO: "2025-12-20",
     gradient: "from-cyan-500 to-teal-500",
     image:
-      "https://images.unsplash.com/photo-1640834203089-cd5f2d9608ac?q=80&w=1772&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "/TBSBV/assets/images/photo-1640834203089.webp",
     body: `
 <p>Online investment fraud has reached epidemic proportions across Europe and globally. From binary options platforms to pig butchering scams, from fake crypto exchanges to Ponzi schemes dressed as trading algorithms — the methods evolve constantly while the damage to victims remains devastating. If you or your organization has been defrauded, understanding the recovery process is the first step toward justice.</p>
 
@@ -218,7 +218,7 @@ export const insights: Insight[] = [
     dateISO: "2025-12-08",
     gradient: "from-blue-500 to-cyan-500",
     image:
-      "https://images.unsplash.com/photo-1687093777245-bc60c636ddf0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHRlYWwlMjBzaGFwZXN8ZW58MXx8fHwxNzcwMDUzMzYyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "/TBSBV/assets/images/photo-1687093777245.webp",
     body: `
 <p>The rapid digitization of financial services has created a complex landscape of rights and obligations that most consumers are unaware of. When you deposit funds with an online broker, use a payment platform, or engage a digital financial service provider, you enter into a regulated relationship governed by a framework of consumer protection laws — many of which carry significant enforcement teeth.</p>
 
@@ -266,7 +266,7 @@ export const insights: Insight[] = [
     dateISO: "2025-11-22",
     gradient: "from-purple-500 to-indigo-500",
     image:
-      "https://images.unsplash.com/photo-1646038572815-43fe759e459b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHB1cnBsZSUyMGdyYWRpZW50fGVufDF8fHx8MTc2OTk1NDg5MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "/TBSBV/assets/images/photo-1646038572815.webp",
     body: `
 <p>Privacy violations online range from unauthorized data collection by apps and platforms to targeted harassment campaigns, doxxing, and the non-consensual sharing of personal information. For individuals and organizations, the consequences can be severe — reputational damage, financial loss, professional harm, and personal safety risks. Understanding how to identify, document, and respond to these violations is essential knowledge in the digital age.</p>
 
@@ -322,7 +322,7 @@ export const insights: Insight[] = [
     dateISO: "2025-11-10",
     gradient: "from-teal-500 to-blue-500",
     image:
-      "https://images.unsplash.com/photo-1639762681057-408e52192e55?q=80&w=2232&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "/TBSBV/assets/images/photo-1639762681057.webp",
     body: `
 <p>The cryptocurrency and blockchain sector has produced extraordinary investment returns — and extraordinary fraud. For every legitimate project that has created lasting value, dozens of fraudulent schemes, rug pulls, and poorly conceived ventures have destroyed investor capital. As institutional and retail investors continue to allocate to digital assets, rigorous due diligence is not optional — it is the difference between informed investment and expensive speculation.</p>
 
