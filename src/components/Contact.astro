@@ -33,19 +33,14 @@
           <div class="absolute inset-0 contact-border-glow"></div>
 
           <form
-            action="https://formsubmit.co/info@tbsbv.com"
-            method="POST"
+            id="contact-form"
             class="relative bg-gradient-to-br from-slate-900 to-slate-800 p-6 sm:p-8 space-y-5 sm:space-y-6"
           >
             <!-- Animated top accent line -->
             <div class="absolute top-0 left-0 right-0 h-[2px] contact-accent-line"></div>
 
-            <!-- FormSubmit config -->
-            <input type="hidden" name="_subject" value="New TBSBV Consultation Request" />
-            <input type="hidden" name="_next" value="https://tbsbv.com/thank-you/" />
-            <input type="hidden" name="_captcha" value="true" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="text" name="_honey" style="display:none" />
+            <!-- Honeypot (anti-spam) -->
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
 
             <div class="group/field">
               <label
@@ -186,6 +181,8 @@
                 placeholder="Tell us about your needs..."
               ></textarea>
             </div>
+
+            <div id="form-errors" class="min-h-[1px]"></div>
 
             <button
               type="submit"
@@ -389,4 +386,64 @@
     );
     observer.observe(contactSection);
   }
+
+  // Contact form submission
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const submitBtn = form?.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+  const btnLabel = submitBtn?.querySelector('span');
+  const errorContainer = document.getElementById('form-errors');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!submitBtn || submitBtn.disabled) return;
+
+    const data = {
+      name: (form.querySelector('#contact-name') as HTMLInputElement).value,
+      email: (form.querySelector('#contact-email') as HTMLInputElement).value,
+      phone_code: (form.querySelector('#contact-phone-code') as HTMLSelectElement).value,
+      phone: (form.querySelector('#contact-phone') as HTMLInputElement).value,
+      company: (form.querySelector('#contact-company') as HTMLInputElement).value,
+      message: (form.querySelector('#contact-message') as HTMLTextAreaElement).value,
+      _honey: (form.querySelector('[name="_honey"]') as HTMLInputElement).value,
+    };
+
+    submitBtn.disabled = true;
+    if (btnLabel) btnLabel.textContent = 'Sending...';
+    if (errorContainer) errorContainer.innerHTML = '';
+
+    try {
+      const res = await fetch('https://www.app.tbsbv.com/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+
+      if (res.ok && result.success) {
+        window.location.href = '/thank-you/';
+      } else if (res.status === 400 && result.errors) {
+        if (errorContainer) {
+          errorContainer.innerHTML = result.errors
+            .map((e: { message: string }) => `<p class="text-red-400 text-sm">${e.message}</p>`)
+            .join('');
+        }
+      } else if (res.status === 429) {
+        if (errorContainer) {
+          errorContainer.innerHTML = '<p class="text-red-400 text-sm">Too many submissions. Please try again in 15 minutes.</p>';
+        }
+      } else {
+        if (errorContainer) {
+          errorContainer.innerHTML = '<p class="text-red-400 text-sm">Something went wrong. Please try again or email us at info@tbsbv.com.</p>';
+        }
+      }
+    } catch {
+      if (errorContainer) {
+        errorContainer.innerHTML = '<p class="text-red-400 text-sm">Network error. Please check your connection and try again.</p>';
+      }
+    } finally {
+      submitBtn.disabled = false;
+      if (btnLabel) btnLabel.textContent = 'Send Message';
+    }
+  });
 </script>

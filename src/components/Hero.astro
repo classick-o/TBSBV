@@ -80,11 +80,11 @@
       <!-- RIGHT COLUMN: 3D Logo -->
       <div class="w-full lg:w-1/2 flex items-center justify-center">
         <div id="logo-3d-container" class="relative w-full aspect-square max-w-[280px] sm:max-w-[350px] lg:max-w-none">
-          <canvas id="logo-3d-canvas" class="absolute inset-0 w-full h-full opacity-0 transition-opacity duration-1000"></canvas>
-          <!-- Loading spinner -->
+          <!-- Loading spinner — hidden once 3D model is ready -->
           <div id="logo-3d-loader" class="absolute inset-0 flex items-center justify-center">
             <div class="w-16 h-16 border-2 border-cyan-500/30 border-t-cyan-400 rounded-full animate-spin"></div>
           </div>
+          <canvas id="logo-3d-canvas" class="absolute inset-0 w-full h-full opacity-0 transition-opacity duration-1000"></canvas>
         </div>
       </div>
     </div>
@@ -183,13 +183,17 @@
 </style>
 
 
-<!-- Three.js 3D Logo (logo only, no particles) -->
+<!-- Three.js 3D Logo (compressed on mobile, original on desktop) -->
 <script>
   import * as THREE from 'three';
   import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+  import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 
   const BASE_PATH = import.meta.env.BASE_URL.replace(/\/$/, '');
-  const MODEL_URL = `${BASE_PATH}/assets/models/logo-3d.glb`;
+  const isDesktop = window.innerWidth >= 1024;
+  const MODEL_URL = isDesktop
+    ? `${BASE_PATH}/assets/models/logo-3d.glb`
+    : `${BASE_PATH}/assets/models/logo-3d-compressed.glb`;
   const INITIAL_Y_ROTATION = -Math.PI / 6;
   const FLOAT_AMPLITUDE = 0.15;
   const FLOAT_SPEED = 0.8;
@@ -204,10 +208,10 @@
     const renderer = new THREE.WebGLRenderer({
       canvas: logo3dCanvas,
       alpha: true,
-      antialias: true,
+      antialias: window.innerWidth >= 1024,
       powerPreference: 'high-performance',
     });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, window.innerWidth >= 1024 ? 2 : 1.5));
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.2;
     renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -258,7 +262,11 @@
 
     let model: THREE.Group | null = null;
 
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.7/');
+
     const gltfLoader = new GLTFLoader();
+    gltfLoader.setDRACOLoader(dracoLoader);
     gltfLoader.load(
       MODEL_URL,
       (gltf) => {
@@ -373,6 +381,7 @@
       cancelAnimationFrame(animationFrameId);
       resizeObserver.disconnect();
       renderer.dispose();
+      dracoLoader.dispose();
     });
   }
 </script>

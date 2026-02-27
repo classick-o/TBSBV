@@ -4,6 +4,15 @@ import { imgPartnerCollab } from '../assets/images';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Footer from '../components/Footer.astro';
 
+import imgCarloZaccagnini from '../assets/partners/carlo-zaccagnini.png';
+import imgMarkSolomons from '../assets/partners/mark-solomons.png';
+import imgYkLaw from '../assets/partners/yk-law.png';
+import imgAmcham from '../assets/partners/amcham.png';
+import imgLeonHill from '../assets/partners/leon-hill.jpg';
+import imgPacificRisk from '../assets/partners/pacific-risk.jpg';
+import imgScamDetector from '../assets/partners/scam-detector.png';
+import imgGuidepostSolutions from '../assets/partners/guidepost-solutions.png';
+
 const title = 'Partners | TBSBV';
 const description = 'Explore our network of esteemed partners who contribute to our mission of providing cutting-edge solutions and expertise in digital investigations, cybersecurity, and more.';
 const canonicalURL = 'https://tbsbv.com/partners/';
@@ -14,56 +23,56 @@ const partners = [
     name: 'Carlo Zaccagnini',
     type: 'Italian Law Firm',
     url: 'https://carlozaccagnini.it/',
-    image: 'https://tbsbv.com/wp-content/uploads/2024/11/WhatsApp_Image_2024-11-13_at_11.23.42_AM-removebg-preview.png',
+    image: imgCarloZaccagnini,
     description: 'Carlo Zaccagnini Law Firm is a boutique Italian law firm with extensive experience in criminal tax and bankruptcy law, known for supporting top managers, prominent companies, and political figures. Their expertise spans preventive measures and cybercrime recovery, making them an invaluable ally for Transparent Business Solutions B.V. Through our collaboration, Carlo Zaccagnini\'s team provides civil law consultancy services to assist clients in reclaiming stolen funds.',
   },
   {
     name: 'Mark Solomons',
     type: 'Award-Winning Investigative Journalist',
     url: 'https://marksolomons.com/',
-    image: 'https://tbsbv.com/wp-content/uploads/2024/04/Mark-web-logo-tbsvb.png',
+    image: imgMarkSolomons,
     description: 'Mark Solomons is an experienced criminal investigator specialising in complex fraud and cybercrime cases. A former award-winning investigative journalist and Financial Times reporter, Mark is an expert on cryptocurrency and investment fraud and can call on an extensive global network of trusted contacts in law enforcement, regulatory agencies and financial institutions. Based in Australia, Mark specialises in managing multi-jurisdictional fraud cases across Southeast Asia, Europe and the Middle East.',
   },
   {
     name: 'YK Law LLP',
     type: 'Business Law Firm',
     url: 'https://www.yklaw.us/',
-    image: 'https://tbsbv.com/wp-content/uploads/2024/01/yk-logo-1.png',
+    image: imgYkLaw,
     description: 'As an American law firm embedded in a global network, YK Law possesses a distinctive ability to achieve outcomes for clients spanning local and international jurisdictions. Operating from offices in New York, Los Angeles, San Francisco, and Dallas, YK Law utilizes region-specific knowledge to navigate a wide spectrum of legal matters. As a member of the Yangke Global Network, YK Law is positioned to assist clients in meeting the challenges of a globalized legal landscape.',
   },
   {
     name: 'AmCham',
     type: 'American Chamber of Commerce in The Netherlands',
     url: 'https://www.amcham.nl/',
-    image: 'https://tbsbv.com/wp-content/uploads/2024/01/Amcham.png',
+    image: imgAmcham,
     description: 'Established in 1961, the American Chamber of Commerce in the Netherlands has played a pivotal role as the advocate for American businesses in the country. Representing a significant economic force, US-based firms affiliated with AmCham employ approximately 450,000 individuals, contributing to nearly 12% of the Netherlands\' annual revenue. AmCham continues to be a driving force in promoting trade, fostering partnerships, and maximizing the advantages available in the Dutch business landscape.',
   },
   {
     name: 'Leon Hill',
     type: 'In-House Legal Counsel',
     url: 'https://apps.calbar.ca.gov/attorney/Licensee/Detail/123140',
-    image: 'https://tbsbv.com/wp-content/uploads/2024/01/Leon-Hill.jpg',
+    image: imgLeonHill,
     description: 'With a wealth of professional experience, Leon Hill is a force in managing complex projects focused on combatting fraud and enforcing anti-money-laundering regulations. His expertise extends to directing IP anti-piracy investigations, providing foreign area risk assessments, and unmasking fraudulent industrial provocateurs. Leon\'s multifaceted skill set positions him as a key player in navigating the intricate landscape of global fraud prevention and enforcement.',
   },
   {
     name: 'Pacific Risk Ltd.',
     type: 'Corporate Intelligence',
     url: 'https://pacificriskasia.com/',
-    image: 'https://tbsbv.com/wp-content/uploads/2024/01/Pacific-Risk-Ltd.jpg',
+    image: imgPacificRisk,
     description: 'At the helm of Pacific Risk Ltd. is Julian, whose extensive expertise encompasses the project management of diverse business intelligence cases. Ranging from pre-transactional due diligence across various industries to anti-money-laundering initiatives, security risk assessments, and complex criminal investigations, Julian leads assignments that span the globe, addressing intricate challenges involving insurance fraud, money laundering, and offshore companies.',
   },
   {
     name: 'Scam Detector',
     type: 'World\'s Largest Fraud Prevention Resource',
     url: 'https://www.scam-detector.com/',
-    image: 'https://tbsbv.com/wp-content/uploads/2024/01/Scam-Detector.png',
+    image: imgScamDetector,
     description: 'As a pivotal platform dedicated to exposing the globe\'s most notorious scams, Scam Detector stands as a beacon of consumer protection. Offering a robust website validator tool, Scam Detector empowers users to verify the authenticity of any website before engagement. The platform has garnered features on esteemed media outlets such as ABC, BBC, CBS, FOX, and Cnet, solidifying its status as a trusted source of scam awareness.',
   },
   {
     name: 'Guidepost Solutions',
     type: 'Forensic Accounting & Security Technology',
     url: 'https://guidepostsolutions.com/',
-    image: 'https://tbsbv.com/wp-content/uploads/2024/01/Guidepost-Solutions.png',
+    image: imgGuidepostSolutions,
     description: 'Guidepost Solutions stands as a global authority in risk management and investigations, offering a spectrum of services that include compliance solutions, local and international investigations, monitoring, and security and technology consultancy. Comprising investigators, security and technology experts, and compliance professionals, Guidepost Solutions sets industry standards by delivering comprehensive and strategic solutions tailored to the unique needs of each client.',
   },
 ];
@@ -234,12 +243,12 @@ const partnersSchema = {
 
               <!-- Logo area -->
               <div class="p-8 pb-6 border-b border-slate-200 flex items-center justify-center h-36 bg-slate-50">
-                <img
+                <Image
                   src={partner.image}
                   alt={`${partner.name} — TBSBV partner`}
                   loading="lazy"
-                  width="200"
-                  height="96"
+                  width={200}
+                  height={96}
                   class="max-h-24 max-w-[200px] w-auto object-contain"
                 />
               </div>
