@@ -1,3 +1,8 @@
+---
+import { Image } from 'astro:assets';
+import { imgTeamwork } from '../assets/images';
+---
+
 <section id="why-choose-us" class="relative py-5 sm:py-8 lg:py-12 bg-slate-950 overflow-hidden">
   <!-- Background pattern -->
   <div class="absolute inset-0 opacity-[0.03]">
@@ -119,9 +124,9 @@
 
         <!-- Image -->
         <div class="relative aspect-[4/5] overflow-hidden group">
-          <img
-            src="/assets/images/photo-1582553996499.webp"
-            alt="Why choose TBSBV"
+          <Image
+            src={imgTeamwork}
+            alt="Why choose TBSBV — expert cybersecurity and investigation team"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           />
           <!-- Gradient overlay bottom -->

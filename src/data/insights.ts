@@ -1,4 +1,15 @@
-﻿export interface Insight {
+﻿import type { ImageMetadata } from 'astro';
+import {
+  imgAiCyberAttacks,
+  imgMnaRedFlags,
+  imgBlockchainForensics,
+  imgInvestmentFraud,
+  imgConsumerRights,
+  imgPrivacyViolations,
+  imgCryptoDueDiligence,
+} from '../assets/images';
+
+export interface Insight {
   slug: string;
   category: string;
   title: string;
@@ -7,7 +18,7 @@
   date: string;
   dateISO: string;
   gradient: string;
-  image: string;
+  image: ImageMetadata;
   imageAlt: string;
   keywords: string[];
   body: string;
@@ -24,8 +35,7 @@ export const insights: Insight[] = [
     date: "Jan 28, 2026",
     dateISO: "2026-01-28",
     gradient: "from-cyan-500 to-blue-500",
-    image:
-      "/assets/images/photo-1658552963426.webp",
+    image: imgAiCyberAttacks,
     imageAlt: "AI-powered cyber attacks — artificial intelligence threat landscape visualization",
     keywords: ["AI cyber attacks", "machine learning threats", "deepfake fraud", "polymorphic malware", "cybersecurity 2026", "AI-driven security"],
     body: `
@@ -70,8 +80,7 @@ export const insights: Insight[] = [
     date: "Jan 15, 2026",
     dateISO: "2026-01-15",
     gradient: "from-blue-500 to-indigo-500",
-    image:
-      "/assets/images/photo-1653549893012.webp",
+    image: imgMnaRedFlags,
     imageAlt: "M&A due diligence red flags — corporate transaction risk analysis",
     keywords: ["M&A due diligence", "red flags", "beneficial ownership", "corporate investigation", "pre-acquisition intelligence", "investment risk"],
     body: `
@@ -113,8 +122,7 @@ export const insights: Insight[] = [
     date: "Jan 5, 2026",
     dateISO: "2026-01-05",
     gradient: "from-indigo-500 to-purple-500",
-    image:
-      "/assets/images/photo-1639322537228.webp",
+    image: imgBlockchainForensics,
     imageAlt: "Blockchain forensics — cryptocurrency transaction tracing and analysis",
     keywords: ["blockchain forensics", "crypto tracing", "cryptocurrency fraud", "asset recovery", "wallet tracing", "exchange identification"],
     body: `
@@ -170,8 +178,7 @@ export const insights: Insight[] = [
     date: "Dec 20, 2025",
     dateISO: "2025-12-20",
     gradient: "from-cyan-500 to-teal-500",
-    image:
-      "/assets/images/photo-1640834203089.webp",
+    image: imgInvestmentFraud,
     imageAlt: "Online investment fraud recovery — victim rights and legal pathways",
     keywords: ["investment fraud recovery", "online scam", "pig butchering", "fraud victim rights", "chargeback", "crypto fraud recovery"],
     body: `
@@ -227,8 +234,7 @@ export const insights: Insight[] = [
     date: "Dec 8, 2025",
     dateISO: "2025-12-08",
     gradient: "from-blue-500 to-cyan-500",
-    image:
-      "/assets/images/photo-1687093777245.webp",
+    image: imgConsumerRights,
     imageAlt: "Consumer rights in digital financial services — regulatory framework and protection",
     keywords: ["consumer rights", "digital financial services", "MiFID II", "PSD2", "GDPR", "chargeback rights", "financial regulation"],
     body: `
@@ -277,8 +283,7 @@ export const insights: Insight[] = [
     date: "Nov 22, 2025",
     dateISO: "2025-11-22",
     gradient: "from-purple-500 to-indigo-500",
-    image:
-      "/assets/images/photo-1646038572815.webp",
+    image: imgPrivacyViolations,
     imageAlt: "Online privacy violations — GDPR rights and evidence documentation",
     keywords: ["privacy violations", "GDPR", "doxxing", "data breach", "right to erasure", "online harassment", "evidence preservation"],
     body: `
@@ -335,8 +340,7 @@ export const insights: Insight[] = [
     date: "Nov 10, 2025",
     dateISO: "2025-11-10",
     gradient: "from-teal-500 to-blue-500",
-    image:
-      "/assets/images/photo-1639762681057.webp",
+    image: imgCryptoDueDiligence,
     imageAlt: "Due diligence in crypto era — digital asset investment risk assessment",
     keywords: ["crypto due diligence", "cryptocurrency investment", "rug pull", "MiCA regulation", "token analysis", "on-chain due diligence"],
     body: `

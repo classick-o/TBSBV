@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import { imgDueDiligence } from '../../assets/images';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Footer from '../../components/Footer.astro';
 
@@ -157,8 +159,8 @@ const jsonLd = `<script type="application/ld+json">${JSON.stringify(serviceSchem
             <div class="absolute -top-4 -right-4 w-16 h-16 border-t-4 border-r-4 border-cyan-500 pointer-events-none z-10"></div>
             <div class="absolute -bottom-4 -left-4 w-16 h-16 border-b-4 border-l-4 border-blue-500 pointer-events-none z-10"></div>
             <div class="overflow-hidden">
-              <img
-                src="/assets/images/photo-1634848577969.webp"
+              <Image
+                src={imgDueDiligence}
                 alt="TBSBV due diligence assessment — corporate document review and risk evaluation"
                 class="w-full aspect-[4/3] object-cover"
                 loading="eager"

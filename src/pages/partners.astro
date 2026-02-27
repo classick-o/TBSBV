@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import { imgPartnerCollab } from '../assets/images';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Footer from '../components/Footer.astro';
 
@@ -232,10 +234,11 @@ const partnersSchema = {
 
               <!-- Logo area -->
               <div class="p-8 pb-6 border-b border-slate-200 flex items-center justify-center h-36 bg-slate-50">
-                <img
+                <Image
                   src={partner.image}
                   alt={partner.name}
                   loading="lazy"
+                  inferSize
                   class="max-h-24 max-w-[200px] w-auto object-contain"
                 />
               </div>
@@ -308,8 +311,8 @@ const partnersSchema = {
             <div class="absolute -bottom-4 -right-4 w-16 h-16 border-b-4 border-r-4 border-blue-500 pointer-events-none z-10"></div>
 
             <div class="aspect-[4/3] overflow-hidden">
-              <img
-                src="/assets/images/photo-1594492691731.webp"
+              <Image
+                src={imgPartnerCollab}
                 alt="Global partner network collaboration"
                 class="w-full h-full object-cover"
                 loading="lazy"

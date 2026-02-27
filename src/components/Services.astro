@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import { imgDueDiligence, imgCyberInvestigation, imgCryptoTracing, imgReputation } from '../assets/images';
 import AnimatedWaveLines from './AnimatedWaveLines.astro';
 const services = [
   {
@@ -14,7 +16,7 @@ const services = [
     ],
     closing: "Our due diligence reports provide clear risk evaluations to support informed decision-making and protect against financial, reputational, and compliance exposure.",
     gradient: "from-cyan-500 to-blue-500",
-    image: "/assets/images/photo-1634848577969.webp",
+    image: imgDueDiligence,
     hoverColor: "group-hover:text-cyan-400",
     linkColor: "text-cyan-400",
     dotBg: "bg-cyan-500/30",
@@ -32,7 +34,7 @@ const services = [
     ],
     closing: "By combining technical analysis with investigative strategy, we uncover actionable intelligence to support investigative and legal action, and regulatory escalation.",
     gradient: "from-blue-500 to-indigo-500",
-    image: "/assets/images/photo-1710957987034.webp",
+    image: imgCyberInvestigation,
     hoverColor: "group-hover:text-blue-600",
     linkColor: "text-blue-600",
     dotBg: "bg-blue-100",
@@ -51,7 +53,7 @@ const services = [
     ],
     closing: "Whether supporting fraud victims, legal teams, or corporate investigations, we deliver clear, evidence-based blockchain intelligence.",
     gradient: "from-teal-500 to-cyan-500",
-    image: "/assets/images/photo-1617228679684.webp",
+    image: imgCryptoTracing,
     hoverColor: "group-hover:text-teal-600",
     linkColor: "text-teal-600",
     dotBg: "bg-teal-100",
@@ -71,7 +73,7 @@ const services = [
     ],
     closing: "In an increasingly digital world, reputational integrity is critical. We help clients proactively manage risk and respond effectively when issues arise.",
     gradient: "from-indigo-500 to-purple-500",
-    image: "/assets/images/photo-1676911809746.webp",
+    image: imgReputation,
     hoverColor: "group-hover:text-indigo-600",
     linkColor: "text-indigo-600",
     dotBg: "bg-indigo-100",
@@ -127,7 +129,7 @@ const services = [
         class="col-span-12 lg:col-span-7 group relative bg-slate-900 overflow-hidden hover:shadow-3xl transition-all duration-700"
       >
         <div class="relative h-[320px] sm:h-[280px] lg:h-[340px] overflow-hidden">
-          <img src={services[0].image} alt={services[0].title} loading="lazy"
+          <Image src={services[0].image} alt={services[0].title} loading="lazy"
             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
           <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/70 to-transparent"></div>
         </div>
@@ -168,7 +170,7 @@ const services = [
         class="col-span-12 lg:col-span-5 group relative bg-white border-2 border-slate-200 hover:border-cyan-300 overflow-hidden hover:shadow-3xl transition-all duration-700"
       >
         <div class="relative h-52 overflow-hidden">
-          <img src={services[1].image} alt={services[1].title} loading="lazy"
+          <Image src={services[1].image} alt={services[1].title} loading="lazy"
             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
           <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white"></div>
         </div>
@@ -206,7 +208,7 @@ const services = [
         class="col-span-12 lg:col-span-5 group relative bg-white border-2 border-slate-200 hover:border-teal-300 overflow-hidden hover:shadow-3xl transition-all duration-700"
       >
         <div class="relative h-52 overflow-hidden">
-          <img src={services[2].image} alt={services[2].title} loading="lazy"
+          <Image src={services[2].image} alt={services[2].title} loading="lazy"
             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
           <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white"></div>
         </div>
@@ -244,7 +246,7 @@ const services = [
         class="col-span-12 lg:col-span-7 group relative bg-slate-900 overflow-hidden hover:shadow-3xl transition-all duration-700"
       >
         <div class="relative h-[240px] sm:h-[220px] lg:h-[260px] overflow-hidden">
-          <img src={services[3].image} alt={services[3].title} loading="lazy"
+          <Image src={services[3].image} alt={services[3].title} loading="lazy"
             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
           <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/70 to-transparent"></div>
         </div>

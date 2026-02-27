@@ -36,6 +36,11 @@ export default defineConfig({
       },
     }),
   ],
+  image: {
+    remotePatterns: [
+      { protocol: 'https', hostname: 'tbsbv.com' },
+    ],
+  },
   vite: {
     plugins: [tailwindcss()]
   }

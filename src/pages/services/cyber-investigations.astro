@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import { imgCyberInvestigation } from '../../assets/images';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Footer from '../../components/Footer.astro';
 
@@ -143,7 +145,7 @@ const jsonLd = `<script type="application/ld+json">${JSON.stringify(serviceSchem
             <div class="absolute -top-4 -left-4 w-16 h-16 border-t-4 border-l-4 border-blue-500 pointer-events-none z-10"></div>
             <div class="absolute -bottom-4 -right-4 w-16 h-16 border-b-4 border-r-4 border-indigo-500 pointer-events-none z-10"></div>
             <div class="overflow-hidden">
-              <img src="/assets/images/photo-1710957987034.webp" alt="TBSBV cyber investigation — digital forensics and online fraud analysis" class="w-full aspect-[4/3] object-cover" loading="eager" />
+              <Image src={imgCyberInvestigation} alt="TBSBV cyber investigation — digital forensics and online fraud analysis" class="w-full aspect-[4/3] object-cover" loading="eager" />
             </div>
           </div>
         </div>

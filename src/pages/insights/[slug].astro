@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Footer from '../../components/Footer.astro';
 import { insights } from '../../data/insights';
@@ -42,7 +43,7 @@ const articleSchema = {
   "datePublished": insight.dateISO,
   "dateModified": insight.dateISO,
   "url": canonicalURL,
-  "image": insight.image,
+  "image": `https://tbsbv.com${insight.image.src}`,
   "author": {
     "@type": "Organization",
     "name": "Transparent Business Solutions B.V.",
@@ -67,7 +68,7 @@ const articleSchema = {
 };
 ---
 
-<BaseLayout title={pageTitle} description={insight.excerpt} ogType="article" ogImage={`https://tbsbv.com${insight.image}`} jsonLd={`<script type="application/ld+json">${JSON.stringify(articleSchema)}</script>\n<script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>`}>
+<BaseLayout title={pageTitle} description={insight.excerpt} ogType="article" ogImage={`https://tbsbv.com${insight.image.src}`} jsonLd={`<script type="application/ld+json">${JSON.stringify(articleSchema)}</script>\n<script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>`}>
 
   <!-- Header -->
   <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-xl border-b border-slate-800/50 shadow-2xl">
@@ -144,7 +145,7 @@ const articleSchema = {
     <section class="relative overflow-hidden bg-slate-950">
       <!-- Hero image with overlay -->
       <div class="relative h-[50vh] sm:h-[55vh] lg:h-[60vh] min-h-[380px] max-h-[600px]">
-        <img
+        <Image
           src={insight.image}
           alt={insight.imageAlt || insight.title}
           class="w-full h-full object-cover"
@@ -223,7 +224,7 @@ const articleSchema = {
               <a href={`/insights/${related.slug}/`} class="group block">
                 <article class="bg-white border-2 border-slate-200 hover:border-cyan-300 transition-all duration-300 hover:shadow-lg overflow-hidden flex h-32">
                   <div class="relative w-36 flex-shrink-0 overflow-hidden">
-                    <img src={related.image} alt={related.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                    <Image src={related.image} alt={related.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                   </div>
                   <div class={`w-0.5 bg-gradient-to-b ${related.gradient} flex-shrink-0`}></div>
                   <div class="px-5 py-4 flex flex-col justify-center flex-1 min-w-0">
