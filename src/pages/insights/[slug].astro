@@ -22,7 +22,7 @@ const relatedInsights = insights
   );
 
 const pageTitle = `${insight.title} | TBSBV Insights`;
-const canonicalURL = `https://classick-o.github.io/TBSBV/insights/${insight.slug}/`;
+const canonicalURL = `https://tbsbv.com/insights/${insight.slug}/`;
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -36,15 +36,15 @@ const articleSchema = {
   "author": {
     "@type": "Organization",
     "name": "Transparent Business Solutions B.V.",
-    "url": "https://classick-o.github.io/TBSBV/"
+    "url": "https://tbsbv.com/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "TBSBV",
-    "url": "https://classick-o.github.io/TBSBV/",
+    "url": "https://tbsbv.com/",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://classick-o.github.io/TBSBV/assets/logo/logo-png.png"
+      "url": "https://tbsbv.com/assets/logo/logo-png.png"
     }
   },
   "articleSection": insight.category,
@@ -61,19 +61,19 @@ const articleSchema = {
   <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-xl border-b border-slate-800/50 shadow-2xl">
     <div class="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-20">
       <div class="flex items-center justify-between h-20 lg:h-24">
-        <a href="/TBSBV/" class="flex items-center group transition-all duration-300 hover:opacity-80">
-          <img src="/TBSBV/assets/logo/logo.svg" alt="TBSBV — Transparent Business Solutions" class="h-10 sm:h-12 w-auto" />
+        <a href="/" class="flex items-center group transition-all duration-300 hover:opacity-80">
+          <img src="/assets/logo/logo.svg" alt="TBSBV — Transparent Business Solutions" class="h-10 sm:h-12 w-auto" />
         </a>
         <nav class="hidden lg:flex items-center gap-8 xl:gap-10">
-          <a href="/TBSBV/services/" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Services</a>
-          <a href="/TBSBV/#why-choose-us" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Why Us</a>
-          <a href="/TBSBV/#case-studies" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Case Studies</a>
-          <a href="/TBSBV/#process" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Process</a>
-          <a href="/TBSBV/insights/" class="text-sm font-semibold text-cyan-400 transition-colors duration-200">Insights</a>
-          <a href="/TBSBV/partners/" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Partners</a>
-          <a href="/TBSBV/press/" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Press</a>
+          <a href="/services/" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Services</a>
+          <a href="/#why-choose-us" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Why Us</a>
+          <a href="/#case-studies" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Case Studies</a>
+          <a href="/#process" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Process</a>
+          <a href="/insights/" class="text-sm font-semibold text-cyan-400 transition-colors duration-200">Insights</a>
+          <a href="/partners/" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Partners</a>
+          <a href="/press/" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors duration-200">Press</a>
         </nav>
-        <a href="/TBSBV/#contact" class="hidden lg:inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold text-xs hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-300 hover:scale-105">
+        <a href="/#contact" class="hidden lg:inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold text-xs hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-300 hover:scale-105">
           Request Consultation
         </a>
         <!-- Mobile Menu Button -->
@@ -90,14 +90,14 @@ const articleSchema = {
     </div>
     <!-- Mobile Navigation -->
     <nav id="mobile-nav" class="hidden lg:hidden py-6 border-t border-slate-800 bg-slate-950">
-      <a href="/TBSBV/services/" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Services</a>
-      <a href="/TBSBV/#why-choose-us" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Why Us</a>
-      <a href="/TBSBV/#case-studies" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Case Studies</a>
-      <a href="/TBSBV/#process" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Process</a>
-      <a href="/TBSBV/insights/" class="block py-3 text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Insights</a>
-      <a href="/TBSBV/partners/" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Partners</a>
-      <a href="/TBSBV/press/" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Press</a>
-      <a href="/TBSBV/#contact" class="block mt-4 mx-4 text-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold">Get Started</a>
+      <a href="/services/" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Services</a>
+      <a href="/#why-choose-us" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Why Us</a>
+      <a href="/#case-studies" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Case Studies</a>
+      <a href="/#process" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Process</a>
+      <a href="/insights/" class="block py-3 text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Insights</a>
+      <a href="/partners/" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Partners</a>
+      <a href="/press/" class="block py-3 text-slate-300 hover:text-cyan-400 hover:bg-slate-900/50 px-4 transition-colors font-medium">Press</a>
+      <a href="/#contact" class="block mt-4 mx-4 text-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold">Get Started</a>
     </nav>
   </header>
 
@@ -146,9 +146,9 @@ const articleSchema = {
       <div class="relative z-10 max-w-[900px] mx-auto px-6 sm:px-8 lg:px-12 -mt-48 sm:-mt-56 pb-0">
         <!-- Breadcrumb -->
         <nav class="flex items-center gap-2 text-xs text-slate-500 mb-6" aria-label="Breadcrumb">
-          <a href="/TBSBV/" class="hover:text-cyan-400 transition-colors">Home</a>
+          <a href="/" class="hover:text-cyan-400 transition-colors">Home</a>
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-          <a href="/TBSBV/insights/" class="hover:text-cyan-400 transition-colors">Insights</a>
+          <a href="/insights/" class="hover:text-cyan-400 transition-colors">Insights</a>
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
           <span class="text-slate-400 truncate max-w-[200px]">{insight.category}</span>
         </nav>
@@ -189,11 +189,11 @@ const articleSchema = {
 
         <!-- Share / back -->
         <div class="mt-16 pt-10 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <a href="/TBSBV/insights/" class="inline-flex items-center gap-2 text-slate-600 hover:text-cyan-600 transition-colors text-sm font-semibold">
+          <a href="/insights/" class="inline-flex items-center gap-2 text-slate-600 hover:text-cyan-600 transition-colors text-sm font-semibold">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
             Back to Insights
           </a>
-          <a href="/TBSBV/#contact" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold text-sm hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300 hover:scale-105">
+          <a href="/#contact" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold text-sm hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300 hover:scale-105">
             Speak with Our Team
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
@@ -208,7 +208,7 @@ const articleSchema = {
           <h2 class="text-lg font-bold text-slate-700 mb-6">Related Insights</h2>
           <div class="grid sm:grid-cols-2 gap-5">
             {relatedInsights.map((related) => (
-              <a href={`/TBSBV/insights/${related.slug}/`} class="group block">
+              <a href={`/insights/${related.slug}/`} class="group block">
                 <article class="bg-white border-2 border-slate-200 hover:border-cyan-300 transition-all duration-300 hover:shadow-lg overflow-hidden flex h-32">
                   <div class="relative w-36 flex-shrink-0 overflow-hidden">
                     <img src={related.image} alt={related.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />

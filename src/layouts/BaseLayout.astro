@@ -11,7 +11,7 @@ interface Props {
   ogImage?: string;
 }
 
-const { title, description, jsonLd, ogType = 'website', ogImage = 'https://classick-o.github.io/TBSBV/assets/logo/logo-png.png' } = Astro.props;
+const { title, description, jsonLd, ogType = 'website', ogImage = 'https://tbsbv.com/assets/logo/logo-png.png' } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -20,7 +20,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/png" href="/TBSBV/assets/logo/logo-png.png" />
+    <link rel="icon" type="image/png" href="/assets/logo/logo-png.png" />
     <meta name="generator" content={Astro.generator} />
 
     <!-- SEO -->

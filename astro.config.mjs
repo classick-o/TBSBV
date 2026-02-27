@@ -5,8 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://classick-o.github.io',
-  base: '/TBSBV',
+  site: 'https://tbsbv.com',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()]
